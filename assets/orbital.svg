@@ -1,26 +1,28 @@
 <!--
   ORBITAL TELEMETRY — WhyILived
-  12 planets = last 12 months. Planet size ∝ contribution count.
-  DATA (placeholder — update via GitHub Action or manually):
-    i=0  Apr '26  90   r=8   #58a6ff
-    i=1  Mar '26  115  r=10  #79c0ff
-    i=2  Feb '26  70   r=6   #a5d6ff
-    i=3  Jan '26  105  r=9   #e6b450
-    i=4  Dec '25  45   r=4   #ffa657
-    i=5  Nov '25  80   r=7   #d2a8ff
-    i=6  Oct '25  125  r=11  #bc8cff
-    i=7  Sep '25  60   r=5   #39d353
-    i=8  Aug '25  85   r=7   #56d364
-    i=9  Jul '25  35   r=3   #ff7b72
-    i=10 Jun '25  70   r=6   #ffa198
-    i=11 May '25  50   r=4   #9b8cff
+  Auto-updated by scripts/update-orbital.py via GitHub Actions (runs 1st of each month).
 
-  Orbit: circle cx=450 cy=185 r=130. Centre star: (450, 185).
-  Planet positions: angle = -90 + i*30 deg
-    px = 450 + 130*cos(angle_rad)
-    py = 185 + 130*sin(angle_rad)
+  Geometry: centre (450, 220), orbit r=130, viewBox 900×430
+  Planet ordering: i=0 = current month at 12-o'clock (-90°), subsequent months
+  go counter-clockwise (i=1 is upper-left, i=2 upper-right of left, etc.).
+  Angle formula: a = -90 - i×30°
+  Planet radius: scaled linearly between r=3 (min month) and r=12 (max month).
+
+  DATA (placeholder — script overwrites BEGIN_PLANETS … END_PLANETS block):
+    i=0  Apr '26  90c  r=8
+    i=1  Mar '26  115c r=10
+    i=2  Feb '26  70c  r=6
+    i=3  Jan '26  105c r=9
+    i=4  Dec '25  45c  r=4
+    i=5  Nov '25  80c  r=7
+    i=6  Oct '25  125c r=11
+    i=7  Sep '25  60c  r=5
+    i=8  Aug '25  85c  r=7
+    i=9  Jul '25  35c  r=3
+    i=10 Jun '25  70c  r=6
+    i=11 May '25  50c  r=4
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 365" width="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 430" width="100%">
   <defs>
     <radialGradient id="star-core" cx="50%" cy="50%" r="50%">
       <stop offset="0%"   stop-color="#fffde7"/>
@@ -49,6 +51,7 @@
       @keyframes p-glow  { 0%,100%{opacity:.72} 50%{opacity:1}   }
       @keyframes ring    { 0%,100%{opacity:.35} 50%{opacity:.55} }
       @keyframes footer  { 0%,100%{opacity:.3}  50%{opacity:.55} }
+      @keyframes orbit-cw { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
 
       .sa { fill:#e8f4f8; animation:tw-a 3.1s ease-in-out infinite; }
       .sb { fill:#58a6ff; animation:tw-b 2.3s ease-in-out infinite; }
@@ -64,193 +67,202 @@
       .foot       { animation:footer 5s ease-in-out infinite; }
       .label      { fill:#8b949e; font-family:monospace; font-size:8px; }
       .label-count{ fill:#58a6ff; font-family:monospace; font-size:8px; }
+      #sys {
+        transform-box: view-box;
+        transform-origin: 450px 220px;
+        animation: orbit-cw 90s linear infinite;
+      }
     </style>
   </defs>
 
-  <!-- ── Background ─────────────────────────────────── -->
-  <rect width="900" height="365" fill="#0d1117"/>
+  <!-- ── Background ──────────────────────────────────── -->
+  <rect width="900" height="430" fill="#0d1117"/>
 
-  <!-- ── Star field ──────────────────────────────────── -->
-  <!-- Outer ring — away from orbit area (r>155 from centre 450,185) -->
-  <circle class="sa" cx="18"  cy="12"  r="0.7" style="animation-delay:.3s"/>
-  <circle class="sd" cx="62"  cy="8"   r="0.5" style="animation-delay:1.2s"/>
-  <circle class="sb" cx="118" cy="18"  r="0.6" style="animation-delay:2.5s"/>
-  <circle class="sa" cx="178" cy="7"   r="0.8" style="animation-delay:.7s"/>
-  <circle class="sc" cx="234" cy="20"  r="0.5" style="animation-delay:3.1s"/>
-  <circle class="sd" cx="292" cy="11"  r="0.7" style="animation-delay:1.8s"/>
-  <circle class="sa" cx="352" cy="6"   r="0.6" style="animation-delay:.4s"/>
-  <circle class="sb" cx="412" cy="16"  r="0.5" style="animation-delay:2.9s"/>
-  <circle class="sc" cx="474" cy="9"   r="0.7" style="animation-delay:.9s"/>
-  <circle class="sa" cx="534" cy="18"  r="0.6" style="animation-delay:2.2s"/>
-  <circle class="sd" cx="592" cy="8"   r="0.5" style="animation-delay:1.5s"/>
-  <circle class="sb" cx="650" cy="15"  r="0.8" style="animation-delay:.2s"/>
-  <circle class="sa" cx="708" cy="7"   r="0.6" style="animation-delay:3.4s"/>
-  <circle class="sc" cx="762" cy="19"  r="0.5" style="animation-delay:1.0s"/>
-  <circle class="sd" cx="818" cy="10"  r="0.7" style="animation-delay:2.7s"/>
-  <circle class="sa" cx="866" cy="15"  r="0.6" style="animation-delay:.6s"/>
+  <!-- ── Star field ─────────────────────────────────── -->
+  <!-- Top band -->
+  <circle class="sa" cx="18"  cy="14"  r="0.7" style="animation-delay:.3s"/>
+  <circle class="sd" cx="64"  cy="9"   r="0.5" style="animation-delay:1.2s"/>
+  <circle class="sb" cx="120" cy="20"  r="0.6" style="animation-delay:2.5s"/>
+  <circle class="sa" cx="182" cy="8"   r="0.8" style="animation-delay:.7s"/>
+  <circle class="sc" cx="238" cy="22"  r="0.5" style="animation-delay:3.1s"/>
+  <circle class="sd" cx="298" cy="12"  r="0.7" style="animation-delay:1.8s"/>
+  <circle class="sa" cx="356" cy="7"   r="0.6" style="animation-delay:.4s"/>
+  <circle class="sb" cx="416" cy="18"  r="0.5" style="animation-delay:2.9s"/>
+  <circle class="sc" cx="476" cy="10"  r="0.7" style="animation-delay:.9s"/>
+  <circle class="sa" cx="536" cy="20"  r="0.6" style="animation-delay:2.2s"/>
+  <circle class="sd" cx="594" cy="9"   r="0.5" style="animation-delay:1.5s"/>
+  <circle class="sb" cx="652" cy="17"  r="0.8" style="animation-delay:.2s"/>
+  <circle class="sa" cx="710" cy="8"   r="0.6" style="animation-delay:3.4s"/>
+  <circle class="sc" cx="764" cy="21"  r="0.5" style="animation-delay:1.0s"/>
+  <circle class="sd" cx="820" cy="11"  r="0.7" style="animation-delay:2.7s"/>
+  <circle class="sa" cx="868" cy="16"  r="0.6" style="animation-delay:.6s"/>
 
-  <circle class="sc" cx="28"  cy="48"  r="0.6" style="animation-delay:2.0s"/>
-  <circle class="sa" cx="70"  cy="65"  r="0.8" style="animation-delay:.5s"/>
-  <circle class="sb" cx="42"  cy="95"  r="0.5" style="animation-delay:3.5s"/>
-  <circle class="sd" cx="88"  cy="120" r="0.7" style="animation-delay:1.2s"/>
-  <circle class="sa" cx="52"  cy="148" r="0.6" style="animation-delay:.8s"/>
-  <circle class="sc" cx="35"  cy="178" r="0.5" style="animation-delay:3.0s"/>
-  <circle class="sb" cx="62"  cy="210" r="0.7" style="animation-delay:1.7s"/>
-  <circle class="sa" cx="40"  cy="238" r="0.6" style="animation-delay:.3s"/>
-  <circle class="sd" cx="78"  cy="262" r="0.5" style="animation-delay:2.4s"/>
-  <circle class="sc" cx="48"  cy="290" r="0.7" style="animation-delay:1.1s"/>
-  <circle class="sa" cx="82"  cy="318" r="0.6" style="animation-delay:3.8s"/>
-  <circle class="sb" cx="25"  cy="342" r="0.5" style="animation-delay:.6s"/>
+  <!-- Left flank (x < 280, clear of orbit label extent ~293px from left) -->
+  <circle class="sc" cx="28"  cy="52"  r="0.6" style="animation-delay:2.0s"/>
+  <circle class="sa" cx="72"  cy="72"  r="0.8" style="animation-delay:.5s"/>
+  <circle class="sb" cx="44"  cy="105" r="0.5" style="animation-delay:3.5s"/>
+  <circle class="sd" cx="90"  cy="135" r="0.7" style="animation-delay:1.2s"/>
+  <circle class="sa" cx="54"  cy="165" r="0.6" style="animation-delay:.8s"/>
+  <circle class="sc" cx="36"  cy="198" r="0.5" style="animation-delay:3.0s"/>
+  <circle class="sb" cx="65"  cy="230" r="0.7" style="animation-delay:1.7s"/>
+  <circle class="sa" cx="42"  cy="260" r="0.6" style="animation-delay:.3s"/>
+  <circle class="sd" cx="80"  cy="288" r="0.5" style="animation-delay:2.4s"/>
+  <circle class="sc" cx="50"  cy="318" r="0.7" style="animation-delay:1.1s"/>
+  <circle class="sa" cx="84"  cy="348" r="0.6" style="animation-delay:3.8s"/>
+  <circle class="sb" cx="26"  cy="378" r="0.5" style="animation-delay:.6s"/>
+  <circle class="sd" cx="110" cy="60"  r="0.6" style="animation-delay:2.2s"/>
+  <circle class="sa" cx="145" cy="100" r="0.5" style="animation-delay:1.6s"/>
+  <circle class="sb" cx="165" cy="148" r="0.7" style="animation-delay:3.3s"/>
+  <circle class="sc" cx="132" cy="200" r="0.5" style="animation-delay:.9s"/>
+  <circle class="sd" cx="175" cy="252" r="0.6" style="animation-delay:2.0s"/>
+  <circle class="sa" cx="148" cy="310" r="0.7" style="animation-delay:1.4s"/>
+  <circle class="sb" cx="182" cy="368" r="0.5" style="animation-delay:3.7s"/>
 
-  <circle class="sd" cx="820" cy="55"  r="0.7" style="animation-delay:2.9s"/>
-  <circle class="sa" cx="852" cy="80"  r="0.5" style="animation-delay:1.4s"/>
-  <circle class="sb" cx="830" cy="108" r="0.6" style="animation-delay:.2s"/>
-  <circle class="sc" cx="866" cy="135" r="0.8" style="animation-delay:3.2s"/>
-  <circle class="sa" cx="840" cy="162" r="0.5" style="animation-delay:1.9s"/>
-  <circle class="sd" cx="872" cy="190" r="0.7" style="animation-delay:.7s"/>
-  <circle class="sb" cx="845" cy="218" r="0.6" style="animation-delay:2.6s"/>
-  <circle class="sc" cx="865" cy="248" r="0.5" style="animation-delay:1.3s"/>
-  <circle class="sa" cx="834" cy="276" r="0.7" style="animation-delay:3.7s"/>
-  <circle class="sd" cx="858" cy="305" r="0.6" style="animation-delay:.4s"/>
-  <circle class="sb" cx="876" cy="332" r="0.5" style="animation-delay:2.1s"/>
-  <circle class="sc" cx="825" cy="352" r="0.7" style="animation-delay:1.6s"/>
+  <!-- Right flank (x > 620) -->
+  <circle class="sd" cx="822" cy="58"  r="0.7" style="animation-delay:2.9s"/>
+  <circle class="sa" cx="854" cy="85"  r="0.5" style="animation-delay:1.4s"/>
+  <circle class="sb" cx="832" cy="115" r="0.6" style="animation-delay:.2s"/>
+  <circle class="sc" cx="868" cy="145" r="0.8" style="animation-delay:3.2s"/>
+  <circle class="sa" cx="842" cy="175" r="0.5" style="animation-delay:1.9s"/>
+  <circle class="sd" cx="874" cy="210" r="0.7" style="animation-delay:.7s"/>
+  <circle class="sb" cx="847" cy="245" r="0.6" style="animation-delay:2.6s"/>
+  <circle class="sc" cx="867" cy="278" r="0.5" style="animation-delay:1.3s"/>
+  <circle class="sa" cx="836" cy="308" r="0.7" style="animation-delay:3.7s"/>
+  <circle class="sd" cx="860" cy="338" r="0.6" style="animation-delay:.4s"/>
+  <circle class="sb" cx="878" cy="368" r="0.5" style="animation-delay:2.1s"/>
+  <circle class="sc" cx="727" cy="60"  r="0.6" style="animation-delay:1.8s"/>
+  <circle class="sd" cx="755" cy="100" r="0.5" style="animation-delay:.3s"/>
+  <circle class="sa" cx="740" cy="148" r="0.7" style="animation-delay:2.4s"/>
+  <circle class="sb" cx="762" cy="256" r="0.5" style="animation-delay:1.0s"/>
+  <circle class="sc" cx="748" cy="312" r="0.6" style="animation-delay:3.5s"/>
+  <circle class="sa" cx="728" cy="362" r="0.7" style="animation-delay:.8s"/>
 
-  <circle class="sb" cx="22"  cy="354" r="0.6" style="animation-delay:3.4s"/>
-  <circle class="sa" cx="78"  cy="358" r="0.5" style="animation-delay:.9s"/>
-  <circle class="sc" cx="140" cy="348" r="0.8" style="animation-delay:2.3s"/>
-  <circle class="sd" cx="220" cy="355" r="0.6" style="animation-delay:1.0s"/>
-  <circle class="sa" cx="310" cy="350" r="0.5" style="animation-delay:3.6s"/>
-  <circle class="sb" cx="590" cy="352" r="0.6" style="animation-delay:.5s"/>
-  <circle class="sc" cx="680" cy="348" r="0.7" style="animation-delay:2.8s"/>
-  <circle class="sd" cx="768" cy="355" r="0.5" style="animation-delay:1.2s"/>
-  <circle class="sa" cx="856" cy="350" r="0.7" style="animation-delay:.1s"/>
+  <!-- Bottom band -->
+  <circle class="sb" cx="24"  cy="410" r="0.6" style="animation-delay:3.4s"/>
+  <circle class="sa" cx="80"  cy="418" r="0.5" style="animation-delay:.9s"/>
+  <circle class="sc" cx="144" cy="408" r="0.8" style="animation-delay:2.3s"/>
+  <circle class="sd" cx="224" cy="415" r="0.6" style="animation-delay:1.0s"/>
+  <circle class="sa" cx="314" cy="410" r="0.5" style="animation-delay:3.6s"/>
+  <circle class="sb" cx="592" cy="412" r="0.6" style="animation-delay:.5s"/>
+  <circle class="sc" cx="682" cy="408" r="0.7" style="animation-delay:2.8s"/>
+  <circle class="sd" cx="770" cy="415" r="0.5" style="animation-delay:1.2s"/>
+  <circle class="sa" cx="858" cy="410" r="0.7" style="animation-delay:.1s"/>
 
-  <!-- Accent stars (larger, glowing) -->
-  <circle cx="108" cy="42"  r="1.5" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 2.8s ease-in-out .4s infinite"/>
-  <circle cx="792" cy="48"  r="1.4" fill="#e6b450" filter="url(#glow)" style="animation:tw-c 3.2s ease-in-out 1.9s infinite"/>
-  <circle cx="58"  cy="302" r="1.5" fill="#8b5cf6" filter="url(#glow)" style="animation:tw-a 2.5s ease-in-out .7s infinite"/>
-  <circle cx="845" cy="315" r="1.6" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 3.6s ease-in-out 2.3s infinite"/>
-  <circle cx="150" cy="340" r="1.3" fill="#e6b450" filter="url(#glow)" style="animation:tw-c 2.1s ease-in-out .1s infinite"/>
+  <!-- Accent glow stars -->
+  <circle cx="110" cy="46"  r="1.5" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 2.8s ease-in-out .4s infinite"/>
+  <circle cx="794" cy="52"  r="1.4" fill="#e6b450" filter="url(#glow)" style="animation:tw-c 3.2s ease-in-out 1.9s infinite"/>
+  <circle cx="60"  cy="382" r="1.5" fill="#8b5cf6" filter="url(#glow)" style="animation:tw-a 2.5s ease-in-out .7s infinite"/>
+  <circle cx="847" cy="375" r="1.6" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 3.6s ease-in-out 2.3s infinite"/>
+  <circle cx="152" cy="400" r="1.3" fill="#e6b450" filter="url(#glow)" style="animation:tw-c 2.1s ease-in-out .1s infinite"/>
 
-  <!-- ── Orbit ring (circle, r=130, centre 450,185) ──── -->
-  <circle class="orbit-ring" cx="450" cy="185" r="130"
+  <!-- ── Orbit ring (centre 450,220 r=130) ──────────── -->
+  <circle class="orbit-ring" cx="450" cy="220" r="130"
           fill="none" stroke="#1a2a3a" stroke-width="0.9"/>
 
-  <!-- Tick marks at 30° intervals (12 ticks) -->
-  <!-- tick: inner at r=125, outer at r=135 -->
-  <!-- a=-90°: (450,60)→(450,50)  a=-60°: (515,73)→(520,64)  etc. -->
-  <line x1="450" y1="60"  x2="450" y2="50"  stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="515" y1="73"  x2="520" y2="64"  stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="563" y1="120" x2="571" y2="114" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="580" y1="185" x2="590" y2="185" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="563" y1="250" x2="571" y2="256" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="515" y1="297" x2="520" y2="306" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="450" y1="310" x2="450" y2="320" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="385" y1="297" x2="380" y2="306" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="337" y1="250" x2="329" y2="256" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="320" y1="185" x2="310" y2="185" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="337" y1="120" x2="329" y2="114" stroke="#1e3a4a" stroke-width="0.7"/>
-  <line x1="385" y1="73"  x2="380" y2="64"  stroke="#1e3a4a" stroke-width="0.7"/>
+  <!-- Tick marks at 30° intervals — fixed, not rotating -->
+  <!-- inner at r=125, outer at r=135 from (450,220)       -->
+  <line x1="450" y1="95"  x2="450" y2="85"  stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="513" y1="112" x2="518" y2="103" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="558" y1="158" x2="567" y2="153" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="575" y1="220" x2="585" y2="220" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="558" y1="283" x2="567" y2="288" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="513" y1="328" x2="518" y2="337" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="450" y1="345" x2="450" y2="355" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="388" y1="328" x2="383" y2="337" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="342" y1="283" x2="333" y2="288" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="325" y1="220" x2="315" y2="220" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="342" y1="158" x2="333" y2="153" stroke="#1e3a4a" stroke-width="0.7"/>
+  <line x1="388" y1="112" x2="383" y2="103" stroke="#1e3a4a" stroke-width="0.7"/>
 
-  <!-- ── Central star ─────────────────────────────────── -->
-  <circle class="star-corona" cx="450" cy="185" r="28" fill="url(#star-halo)" filter="url(#star-glow)"/>
-  <circle class="star-halo"   cx="450" cy="185" r="15" fill="url(#star-halo)" filter="url(#glow)"/>
-  <circle class="star-core"   cx="450" cy="185" r="7"  fill="url(#star-core)"/>
+  <!-- ── Central star (fixed) ──────────────────────── -->
+  <circle class="star-corona" cx="450" cy="220" r="28" fill="url(#star-halo)" filter="url(#star-glow)"/>
+  <circle class="star-halo"   cx="450" cy="220" r="15" fill="url(#star-halo)" filter="url(#glow)"/>
+  <circle class="star-core"   cx="450" cy="220" r="7"  fill="url(#star-core)"/>
 
   <!-- ══════════════════════════════════════════════════
-       PLANETS — 12 months, sized by contribution count
-       Position formula: px=450+130*cos(a), py=185+130*sin(a)
-       where a = -90 + i*30 degrees
-
-       Label offsets: lx = px+(r+22)*cos(a), ly = py+(r+22)*sin(a)
+       PLANETS — rotating group (clockwise, 90s/rev)
+       All 12 months + labels orbit together.
+       Script rewrites everything between the markers.
        ══════════════════════════════════════════════════ -->
 
-  <!-- i=0  Apr '26  90 commits  r=8   a=-90°  pos=(450,55)   label=(450,25) -->
-  <circle class="planet" cx="450" cy="55"  r="8"  fill="#58a6ff" filter="url(#glow)" style="animation-delay:0s"/>
-  <text text-anchor="middle" x="450" y="24">
-    <tspan class="label">Apr '26</tspan>
-    <tspan class="label-count" dx="4">90</tspan>
+<!-- BEGIN_PLANETS -->
+<g id="sys">
+  <!-- i=0  Apr '26  90c  r=8   pos=(450,90)  label=(450,66) -->
+  <circle class="planet" cx="450" cy="90"  r="8"  fill="#58a6ff" filter="url(#glow)" style="animation-delay:0s"/>
+  <text text-anchor="middle" x="450" y="66">
+    <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">90</tspan>
   </text>
 
-  <!-- i=1  Mar '26  115 commits r=10  a=-60°  pos=(515,72)   label=(531,47) -->
-  <circle class="planet" cx="515" cy="72"  r="10" fill="#79c0ff" filter="url(#glow)" style="animation-delay:.4s"/>
-  <text text-anchor="start" x="531" y="50">
-    <tspan class="label">Mar '26</tspan>
-    <tspan class="label-count" dx="4">115</tspan>
+  <!-- i=1  Mar '26  115c r=10  pos=(385,107) label=(372,85) -->
+  <circle class="planet" cx="385" cy="107" r="10" fill="#79c0ff" filter="url(#glow)" style="animation-delay:.4s"/>
+  <text text-anchor="middle" x="372" y="85">
+    <tspan class="label">Mar '26</tspan><tspan class="label-count" dx="4">115</tspan>
   </text>
 
-  <!-- i=2  Feb '26  70 commits  r=6   a=-30°  pos=(563,120)  label=(583,107) -->
-  <circle class="planet" cx="563" cy="120" r="6"  fill="#a5d6ff" filter="url(#glow)" style="animation-delay:.8s"/>
-  <text text-anchor="start" x="583" y="111">
-    <tspan class="label">Feb '26</tspan>
-    <tspan class="label-count" dx="4">70</tspan>
+  <!-- i=2  Feb '26  70c  r=6   pos=(337,155) label=(318,144) -->
+  <circle class="planet" cx="337" cy="155" r="6"  fill="#a5d6ff" filter="url(#glow)" style="animation-delay:.8s"/>
+  <text text-anchor="middle" x="318" y="144">
+    <tspan class="label">Feb '26</tspan><tspan class="label-count" dx="4">70</tspan>
   </text>
 
-  <!-- i=3  Jan '26  105 commits r=9   a=0°    pos=(580,185)  label=(609,185) -->
-  <circle class="planet" cx="580" cy="185" r="9"  fill="#e6b450" filter="url(#glow)" style="animation-delay:1.2s"/>
-  <text text-anchor="start" x="609" y="189">
-    <tspan class="label">Jan '26</tspan>
-    <tspan class="label-count" dx="4">105</tspan>
+  <!-- i=3  Jan '26  105c r=9   pos=(320,220) label=(295,220) -->
+  <circle class="planet" cx="320" cy="220" r="9"  fill="#e6b450" filter="url(#glow)" style="animation-delay:1.2s"/>
+  <text text-anchor="middle" x="295" y="224">
+    <tspan class="label">Jan '26</tspan><tspan class="label-count" dx="4">105</tspan>
   </text>
 
-  <!-- i=4  Dec '25  45 commits  r=4   a=30°   pos=(563,250)  label=(581,261) -->
-  <circle class="planet" cx="563" cy="250" r="4"  fill="#ffa657" filter="url(#glow)" style="animation-delay:1.6s"/>
-  <text text-anchor="start" x="581" y="264">
-    <tspan class="label">Dec '25</tspan>
-    <tspan class="label-count" dx="4">45</tspan>
+  <!-- i=4  Dec '25  45c  r=4   pos=(337,285) label=(320,295) -->
+  <circle class="planet" cx="337" cy="285" r="4"  fill="#ffa657" filter="url(#glow)" style="animation-delay:1.6s"/>
+  <text text-anchor="middle" x="320" y="295">
+    <tspan class="label">Dec '25</tspan><tspan class="label-count" dx="4">45</tspan>
   </text>
 
-  <!-- i=5  Nov '25  80 commits  r=7   a=60°   pos=(515,297)  label=(528,323) -->
-  <circle class="planet" cx="515" cy="297" r="7"  fill="#d2a8ff" filter="url(#glow)" style="animation-delay:2.0s"/>
-  <text text-anchor="start" x="528" y="326">
-    <tspan class="label">Nov '25</tspan>
-    <tspan class="label-count" dx="4">80</tspan>
+  <!-- i=5  Nov '25  80c  r=7   pos=(385,333) label=(374,353) -->
+  <circle class="planet" cx="385" cy="333" r="7"  fill="#d2a8ff" filter="url(#glow)" style="animation-delay:2.0s"/>
+  <text text-anchor="middle" x="374" y="353">
+    <tspan class="label">Nov '25</tspan><tspan class="label-count" dx="4">80</tspan>
   </text>
 
-  <!-- i=6  Oct '25  125 commits r=11  a=90°   pos=(450,315)  label=(450,347) -->
-  <circle class="planet" cx="450" cy="315" r="11" fill="#bc8cff" filter="url(#glow)" style="animation-delay:2.4s"/>
-  <text text-anchor="middle" x="450" y="350">
-    <tspan class="label">Oct '25</tspan>
-    <tspan class="label-count" dx="4">125</tspan>
+  <!-- i=6  Oct '25  125c r=11  pos=(450,350) label=(450,377) -->
+  <circle class="planet" cx="450" cy="350" r="11" fill="#bc8cff" filter="url(#glow)" style="animation-delay:2.4s"/>
+  <text text-anchor="middle" x="450" y="377">
+    <tspan class="label">Oct '25</tspan><tspan class="label-count" dx="4">125</tspan>
   </text>
 
-  <!-- i=7  Sep '25  60 commits  r=5   a=120°  pos=(385,297)  label=(372,324) -->
-  <circle class="planet" cx="385" cy="297" r="5"  fill="#39d353" filter="url(#glow)" style="animation-delay:2.8s"/>
-  <text text-anchor="end" x="372" y="326">
-    <tspan class="label">Sep '25</tspan>
-    <tspan class="label-count" dx="4">60</tspan>
+  <!-- i=7  Sep '25  60c  r=5   pos=(515,333) label=(526,351) -->
+  <circle class="planet" cx="515" cy="333" r="5"  fill="#39d353" filter="url(#glow)" style="animation-delay:2.8s"/>
+  <text text-anchor="middle" x="526" y="351">
+    <tspan class="label">Sep '25</tspan><tspan class="label-count" dx="4">60</tspan>
   </text>
 
-  <!-- i=8  Aug '25  85 commits  r=7   a=150°  pos=(337,250)  label=(314,263) -->
-  <circle class="planet" cx="337" cy="250" r="7"  fill="#56d364" filter="url(#glow)" style="animation-delay:3.2s"/>
-  <text text-anchor="end" x="314" y="264">
-    <tspan class="label">Aug '25</tspan>
-    <tspan class="label-count" dx="4">85</tspan>
+  <!-- i=8  Aug '25  85c  r=7   pos=(563,285) label=(583,297) -->
+  <circle class="planet" cx="563" cy="285" r="7"  fill="#56d364" filter="url(#glow)" style="animation-delay:3.2s"/>
+  <text text-anchor="middle" x="583" y="297">
+    <tspan class="label">Aug '25</tspan><tspan class="label-count" dx="4">85</tspan>
   </text>
 
-  <!-- i=9  Jul '25  35 commits  r=3   a=180°  pos=(320,185)  label=(295,185) -->
-  <circle class="planet" cx="320" cy="185" r="3"  fill="#ff7b72" filter="url(#glow)" style="animation-delay:3.6s"/>
-  <text text-anchor="end" x="295" y="189">
-    <tspan class="label">Jul '25</tspan>
-    <tspan class="label-count" dx="4">35</tspan>
+  <!-- i=9  Jul '25  35c  r=3   pos=(580,220) label=(599,220) -->
+  <circle class="planet" cx="580" cy="220" r="3"  fill="#ff7b72" filter="url(#glow)" style="animation-delay:3.6s"/>
+  <text text-anchor="middle" x="599" y="224">
+    <tspan class="label">Jul '25</tspan><tspan class="label-count" dx="4">35</tspan>
   </text>
 
-  <!-- i=10 Jun '25  70 commits  r=6   a=210°  pos=(337,120)  label=(314,108) -->
-  <circle class="planet" cx="337" cy="120" r="6"  fill="#ffa198" filter="url(#glow)" style="animation-delay:4.0s"/>
-  <text text-anchor="end" x="314" y="111">
-    <tspan class="label">Jun '25</tspan>
-    <tspan class="label-count" dx="4">70</tspan>
+  <!-- i=10 Jun '25  70c  r=6   pos=(563,155) label=(582,144) -->
+  <circle class="planet" cx="563" cy="155" r="6"  fill="#ffa198" filter="url(#glow)" style="animation-delay:4.0s"/>
+  <text text-anchor="middle" x="582" y="144">
+    <tspan class="label">Jun '25</tspan><tspan class="label-count" dx="4">70</tspan>
   </text>
 
-  <!-- i=11 May '25  50 commits  r=4   a=240°  pos=(385,72)   label=(373,51) -->
-  <circle class="planet" cx="385" cy="72"  r="4"  fill="#9b8cff" filter="url(#glow)" style="animation-delay:4.4s"/>
-  <text text-anchor="end" x="373" y="51">
-    <tspan class="label">May '25</tspan>
-    <tspan class="label-count" dx="4">50</tspan>
+  <!-- i=11 May '25  50c  r=4   pos=(515,107) label=(525,90) -->
+  <circle class="planet" cx="515" cy="107" r="4"  fill="#9b8cff" filter="url(#glow)" style="animation-delay:4.4s"/>
+  <text text-anchor="middle" x="525" y="90">
+    <tspan class="label">May '25</tspan><tspan class="label-count" dx="4">50</tspan>
   </text>
+</g>
+<!-- END_PLANETS -->
 
-  <!-- ── Footer label ──────────────────────────────────── -->
-  <text class="foot" x="450" y="362" text-anchor="middle"
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <text class="foot" x="450" y="420" text-anchor="middle"
         font-family="monospace" font-size="8" fill="#8b949e" letter-spacing="2">
     CONTRIBUTIONS TELEMETRY · SYSTEM WhyILived · LAST 12 MONTHS
   </text>
