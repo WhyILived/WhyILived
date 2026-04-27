@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 50" width="100%">
+  <defs>
+    <style>
+      @keyframes tw-a { 0%,100%{opacity:.12} 50%{opacity:.85} }
+      @keyframes tw-b { 0%,100%{opacity:.22} 50%{opacity:1}   }
+      @keyframes tw-c { 0%,100%{opacity:.06} 50%{opacity:.6}  }
+      @keyframes tw-d { 0%,100%{opacity:.1}  50%{opacity:.9}  }
+      .ta { fill:#e8f4f8; animation:tw-a 3.1s ease-in-out infinite; }
+      .tb { fill:#58a6ff; animation:tw-b 2.3s ease-in-out infinite; }
+      .tc { fill:#e6b450; animation:tw-c 1.9s ease-in-out infinite; }
+      .td { fill:#ffffff;  animation:tw-d 4.3s ease-in-out infinite; }
+    </style>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="720" height="50" fill="#0d1117"/>
+
+  <!-- Stars — sparse, avoiding centre text band -->
+  <circle class="ta" cx="8"   cy="4"   r="0.5" style="animation-delay:.3s"/>
+  <circle class="td" cx="28"  cy="9"   r="0.4" style="animation-delay:1.2s"/>
+  <circle class="tb" cx="48"  cy="3"   r="0.5" style="animation-delay:2.5s"/>
+  <circle class="ta" cx="68"  cy="7"   r="0.6" style="animation-delay:.7s"/>
+  <circle class="tc" cx="88"  cy="12"  r="0.4" style="animation-delay:3.1s"/>
+  <circle class="td" cx="108" cy="2"   r="0.5" style="animation-delay:1.8s"/>
+  <circle class="ta" cx="128" cy="5"   r="0.4" style="animation-delay:.4s"/>
+  <circle class="tb" cx="148" cy="10"  r="0.5" style="animation-delay:2.9s"/>
+  <circle class="tc" cx="168" cy="3"   r="0.4" style="animation-delay:.9s"/>
+  <circle class="ta" cx="188" cy="8"   r="0.5" style="animation-delay:2.2s"/>
+  <circle class="td" cx="208" cy="1"   r="0.4" style="animation-delay:1.5s"/>
+  <circle class="tb" cx="228" cy="6"   r="0.6" style="animation-delay:.2s"/>
+  <circle class="ta" cx="248" cy="11"  r="0.4" style="animation-delay:3.4s"/>
+  <circle class="tc" cx="268" cy="4"   r="0.5" style="animation-delay:1.0s"/>
+  <circle class="td" cx="288" cy="9"   r="0.4" style="animation-delay:2.7s"/>
+  <circle class="ta" cx="308" cy="2"   r="0.5" style="animation-delay:.6s"/>
+
+  <circle class="tc" cx="412" cy="3"   r="0.4" style="animation-delay:2.0s"/>
+  <circle class="ta" cx="432" cy="8"   r="0.5" style="animation-delay:.8s"/>
+  <circle class="tb" cx="452" cy="12"  r="0.4" style="animation-delay:3.3s"/>
+  <circle class="td" cx="472" cy="2"   r="0.5" style="animation-delay:1.2s"/>
+  <circle class="ta" cx="492" cy="6"   r="0.4" style="animation-delay:.1s"/>
+  <circle class="tb" cx="512" cy="10"  r="0.5" style="animation-delay:2.7s"/>
+  <circle class="tc" cx="532" cy="4"   r="0.6" style="animation-delay:1.0s"/>
+  <circle class="td" cx="552" cy="9"   r="0.4" style="animation-delay:3.5s"/>
+  <circle class="ta" cx="572" cy="2"   r="0.5" style="animation-delay:.5s"/>
+  <circle class="tb" cx="592" cy="7"   r="0.4" style="animation-delay:1.8s"/>
+  <circle class="tc" cx="612" cy="11"  r="0.5" style="animation-delay:3.2s"/>
+  <circle class="td" cx="632" cy="3"   r="0.4" style="animation-delay:.3s"/>
+  <circle class="ta" cx="652" cy="8"   r="0.6" style="animation-delay:2.6s"/>
+  <circle class="tb" cx="672" cy="5"   r="0.4" style="animation-delay:1.4s"/>
+  <circle class="tc" cx="692" cy="10"  r="0.5" style="animation-delay:3.9s"/>
+  <circle class="td" cx="712" cy="2"   r="0.4" style="animation-delay:.6s"/>
+
+  <!-- Stars — left flank -->
+  <circle class="tc" cx="12"  cy="24"  r="0.4" style="animation-delay:2.1s"/>
+  <circle class="ta" cx="18"  cy="38"  r="0.5" style="animation-delay:.5s"/>
+  <circle class="tb" cx="8"   cy="46"  r="0.4" style="animation-delay:3.6s"/>
+
+  <!-- Stars — right flank -->
+  <circle class="td" cx="708" cy="24"  r="0.5" style="animation-delay:2.8s"/>
+  <circle class="tc" cx="714" cy="40"  r="0.4" style="animation-delay:.6s"/>
+  <circle class="ta" cx="712" cy="46"  r="0.5" style="animation-delay:3.2s"/>
+
+  <!-- Stars — bottom band -->
+  <circle class="tb" cx="14"  cy="46"  r="0.5" style="animation-delay:2.0s"/>
+  <circle class="ta" cx="38"  cy="48"  r="0.4" style="animation-delay:.8s"/>
+  <circle class="tc" cx="62"  cy="45"  r="0.5" style="animation-delay:3.3s"/>
+  <circle class="td" cx="100" cy="47"  r="0.5" style="animation-delay:1.2s"/>
+  <circle class="ta" cx="142" cy="46"  r="0.4" style="animation-delay:.1s"/>
+  <circle class="tb" cx="578" cy="47"  r="0.5" style="animation-delay:2.7s"/>
+  <circle class="tc" cx="618" cy="45"  r="0.6" style="animation-delay:1.0s"/>
+  <circle class="td" cx="660" cy="48"  r="0.4" style="animation-delay:3.5s"/>
+  <circle class="ta" cx="706" cy="46"  r="0.5" style="animation-delay:.5s"/>
+
+  <!-- Accent glow stars -->
+  <circle cx="30"  cy="18"  r="1.0" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 2.8s ease-in-out .4s infinite"/>
+  <circle cx="690" cy="22"  r="0.9" fill="#e6b450" filter="url(#glow)" style="animation:tw-c 3.2s ease-in-out 1.9s infinite"/>
+  <circle cx="18"  cy="42"  r="1.0" fill="#8b5cf6" filter="url(#glow)" style="animation:tw-a 2.5s ease-in-out .7s infinite"/>
+
+  <!-- Typing text paths -->
+  <path id='t0'>
+    <animate id='d0' attributeName='d' begin='0s;d5.end'
+      dur='4500ms' fill='remove'
+      values='m0,25 h0 ; m0,25 h720 ; m0,25 h720 ; m0,25 h0' keyTimes='0;0.62222222222222;0.84444444444444;1' />
+  </path>
+  <text font-family='"Fira Code", monospace' fill='#F99E3A' font-size='15'
+    dominant-baseline='middle' x='50%' text-anchor='middle' letter-spacing='normal'>
+    <textPath xlink:href='#t0'>My Ascendant to Iron descent needs to be studied</textPath>
+  </text>
+
+  <path id='t1'>
+    <animate id='d1' attributeName='d' begin='d0.end'
+      dur='4500ms' fill='remove'
+      values='m0,25 h0 ; m0,25 h720 ; m0,25 h720 ; m0,25 h0' keyTimes='0;0.62222222222222;0.84444444444444;1' />
+  </path>
+  <text font-family='"Fira Code", monospace' fill='#F99E3A' font-size='15'
+    dominant-baseline='middle' x='50%' text-anchor='middle' letter-spacing='normal'>
+    <textPath xlink:href='#t1'>Perpetually Procrastinating</textPath>
+  </text>
+
+  <path id='t2'>
+    <animate id='d2' attributeName='d' begin='d1.end'
+      dur='4500ms' fill='remove'
+      values='m0,25 h0 ; m0,25 h720 ; m0,25 h720 ; m0,25 h0' keyTimes='0;0.62222222222222;0.84444444444444;1' />
+  </path>
+  <text font-family='"Fira Code", monospace' fill='#F99E3A' font-size='15'
+    dominant-baseline='middle' x='50%' text-anchor='middle' letter-spacing='normal'>
+    <textPath xlink:href='#t2'>You&#039;ve been heralded</textPath>
+  </text>
+
+  <path id='t3'>
+    <animate id='d3' attributeName='d' begin='d2.end'
+      dur='4500ms' fill='remove'
+      values='m0,25 h0 ; m0,25 h720 ; m0,25 h720 ; m0,25 h0' keyTimes='0;0.62222222222222;0.84444444444444;1' />
+  </path>
+  <text font-family='"Fira Code", monospace' fill='#F99E3A' font-size='15'
+    dominant-baseline='middle' x='50%' text-anchor='middle' letter-spacing='normal'>
+    <textPath xlink:href='#t3'>I use Arch btw</textPath>
+  </text>
+
+  <path id='t4'>
+    <animate id='d4' attributeName='d' begin='d3.end'
+      dur='4500ms' fill='remove'
+      values='m0,25 h0 ; m0,25 h720 ; m0,25 h720 ; m0,25 h0' keyTimes='0;0.62222222222222;0.84444444444444;1' />
+  </path>
+  <text font-family='"Fira Code", monospace' fill='#F99E3A' font-size='15'
+    dominant-baseline='middle' x='50%' text-anchor='middle' letter-spacing='normal'>
+    <textPath xlink:href='#t4'>HOW IS HE STILL PRESIDENT</textPath>
+  </text>
+
+  <path id='t5'>
+    <animate id='d5' attributeName='d' begin='d4.end'
+      dur='4500ms' fill='remove'
+      values='m0,25 h0 ; m0,25 h720 ; m0,25 h720 ; m0,25 h0' keyTimes='0;0.62222222222222;0.84444444444444;1' />
+  </path>
+  <text font-family='"Fira Code", monospace' fill='#F99E3A' font-size='15'
+    dominant-baseline='middle' x='50%' text-anchor='middle' letter-spacing='normal'>
+    <textPath xlink:href='#t5'>Kapow!</textPath>
+  </text>
+</svg>
