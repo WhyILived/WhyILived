@@ -19,6 +19,7 @@ import math
 import os
 import re
 import sys
+import argparse
 from datetime import datetime, timezone
 from urllib.request import Request, urlopen
 
@@ -27,6 +28,7 @@ USERNAME  = "WhyILived"
 SVG_PATH  = "assets/orbital.svg"
 API_URL   = "https://api.github.com/graphql"
 TOKEN     = os.environ.get("GITHUB_TOKEN", "")
+OUTPUT_PATH = None  # None = overwrite SVG_PATH; set via --output for test runs
 
 # Orbit geometry — must match the static SVG template
 CX, CY, ORBIT_R = 450, 220, 130
@@ -74,10 +76,10 @@ query($username: String!, $from: DateTime!, $to: DateTime!) {
 """
 
 
-def gql(query, variables):
+def gql(query, variables, token):
     payload = json.dumps({"query": query, "variables": variables}).encode()
     req = Request(API_URL, data=payload, headers={
-        "Authorization": "Bearer " + TOKEN,
+        "Authorization": "Bearer " + token,
         "Content-Type": "application/json",
         "User-Agent": "WhyILived-orbital-updater/1.0",
     })
@@ -86,7 +88,7 @@ def gql(query, variables):
 
 
 # ── Contribution fetching ───────────────────────────────────────────────────
-def fetch_monthly():
+def fetch_monthly(token):
     """
     Return [(year, month, total_contributions), ...] for the last 12 months,
     ordered latest-first (index 0 = current month).
@@ -111,7 +113,7 @@ def fetch_monthly():
         "username": USERNAME,
         "from": from_dt.isoformat(),
         "to": to_dt.isoformat(),
-    })
+    }, token)
 
     errors = data.get("errors")
     if errors:
@@ -193,7 +195,7 @@ def build_planets_block(months):
         # Vertical offset for label text baseline: centre the text on ly
         ly_text = ly + 3  # small downward nudge so text visually centres on ly
         lines.append(
-            '  <text text-anchor="middle" x="{lx:.0f}" y="{ly:.0f}">'.format(
+            '  <text class="planet-text" text-anchor="middle" x="{lx:.0f}" y="{ly:.0f}">'.format(
                 lx=lx, ly=ly_text,
             )
         )
@@ -217,7 +219,32 @@ MARKER_RE = re.compile(
 )
 
 
-def update_svg(new_block):
+def update_svg(new_block, output_path=None):
+    target = output_path or SVG_PATH
+    with open(target, "r", encoding="utf-8") as f:
+        svg = f.read()
+
+    if not MARKER_RE.search(svg):
+        print(
+            "ERROR: BEGIN_PLANETS / END_PLANETS markers not found in",
+            target, file=sys.stderr,
+        )
+        sys.exit(1)
+
+    replacement = (
+        "<!-- BEGIN_PLANETS -->\n"
+        + new_block
+        + "\n<!-- END_PLANETS -->"
+    )
+    new_svg = MARKER_RE.sub(replacement, svg)
+
+    with open(target, "w", encoding="utf-8") as f:
+        f.write(new_svg)
+
+    print("Updated" if not output_path else "Wrote", target)
+
+
+def write_test_svg(new_block, output_path):
     with open(SVG_PATH, "r", encoding="utf-8") as f:
         svg = f.read()
 
@@ -235,21 +262,26 @@ def update_svg(new_block):
     )
     new_svg = MARKER_RE.sub(replacement, svg)
 
-    with open(SVG_PATH, "w", encoding="utf-8") as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         f.write(new_svg)
 
-    print("Updated", SVG_PATH)
+    print("Wrote", output_path)
 
 
 # ── Main ────────────────────────────────────────────────────────────────────
 def main():
-    if not TOKEN:
-        print("ERROR: GITHUB_TOKEN environment variable is not set.",
-              file=sys.stderr)
+    parser = argparse.ArgumentParser(description="Update orbital SVG with GitHub contributions.")
+    parser.add_argument("--output", "-o", help="Output SVG path (default: overwrite assets/orbital.svg)")
+    parser.add_argument("--token", "-t", help="GitHub token (or set GITHUB_TOKEN env var)")
+    args = parser.parse_args()
+
+    token = args.token or TOKEN
+    if not token:
+        print("ERROR: GITHUB_TOKEN environment variable is not set.", file=sys.stderr)
         sys.exit(1)
 
     print("Fetching last 12 months of contributions for", USERNAME, "…")
-    months = fetch_monthly()
+    months = fetch_monthly(token)
 
     print("\n  Month          Contributions")
     print("  " + "-" * 28)
@@ -258,7 +290,10 @@ def main():
 
     print()
     block = build_planets_block(months)
-    update_svg(block)
+    if args.output:
+        write_test_svg(block, args.output)
+    else:
+        update_svg(block)
     print("Done.")
 
 
