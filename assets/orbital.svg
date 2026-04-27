@@ -186,7 +186,7 @@
   <line class="meteor" x1="120" y1="35"  x2="215" y2="65"  stroke="#e8f4f8" stroke-width="1.2" style="animation-delay:0s"/>
   <line class="meteor" x1="650" y1="18"  x2="745" y2="42"  stroke="#58a6ff" stroke-width="0.9" style="animation-delay:2.5s"/>
   <line class="meteor" x1="700" y1="255" x2="790" y2="278" stroke="#e8f4f8" stroke-width="1.0" style="animation-delay:4.2s"/>
-  <line class="meteor" x1="60"  cy="235" x1="60"  y1="235" x2="140" y2="255" stroke="#e6b450" stroke-width="0.8" style="animation-delay:1.7s"/>
+  <line class="meteor" x1="60" y1="235" x2="140" y2="255" stroke="#e6b450" stroke-width="0.8" style="animation-delay:1.7s"/>
 
   <!-- ── Orbit rings (ellipses around centre cx=450,cy=150) ─ -->
   <!-- Rings are purely decorative ellipses, slightly tilted via rx/ry ratio -->

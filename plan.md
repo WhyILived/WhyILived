@@ -263,23 +263,22 @@ GitHub (external):
 | Step | Status | Notes |
 |---|---|---|
 | Update plan/research docs | ✅ Done | |
-| Write orbital.svg | ✅ Done | `assets/orbital.svg` — CSS animated planetary system |
+| Write orbital.svg | ✅ Done (SVG bug fixed) | `assets/orbital.svg` — kept in assets, not in README |
 | Write status scripts | ✅ Done | `local-scripts/` — online.sh, offline.sh, hypridle-addition.conf |
-| Write README.md skeleton | ✅ Done | All sections stubbed, placeholders marked |
-| Animated header (capsule render) | ✅ Done | venom type, space gradient, twinkling |
-| Typing animation | ✅ Done | 6 phrases, Fira Code font, blue |
-| Live status badge | ✅ Done in README | **Needs Gist setup from you — see below** |
-| Stats cards side by side | ✅ Done | custom space color scheme |
+| Write README.md | ✅ Done | Revised per feedback |
+| Animated header | ✅ Done | venom, space gradient, no animation (simplified) |
+| Typing animation | ✅ Done | 6 phrases, Fira Code font |
+| Status + visitor badges | ❌ Removed | User requested removal |
+| Stats + top languages cards | ❌ Removed | Replaced by tech stack badges |
+| Tech stack badges | ✅ Partial | C, C++, Python, Arch, FreeRTOS, Git, Linux — **needs full list from you** |
 | Activity graph | ✅ Done | custom space colors |
-| Orbital SVG section | ✅ Done | |
+| Pac-Man contribution graph | ✅ Done in README | **Needs workflow run — see below** |
+| Pac-Man GitHub Action | ✅ Done | `.github/workflows/pacman.yml` |
 | GitHub trophies | ✅ Done | darkhub theme |
 | Footer (capsule render wave) | ✅ Done | |
-| Tech stack badges | ⏳ Deferred | waiting on full stack list |
 | Bio section | ⏳ Deferred | waiting on content |
 | Contact links | ⏳ Deferred | waiting on details |
-| Replace GIST_ID_HERE in README | ⏳ Needs your action | see setup steps below |
-| Copy scripts to ~/.local/bin/ | ⏳ Needs your action | see setup steps below |
-| Edit hypridle.conf | ⏳ Needs your action | see setup steps below |
+| Full tech stack badges | ⏳ Deferred | waiting on your full list |
 | Final pass + dark/light mode test | ⏳ After deferred sections done | |
 
 ---
