@@ -193,10 +193,10 @@
 
 <!-- BEGIN_PLANETS -->
 <g id="sys">
-  <!-- i=0  Apr '26  133c  r=10  pos=(450,90)  label=(450,40) -->
+  <!-- i=0  Apr '26  136c  r=10  pos=(450,90)  label=(450,40) -->
   <circle class="planet" cx="450" cy="90" r="10" fill="#e6b450" filter="url(#glow)" style="animation-delay:0.0s"/>
   <text class="planet-text" text-anchor="middle" x="450" y="43">
-    <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">133</tspan>
+    <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">136</tspan>
   </text>
 
   <!-- i=1  Mar '26  73c  r=7  pos=(385,107)  label=(362,67) -->
