@@ -181,9 +181,9 @@
   <line x1="388" y1="112" x2="383" y2="103" stroke="#1e3a4a" stroke-width="0.7"/>
 
   <!-- ── Central star (fixed) ──────────────────────── -->
-  <circle class="star-corona" cx="450" cy="220" r="28" fill="url(#star-halo)" filter="url(#star-glow)"/>
-  <circle class="star-halo"   cx="450" cy="220" r="15" fill="url(#star-halo)" filter="url(#glow)"/>
-  <circle class="star-core"   cx="450" cy="220" r="7"  fill="url(#star-core)"/>
+  <circle class="star-corona" cx="450" cy="220" r="50" fill="url(#star-halo)" filter="url(#star-glow)"/>
+  <circle class="star-halo"   cx="450" cy="220" r="28" fill="url(#star-halo)" filter="url(#glow)"/>
+  <circle class="star-core"   cx="450" cy="220" r="12" fill="url(#star-core)"/>
 
   <!-- ══════════════════════════════════════════════════
        PLANETS — rotating group (clockwise, 90s/rev)

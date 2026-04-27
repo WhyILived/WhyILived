@@ -40,18 +40,18 @@ LABEL_GAP        = 40           # px from planet edge to label anchor
 # a_i = -90 - i*30  degrees
 
 COLORS = [
-    "#58a6ff",  # i=0  latest
-    "#79c0ff",  # i=1
-    "#a5d6ff",  # i=2
-    "#e6b450",  # i=3
-    "#ffa657",  # i=4
-    "#d2a8ff",  # i=5
-    "#bc8cff",  # i=6
-    "#39d353",  # i=7
-    "#56d364",  # i=8
-    "#ff7b72",  # i=9
-    "#ffa198",  # i=10
-    "#9b8cff",  # i=11 oldest
+    "#e6b450",  # i=0  latest  (amber)
+    "#58a6ff",  # i=1  (bright blue)
+    "#9b8cff",  # i=2  (indigo)
+    "#39d353",  # i=3  (green)
+    "#ff7b72",  # i=4  (coral)
+    "#a5d6ff",  # i=5  (pale blue)
+    "#ffa657",  # i=6  (orange)
+    "#bc8cff",  # i=7  (violet)
+    "#79c0ff",  # i=8  (sky blue)
+    "#d2a8ff",  # i=9  (purple)
+    "#56d364",  # i=10 (lime green)
+    "#ffa198",  # i=11 oldest (salmon)
 ]
 
 MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
