@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&duration=3500&pause=1000&color=58A6FF&center=true&vCenter=true&width=720&lines=My+Ascendant+to+Iron+descent+needs+to+be+studied;Perpetually+Procrastinating;You%27ve+been+heralded;I+use+Arch+btw;HOW+IS+HE+STILL+PRESIDENT;Kapow!" alt="Typing SVG"/>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=15&duration=3500&pause=1000&color=F99E3A&center=true&vCenter=true&width=720&lines=My+Ascendant+to+Iron+descent+needs+to+be+studied;Perpetually+Procrastinating;You%27ve+been+heralded;I+use+Arch+btw;HOW+IS+HE+STILL+PRESIDENT;Kapow!" alt="Typing SVG"/>
 
 </div>
 
