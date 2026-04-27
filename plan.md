@@ -9,19 +9,23 @@
 
 | Decision | Choice |
 |---|---|
-| Theme | Deep Space / Mission Control (Option A) — dark, blues/purples, feels like a spacecraft dashboard |
+| Theme | Deep Space / Mission Control — dark, blues/purples, feels like a spacecraft dashboard |
 | Typing animation tone | Personality-first, not a résumé |
-| Setup effort | High — willing to do GitHub Actions, secrets, workflows |
+| Setup effort | High — willing to do GitHub Actions, secrets, local machine scripts |
 | Private repo stats | Yes |
-| Contribution graph | TBD — need to pick (see Section 3) |
-| Bio/About section | Deferred to later |
-| Full tech stack | Deferred to later |
+| Contribution graph | Custom hand-written space SVG |
+| Live status badge | Yes — Arch Linux / Hyprland "last seen" or "now online" |
+| Bio/About section | Deferred |
+| Full tech stack | Deferred |
+| WakaTime | No |
+| Spotify | No |
+| Contact links | Placeholders for now, finalize later |
 
 ---
 
-## Typing Animation Phrases (from your answers)
+## Typing Animation Phrases ✓
 
-These will cycle in the animated typewriter block at the top of the profile:
+Confirmed as-is:
 
 ```
 "My Ascendant to Iron descent needs to be studied"
@@ -32,251 +36,249 @@ These will cycle in the animated typewriter block at the top of the profile:
 "Kapow!"
 ```
 
-**OPEN QUESTION 1 — Phrase order & additions**
+**OPEN QUESTION 1 — A few quick clarifications on the phrases**
 
-Quick context on each phrase so we're on the same page:
-- *"My Ascendant to Iron descent..."* — Valorant rank joke (Ascendant is high rank, Iron is the lowest)
-- *"Perpetually Procrastinating"* — relatable chaos energy
-- *"You've been heralded"* — this sounds like it's from Hades (the game), where Hermes says it when you die. Is that right? Or is it a reference to something else? Matters because the phrasing is a bit cryptic without context and I want to make sure the vibe is what you intend
-- *"I use Arch btw"* — classic Linux meme (Arch Linux users are famously proud of using it, this is the engineer version of a humble brag)
-- *"HOW IS HE STILL PRESIDENT"* — political frustration, presumably about Trump. Worth confirming — this will be visible to every recruiter, professor, and potential employer who visits your profile. Still want it? (No judgment, just making sure it's intentional)
-- *"Kapow!"* — what's this a reference to? Is it just vibes, or does it mean something? Spider-Man? A project? A catchphrase?
+No blocking issues, just want to make sure intent is right before locking these in:
 
-Any phrases you want to add or remove?
+- *"You've been heralded"* — is this a Hades (the game) reference? Hermes says it when you die. Or is it something else? Doesn't change whether we use it, just want to know if there's a deeper meaning behind it
+- *"HOW IS HE STILL PRESIDENT"* — flagging once more: this will be the first thing people see on your GitHub profile including recruiters, professors, internship hiring managers. Still fully your call — just making sure it's intentional and not something you'd want to swap for something less politically tied. Options if you want an alternative vibe: "why is it still winter", "genuinely confused", etc.
+- *"Kapow!"* — pure vibes, or a reference to something specific?
 
 ---
 
 ## Planned Sections (Top to Bottom)
 
-This is the full proposed structure of your README:
-
 ```
-1.  [Animated header banner]
+1.  [Animated space header banner]
 2.  [Typing animation — personality phrases]
-3.  [Short bio / intro]
-4.  [Stats + languages side by side]
-5.  [Tech stack badges]
-6.  [Contribution graph animation]
+3.  [🟢 Live status: Online / Last seen on Arch Linux / Hyprland]
+4.  [Short bio / intro]                              ← deferred
+5.  [Stats card + Top languages card — side by side]
+6.  [Tech stack badges]                              ← deferred
 7.  [Activity graph — 31 days]
-8.  [GitHub trophies]
-9.  [Animated footer + contact links]
+8.  [Custom space SVG — contribution visualization]
+9.  [GitHub trophies]
+10. [Animated footer + contact links]
 ```
 
-Section order can be rearranged — this is just the default logic flow.
-
 ---
 
-## Section 3 — Contribution Graph Animation Options
+## Section 3 — Live Status Badge (Arch Linux / Hyprland)
 
-You said you didn't want to default to the snake — here are all the real options. Pick one (or say none and we skip it).
+**Decision:** Yes, building this.
 
----
+**What it'll show:**
+- When you're active: `🟢 Online · Arch Linux / Hyprland`
+- When idle/locked: `⚫ Last seen · Xh Xm ago`
 
-### Option A: Snake (Platane/snk)
-**What it looks like:** A snake slithers across your green contribution squares eating each dot, growing longer as it goes. Loops forever.
-
-**Space-theme compatibility:** High — you can set custom colors: dark background, bright blue or gold dots, a neon-colored snake. Looks great in space palette.
-
-**Dark mode support:** Yes — it can serve two versions and GitHub auto-picks based on viewer's theme setting.
-
-**Vibe:** Classic, satisfying, immediately recognizable as "that cool contribution graph thing."
-
-**Setup:** GitHub Action runs daily, generates the SVG, saves it to the repo. Medium effort (~10 min).
-
-**Link to see examples:** https://github.com/Platane/snk
-
----
-
-### Option B: Pac-Man (abozanona/pacman-contribution-graph)
-**What it looks like:** Pac-Man navigates your contribution grid eating dots, with ghosts chasing it. Based on the actual pathfinding algorithm — Pac-Man makes decisions based on the shape of your contribution graph.
-
-**Space-theme compatibility:** Medium — supports `github-dark` and `gitlab-dark` themes but no full custom color palette. You can't make it fully space-colored.
-
-**Vibe:** Playful, nostalgic, game-reference energy — fits your Valorant/gamer personality more than the snake does.
-
-**Setup:** Same as snake — GitHub Action, daily regeneration. Medium effort.
-
-**Link to see examples:** https://github.com/abozanona/pacman-contribution-graph
-
----
-
-### Option C: Bubble Pop / Exploding (Man0dya/Readme-Contribution-Graph-Generator)
-**What it looks like:** Your contribution dots pop and explode like bubbles or particles. Less "game" and more "visual effect."
-
-**Space-theme compatibility:** Medium — dark mode available but limited custom colors.
-
-**Vibe:** Unique, unusual — most people haven't seen this one. Kind of chaotic energy. Matches "Kapow!" tbh.
-
-**Setup:** Similar to above.
-
-**Link to see examples:** https://github.com/Man0dya/Readme-Contribution-Graph-Generator
-
----
-
-### Option D: Custom Space SVG (hand-crafted)
-**What it looks like:** A completely custom SVG file we write ourselves and commit to the repo — an animated star field or nebula background with your actual contribution data overlaid. Would look like no one else's profile because it doesn't use any external tool.
-
-**Space-theme compatibility:** Maximum — we build it to spec.
-
-**Vibe:** Most technically impressive, most unique, matches your website aesthetic the best.
-
-**Setup:** High effort — I'd write the SVG, but it requires design decisions from you and more iteration.
-
-**The catch:** GitHub heavily sandboxes SVG rendering — no JavaScript allowed, only CSS animations. This limits what's possible but CSS-only animations can still look incredible.
-
----
-
-### Option E: Galaxy-Profile Full Suite (vinimlo/galaxy-profile)
-**What it looks like:** This generates four full animated SVG panels — a spiral galaxy header with your name, a "Mission Telemetry" card with your GitHub stats displayed like spacecraft readings, a radar chart of your tech stack, and animated project cards. The contribution graph is embedded in the Mission Telemetry card.
-
-**Space-theme compatibility:** Maximum — this is literally the space aesthetic tool.
-
-**Vibe:** The most visually cohesive and impressive option. Would replace several other sections (stats card, activity graph, and contribution graph all become one unified design).
-
-**Setup:** Heaviest — fork a repo, edit a config file, run a GitHub Action. Probably 30-45 minutes total. But I can write every file for you.
-
-**Link:** https://github.com/vinimlo/galaxy-profile
-
----
-
-**OPEN QUESTION 2 — Which contribution graph do you want?**
-
-If you pick Option E (Galaxy-Profile), it changes a lot about how we structure everything else — it would replace separate stats cards and graphs with one unified space-themed suite. That might actually be the cleanest approach given you want the deep space look. But it's the most setup.
-
----
-
-## Section 4 — Stats Cards
-
-**How this works:** A URL you paste into your README that auto-generates a card image with your GitHub stats. Updates automatically. No setup beyond pasting the URL.
-
-**Plan:** Use `tokyonight` or `synthwave` theme (both dark/space-appropriate). We'll configure it to include private repo contributions since you confirmed your GitHub account already counts those in the contribution graph.
-
-**OPEN QUESTION 3 — GitHub Personal Access Token**
-
-To make the stats card include private repo numbers, I need to walk you through generating a token. This takes about 5 minutes:
-
-1. Go to github.com → Settings → Developer Settings → Personal Access Tokens → Fine-grained tokens
-2. Create a token with read-only access to your repos
-3. Add it as a "secret" (encrypted variable) to your WhyILived/WhyILived repo at Settings → Secrets and variables → Actions → New repository secret, name it `GH_TOKEN`
-
-Do you want to do this step? (yes/no/walk me through it when we get there)
-
----
-
-## Section 5 — Tech Stack Badges
-
-Deferred — you said your stack on the website is outdated. **We'll come back to this after you tell me the real list.** For now I'll leave a placeholder.
-
-**OPEN QUESTION 4 — Tech stack**
-
-When you're ready, tell me:
-- All programming languages you actively use
-- Hardware platforms (microcontrollers, dev boards)
-- Operating systems / embedded OSes
-- Tools, IDEs, protocols, frameworks
-- Anything from private projects worth showing even if people can't see the repo
-
-No rush — this can happen mid-build.
-
----
-
-## Section 6 — About / Bio Section
-
-Deferred — you said we'd think about this later. 
-
-**OPEN QUESTION 5 — Bio**
-
-When you're ready, a few things I'd want to know:
-- What's the story behind the username "WhyILived"? Is that public/shareable or private?
-- Do you want to mention the rocket/VTOL work, hackathon wins, or keep it vague?
-- Do you want it to feel like a mission briefing (space aesthetic), a terminal readout, or just casual and human?
-- Any projects from private repos you want name-dropped?
-
----
-
-## Section 9 — Footer & Contact Links
-
-**Planned links (from your answer "most of those yeah"):**
-
-| Link | Include? | Value |
-|---|---|---|
-| Website | Yes | wilinc.co |
-| Email | Confirm which | mm22rahm@uwaterloo.ca or leaheliz18@gmail.com? |
-| LinkedIn | Confirm | Do you have one? URL? |
-| Twitter/X | Confirm | Do you have one? |
-| Discord | Confirm | Want to share a tag? |
-
-**OPEN QUESTION 6 — Contact links**
-
-Which email do you want public-facing on GitHub? And fill in any of the above you want included. Anything I missed?
-
----
-
-## GitHub Actions We'll Set Up
-
-These are the automated scripts that will run on a schedule to keep your README dynamic:
-
-| Action | What it does | Runs |
-|---|---|---|
-| Contribution graph animation | Generates the animated SVG of your choice | Daily |
-| (Optional) WakaTime stats | Shows your coding time by language | Weekly |
-| (Optional) Spotify now playing | Shows what you're listening to | Real-time |
-
-**OPEN QUESTION 7 — WakaTime and Spotify**
-
-**WakaTime** is a plugin you install in your code editor (VSCode, CLion, etc.) that silently tracks how much time you spend coding in each language. After a week it generates stats like "C++: 14h, Python: 6h, C: 3h." You can display this as a card on your profile. 
-
-- Do you have WakaTime? If not, want to set it up alongside this?
-- Even if you set it up now, you'd need to code for a week before the card shows anything useful.
-
-**Spotify** shows your currently-playing (or last-played) track as a card. Some people love this, some find it too personal.
-
-- Want Spotify on there?
-
----
-
-## Files We'll Create
-
-Once planning is done, here's everything that goes into the repo:
+**How the full pipeline works:**
 
 ```
-WhyILived/
-├── README.md                          ← the main profile (rewritten)
-├── .github/
-│   └── workflows/
-│       ├── snake.yml                  ← (or pacman.yml, etc.) — daily animation update
-│       └── (optional) wakatime.yml   ← weekly stats update
-└── assets/
-    ├── github-snake-dark.svg          ← auto-generated, don't edit
-    ├── github-snake-light.svg         ← auto-generated, don't edit
-    └── (optional) stars-header.svg   ← custom space header if we make one
+hypridle detects screen lock/unlock on your machine
+        ↓
+Fires on_lock_cmd or on_unlock_cmd shell hooks
+        ↓
+Shell script runs: calls GitHub API to update a Gist (a small hosted text file)
+        ↓
+Gist contains JSON: { "schemaVersion": 1, "label": "status", "message": "Online · Arch / Hyprland", "color": "brightgreen" }
+        ↓
+README badge URL points to shields.io which reads the Gist live
+        ↓
+Visitor sees a live badge — updates within minutes of your status changing
 ```
+
+**Files needed on your machine (I'll write all of these):**
+```
+~/.local/bin/github-status-online.sh     ← called when you unlock / resume
+~/.local/bin/github-status-offline.sh   ← called when screen locks / goes idle
+```
+
+**Edit needed in your hypridle config:**
+```
+~/.config/hypr/hypridle.conf
+```
+We add `on_lock_cmd` and `on_unlock_cmd` lines pointing to those scripts.
+
+**Files needed in the repo:** None new — just a badge URL in README.md.
+
+**Secrets needed:** One GitHub token with `gist` write permission (separate from the stats token, or can be the same token if you give it both permissions).
+
+**OPEN QUESTION 2 — hypridle setup details**
+
+Before I write the scripts, I need to know:
+- Do you currently use `hypridle`? (Run `which hypridle` or `pgrep hypridle` in your terminal — if it returns something, you have it)
+- Do you use a screen locker like `hyprlock` or `swaylock`? The on_lock_cmd hook fires when your screen locks, which is the cleanest trigger for "went offline"
+- Alternative trigger: instead of lock/unlock, we could use **login/logout** via a systemd user service. This means the badge updates when you boot up (online) and shutdown (offline) rather than every time you lock your screen. Which feels more accurate to you?
+- How precise do you want "last seen"? Options:
+  - `Last seen 3h ago` (calculated from timestamp in the Gist)
+  - `Last seen today` (less precise, more casual)
+  - Just `Offline` with no time info
+
+---
+
+## Section 4 — Custom Space SVG (Contribution Visualization)
+
+**Decision:** Custom hand-written SVG, not a third-party tool.
+
+**What it'll be:** An animated SVG that visualizes your GitHub contribution data in a space aesthetic. Think: a dark starfield where your contribution activity is represented as glowing stars or orbital paths — more intense contribution weeks = brighter/bigger elements.
+
+**The GitHub SVG constraint:** GitHub strips JavaScript from SVGs for security. Only CSS animations work. CSS can do: fade in/out, pulse, scale, color cycle, translate (movement), rotation. That's enough for a proper space animation.
+
+**Design directions — pick one:**
+
+**Option A — Star Field**
+Your contributions become a field of stars, twinkling with CSS animations. Higher-activity weeks are brighter/larger stars. The background is a deep space gradient. Looks like looking out a spaceship window.
+
+**Option B — Orbital System**
+Each week of contributions becomes a planet orbiting a central star. Activity level determines planet size. CSS keyframe animation makes them orbit continuously. Very clean, very "mission control."
+
+**Option C — Nebula / Pulse Grid**
+The contribution grid is kept as a grid but each cell glows and pulses like a nebula cloud. Empty days are dark, active days pulse with blue/gold light. More abstract, closest to a data visualization aesthetic.
+
+**Option D — Warp Speed**
+Stars stream past horizontally — pure CSS animation of white lines on black. Your contribution data controls the density of stars. Feels like warp/hyperspace. No grid at all.
+
+**OPEN QUESTION 3 — Which SVG direction?**
+
+Which of A/B/C/D feels most "you"? Or describe something else entirely. You can also say "surprise me" and I'll pick based on your website aesthetic.
+
+Note: for Options A/B/C that use your actual contribution data, the SVG will be static (a snapshot of your current contribution graph baked in at write time). To make it auto-update with real data we'd need a GitHub Action — doable, just more work. Worth it?
+
+---
+
+## Section 5 — Stats Cards
+
+**Plan:** Use `github-readme-stats` with a deep space custom color scheme (matching our palette exactly) rather than a preset theme.
+
+**Layout:** Side by side — Stats card on left, Top Languages on right. In GitHub-flavored Markdown, true side-by-side requires an HTML table. That's fine — GitHub renders basic HTML tables in READMEs.
+
+**Private stats:** Already enabled on your GitHub account. The stats card service just needs a token to see it — handled in the token setup step.
+
+**OPEN QUESTION 4 — Stats token setup**
+
+This is the step where you generate a Personal Access Token on GitHub so the stats card can read your private repo data. It's a 5-minute process:
+
+1. Go to: `github.com/settings/tokens` → "Fine-grained tokens" → "Generate new token"
+2. Set expiration (I'd suggest 1 year or no expiration)
+3. Give it read access to your repositories
+4. Copy the token (it only shows once)
+5. Go to your `WhyILived/WhyILived` repo → Settings → Secrets and variables → Actions → New repository secret
+6. Name: `GH_TOKEN`, Value: the token you just copied
+
+Ready to do this step now, or save it for when we're building?
+
+---
+
+## Section 6 — Tech Stack Badges
+
+Deferred. When you're ready, tell me:
+- All programming languages you actively use (not just C/C++/Python from the website — what else?)
+- Hardware platforms (microcontrollers, dev boards, FPGAs?)
+- OSes / embedded OSes / RTOSes
+- Tools, IDEs, build systems, protocols
+- Anything from private projects worth showing
+
+---
+
+## Section 7 — Activity Graph
+
+**Plan:** Use `github-readme-activity-graph` with the `tokyo-night` theme. It's dark, blue-tinted, and fits the space palette well. No setup required — just a URL.
+
+---
+
+## Section 9 — GitHub Trophies
+
+**Plan:** Use `github-profile-trophy` with the `darkhub` or `onedark` theme. Dark-appropriate, shows achievements like commit streaks, stars, PRs. No setup required — just a URL.
+
+---
+
+## Section 10 — Footer & Contact Links
+
+**Placeholders for now — to finalize later:**
+
+| Link | Status |
+|---|---|
+| Website (wilinc.co) | ✓ confirmed |
+| Email | TBD — which one? |
+| LinkedIn | TBD — URL? |
+| Twitter/X | TBD — handle? |
+| Discord | TBD — tag? |
+
+**OPEN QUESTION 5 — Contact details (no rush)**
+
+Which email do you want public? Do you have LinkedIn/Twitter/Discord you want linked?
+
+---
+
+## Section 1 — Animated Header
+
+**Plan:** Capsule Render with `venom` or `blur` shape type. Custom gradient in the space palette (`#0d1117` → `#1a0533` → `#0d2137`). Text: `WhyILived` with `twinkling` animation. A subtitle line: `why i lived.` in smaller text.
+
+No open questions here — this is fully plannable from what we know.
+
+---
+
+## Section 2 — Bio
+
+Deferred. **OPEN QUESTION 6 — Bio (no rush)**
+
+When ready:
+- What's the story behind the username "WhyILived"? Public or private?
+- Mission briefing tone, terminal readout, or casual human?
+- Rocket/VTOL work, hackathons — mention or leave vague?
+- Private projects worth name-dropping?
 
 ---
 
 ## Open Questions Summary
 
-| # | Question | Status |
+| # | Question | Priority |
 |---|---|---|
-| Q1 | Confirm/tweak typing phrases (especially "heralded", "PRESIDENT", "Kapow") | **Needs answer** |
-| Q2 | Which contribution graph animation? (A/B/C/D/E) | **Needs answer** |
-| Q3 | GitHub token for private stats — ready to set up? | **Needs answer** |
-| Q4 | Full tech stack list | Deferred |
-| Q5 | Bio / about section content and tone | Deferred |
-| Q6 | Contact links — which email, LinkedIn, Twitter, Discord | **Needs answer** |
-| Q7 | WakaTime and/or Spotify on profile? | **Needs answer** |
+| Q1 | Clarify "heralded" reference, confirm "PRESIDENT" phrase, explain "Kapow" | Low — not blocking |
+| Q2 | hypridle setup: do you have it, what locker do you use, login vs lock trigger, time precision | **High — needed to write status scripts** |
+| Q3 | Custom SVG direction: A (stars) / B (orbits) / C (nebula grid) / D (warp) / surprise me | **High — needed to design the SVG** |
+| Q4 | GitHub token for private stats — now or during build? | Medium |
+| Q5 | Contact link details (email, LinkedIn, Twitter, Discord) | Low — deferred |
+| Q6 | Bio content and tone | Low — deferred |
 
 ---
 
-## Build Order (once planning is complete)
+## Files We'll Create
 
-1. Set up GitHub token secret (if Q3 = yes)
-2. Write README.md skeleton with all sections stubbed
-3. Add animated header + typing animation (zero-setup, just URLs)
-4. Add stats cards + languages card
-5. Add tech stack badges (once Q4 answered)
-6. Add contribution graph animation + GitHub Action workflow
-7. Add activity graph + trophies
-8. Write bio section (once Q5 answered)
-9. Add footer + contact links
-10. Final pass — spacing, alignment, test on GitHub dark + light mode
+```
+WhyILived/WhyILived repo:
+├── README.md                            ← completely rewritten
+├── .github/
+│   └── workflows/
+│       └── (optional) update-svg.yml   ← if we auto-update the space SVG
+└── assets/
+    ├── space-contributions.svg          ← custom animated SVG
+    └── (optional) header.svg           ← custom animated header
+
+Your local Arch Linux machine:
+├── ~/.local/bin/github-status-online.sh
+└── ~/.local/bin/github-status-offline.sh
+~/.config/hypr/hypridle.conf            ← edited, not created
+
+GitHub (external):
+└── A Gist (small hosted JSON file)     ← stores your online/offline status
+```
+
+---
+
+## Build Order (once Q2 and Q3 are answered)
+
+1. Create the Gist + write status scripts + edit hypridle config (live status feature)
+2. Walk through GitHub token setup for private stats (Q4)
+3. Write README.md skeleton — all sections stubbed with placeholders
+4. Add animated header (capsule render)
+5. Add typing animation
+6. Add live status badge
+7. Add stats cards + languages side by side
+8. Add activity graph + trophies
+9. Build custom space SVG (contribution visualization) — biggest creative chunk
+10. Add footer with placeholder contact links
+11. Tech stack badges (once Q6 answered)
+12. Bio section (once Q7 answered)
+13. Contact links finalized
+14. Final pass — spacing, alignment, test dark + light mode on GitHub

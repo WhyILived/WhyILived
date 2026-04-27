@@ -62,14 +62,23 @@ https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=58A6FF&lin
 
 ---
 
-### 4. Snake Contribution Graph
-**What it is:** A GitHub Action (an automated script that runs on a schedule) that looks at your contribution graph — the green squares calendar on your GitHub profile — and generates an animated SVG of a snake eating all the dots. It regenerates automatically every day and saves the animation file to your repo, which your README then displays.
+### 4. Contribution Graph Animation Options
 
-**Why it's cool:** It's one of the most recognizable "impressive GitHub profile" features. The snake winds through your actual commit history.
+**Decision:** Going with a custom hand-written SVG (see below). The alternatives researched were:
+- **Snake** (Platane/snk) — snake eats contribution dots, dark palette support, most popular
+- **Pac-Man** (abozanona/pacman-contribution-graph) — pac-man + ghost chasers, limited to preset dark themes
+- **Bubble Pop** (Man0dya/Readme-Contribution-Graph-Generator) — contributions pop/explode as particles, dark mode available
 
-**Dark mode support:** You can have two versions (light and dark) and GitHub will automatically show the right one based on the viewer's GitHub theme.
+All three were rejected in favor of a fully custom SVG that matches the deep space aesthetic exactly.
 
-**Setup effort:** Medium. Requires adding a GitHub Actions workflow file (a YAML config file) to the repo. I can write this for you entirely — you'd just need to commit it.
+### 4b. Custom Space SVG (Contribution Graph)
+**What it is:** A hand-written SVG file committed to the repo. SVG (Scalable Vector Graphics) is a file format that describes images using code — you can define shapes, colors, gradients, and animations entirely in text. GitHub renders SVGs directly in READMEs.
+
+**Why this over the others:** Every other tool generates a fixed visual style you can't fully control. A custom SVG lets us build exactly the space aesthetic from scratch — think animated star field, nebula colors, your contribution data overlaid as glowing dots or planets.
+
+**The constraint:** GitHub strips JavaScript from SVGs for security. Only CSS animations are allowed. CSS animations can still do: fading, pulsing, moving, color cycling, twinkling — which is plenty for a space theme.
+
+**Setup effort:** High — I write the SVG, you commit it. No GitHub Actions needed (it's a static file). Can be iterated on over time.
 
 ---
 
@@ -114,6 +123,46 @@ https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=58A6FF&lin
 
 ---
 
+### 10. Live "Last Seen / Now Online" Status Badge (Arch Linux + Hyprland)
+
+**What it is:** A dynamic badge on your profile that shows either "🟢 Online — Arch Linux / Hyprland" or "⚫ Last seen X hours ago." It updates in real-time based on activity on your actual machine.
+
+**Why it's cool and unusual:** Almost no one does this. It makes your profile feel genuinely alive — like a presence indicator, not a static page. Fits the "mission control" aesthetic perfectly (think: crew status readout).
+
+**How it works (the full chain):**
+
+```
+Your machine detects activity/idle
+        ↓
+hypridle fires an on_lock_cmd / on_unlock_cmd hook
+        ↓
+A shell script runs — calls GitHub API to update a Gist (a small pastebin-like file on GitHub)
+        ↓
+The Gist contains a tiny JSON payload: { "status": "online", "updated": "2026-04-25T14:32:00Z" }
+        ↓
+Your README displays a Shields.io badge that reads that Gist URL and renders it as a badge
+        ↓
+Viewer sees: 🟢 Online | Arch Linux / Hyprland
+```
+
+**What each piece is:**
+- **hypridle** — Hyprland's official idle daemon. It watches for inactivity and runs commands when your screen locks or when you come back. Already likely installed if you use a Hyprland setup.
+- **GitHub Gist** — Think of it as a tiny text file hosted on GitHub. You can update it via the GitHub API with a script. It doesn't pollute your commit history.
+- **Shields.io endpoint badge** — Shields.io can read any JSON file from the internet and render it as a badge. The Gist serves the JSON, Shields.io renders the badge, your README displays it.
+- **GitHub API call** — A single `curl` command in a shell script. One line. Sends the status JSON to your Gist.
+
+**Files needed on your machine:**
+- `~/.local/bin/github-status-online.sh` — sets status to online
+- `~/.local/bin/github-status-offline.sh` — sets status to offline + records timestamp
+- Edits to `~/.config/hypr/hypridle.conf` — wires the scripts to lock/unlock events
+
+**Files needed in the repo:**
+- Nothing new — just a badge URL in README.md pointing to the Gist
+
+**Setup effort:** Medium. Requires creating a Gist, generating a token with gist-write permission, writing two small shell scripts on your machine, and editing hypridle config. I write everything — you run a few commands.
+
+---
+
 ## Proposed Profile Structure
 
 Here's the layout being considered, top to bottom:
@@ -121,7 +170,8 @@ Here's the layout being considered, top to bottom:
 ```
 ╔══════════════════════════════════════════════════╗
 ║  [Animated space banner — capsule render header] ║
-║  [Typing SVG: cycling phrases about you]         ║
+║  [Typing SVG: personality phrases cycling]       ║
+║  [🟢 Online / Last seen badge — live status]     ║
 ╠══════════════════════════════════════════════════╣
 ║  Short punchy bio (1-3 sentences, space vibes)   ║
 ╠══════════════════════════════════════════════════╣
@@ -129,11 +179,11 @@ Here's the layout being considered, top to bottom:
 ║  • About me bullets   │  GitHub Stats Card       ║
 ║  • What I'm building  │  Top Languages Card      ║
 ╠══════════════════════════════════════════════════╣
-║  Tech stack badges (C, C++, Python, ESP32, etc.) ║
+║  Tech stack badges (full real stack)             ║
 ╠══════════════════════════════════════════════════╣
 ║  Activity graph (31-day contribution view)       ║
 ╠══════════════════════════════════════════════════╣
-║  Snake eating your contribution graph            ║
+║  Custom space SVG (contribution visualization)   ║
 ╠══════════════════════════════════════════════════╣
 ║  Trophy case (your GitHub achievements)          ║
 ╠══════════════════════════════════════════════════╣
