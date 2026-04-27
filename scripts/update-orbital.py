@@ -33,7 +33,7 @@ OUTPUT_PATH = None  # None = overwrite SVG_PATH; set via --output for test runs
 # Orbit geometry — must match the static SVG template
 CX, CY, ORBIT_R = 450, 220, 130
 MIN_R, MAX_R     = 3, 12        # planet radius range (pixels)
-LABEL_GAP        = 24           # px from planet edge to label anchor
+LABEL_GAP        = 40           # px from planet edge to label anchor
 
 # Month ordering: i=0 = latest/current month, placed at 12-o'clock (-90°).
 # Subsequent months go counter-clockwise (subtract 30° per step).
