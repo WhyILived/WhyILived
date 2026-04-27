@@ -193,75 +193,75 @@
 
 <!-- BEGIN_PLANETS -->
 <g id="sys">
-  <!-- i=0  Apr '26  90c  r=8   pos=(450,90)  label=(450,66) -->
+  <!-- i=0  Apr '26  90c  r=8   pos=(450,90)  label=(450,54) -->
   <circle class="planet" cx="450" cy="90"  r="8"  fill="#58a6ff" filter="url(#glow)" style="animation-delay:0s"/>
-  <text class="planet-text" text-anchor="middle" x="450" y="66">
+  <text class="planet-text" text-anchor="middle" x="450" y="54">
     <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">90</tspan>
   </text>
 
-  <!-- i=1  Mar '26  115c r=10  pos=(385,107) label=(372,85) -->
+  <!-- i=1  Mar '26  115c r=10  pos=(385,107) label=(360,72) -->
   <circle class="planet" cx="385" cy="107" r="10" fill="#79c0ff" filter="url(#glow)" style="animation-delay:.4s"/>
-  <text class="planet-text" text-anchor="middle" x="372" y="85">
+  <text class="planet-text" text-anchor="middle" x="360" y="72">
     <tspan class="label">Mar '26</tspan><tspan class="label-count" dx="4">115</tspan>
   </text>
 
-  <!-- i=2  Feb '26  70c  r=6   pos=(337,155) label=(318,144) -->
+  <!-- i=2  Feb '26  70c  r=6   pos=(337,155) label=(304,138) -->
   <circle class="planet" cx="337" cy="155" r="6"  fill="#a5d6ff" filter="url(#glow)" style="animation-delay:.8s"/>
-  <text class="planet-text" text-anchor="middle" x="318" y="144">
+  <text class="planet-text" text-anchor="middle" x="304" y="138">
     <tspan class="label">Feb '26</tspan><tspan class="label-count" dx="4">70</tspan>
   </text>
 
-  <!-- i=3  Jan '26  105c r=9   pos=(320,220) label=(295,220) -->
+  <!-- i=3  Jan '26  105c r=9   pos=(320,220) label=(279,224) -->
   <circle class="planet" cx="320" cy="220" r="9"  fill="#e6b450" filter="url(#glow)" style="animation-delay:1.2s"/>
-  <text class="planet-text" text-anchor="middle" x="295" y="224">
+  <text class="planet-text" text-anchor="middle" x="279" y="224">
     <tspan class="label">Jan '26</tspan><tspan class="label-count" dx="4">105</tspan>
   </text>
 
-  <!-- i=4  Dec '25  45c  r=4   pos=(337,285) label=(320,295) -->
+  <!-- i=4  Dec '25  45c  r=4   pos=(337,285) label=(306,305) -->
   <circle class="planet" cx="337" cy="285" r="4"  fill="#ffa657" filter="url(#glow)" style="animation-delay:1.6s"/>
-  <text class="planet-text" text-anchor="middle" x="320" y="295">
+  <text class="planet-text" text-anchor="middle" x="306" y="305">
     <tspan class="label">Dec '25</tspan><tspan class="label-count" dx="4">45</tspan>
   </text>
 
-  <!-- i=5  Nov '25  80c  r=7   pos=(385,333) label=(374,353) -->
+  <!-- i=5  Nov '25  80c  r=7   pos=(385,333) label=(366,368) -->
   <circle class="planet" cx="385" cy="333" r="7"  fill="#d2a8ff" filter="url(#glow)" style="animation-delay:2.0s"/>
-  <text class="planet-text" text-anchor="middle" x="374" y="353">
+  <text class="planet-text" text-anchor="middle" x="366" y="368">
     <tspan class="label">Nov '25</tspan><tspan class="label-count" dx="4">80</tspan>
   </text>
 
-  <!-- i=6  Oct '25  125c r=11  pos=(450,350) label=(450,377) -->
+  <!-- i=6  Oct '25  125c r=11  pos=(450,350) label=(450,392) -->
   <circle class="planet" cx="450" cy="350" r="11" fill="#bc8cff" filter="url(#glow)" style="animation-delay:2.4s"/>
-  <text class="planet-text" text-anchor="middle" x="450" y="377">
+  <text class="planet-text" text-anchor="middle" x="450" y="392">
     <tspan class="label">Oct '25</tspan><tspan class="label-count" dx="4">125</tspan>
   </text>
 
-  <!-- i=7  Sep '25  60c  r=5   pos=(515,333) label=(526,351) -->
+  <!-- i=7  Sep '25  60c  r=5   pos=(515,333) label=(534,364) -->
   <circle class="planet" cx="515" cy="333" r="5"  fill="#39d353" filter="url(#glow)" style="animation-delay:2.8s"/>
-  <text class="planet-text" text-anchor="middle" x="526" y="351">
+  <text class="planet-text" text-anchor="middle" x="534" y="364">
     <tspan class="label">Sep '25</tspan><tspan class="label-count" dx="4">60</tspan>
   </text>
 
-  <!-- i=8  Aug '25  85c  r=7   pos=(563,285) label=(583,297) -->
+  <!-- i=8  Aug '25  85c  r=7   pos=(563,285) label=(597,305) -->
   <circle class="planet" cx="563" cy="285" r="7"  fill="#56d364" filter="url(#glow)" style="animation-delay:3.2s"/>
-  <text class="planet-text" text-anchor="middle" x="583" y="297">
+  <text class="planet-text" text-anchor="middle" x="597" y="305">
     <tspan class="label">Aug '25</tspan><tspan class="label-count" dx="4">85</tspan>
   </text>
 
-  <!-- i=9  Jul '25  35c  r=3   pos=(580,220) label=(599,220) -->
+  <!-- i=9  Jul '25  35c  r=3   pos=(580,220) label=(614,224) -->
   <circle class="planet" cx="580" cy="220" r="3"  fill="#ff7b72" filter="url(#glow)" style="animation-delay:3.6s"/>
-  <text class="planet-text" text-anchor="middle" x="599" y="224">
+  <text class="planet-text" text-anchor="middle" x="614" y="224">
     <tspan class="label">Jul '25</tspan><tspan class="label-count" dx="4">35</tspan>
   </text>
 
-  <!-- i=10 Jun '25  70c  r=6   pos=(563,155) label=(582,144) -->
+  <!-- i=10 Jun '25  70c  r=6   pos=(563,155) label=(596,136) -->
   <circle class="planet" cx="563" cy="155" r="6"  fill="#ffa198" filter="url(#glow)" style="animation-delay:4.0s"/>
-  <text class="planet-text" text-anchor="middle" x="582" y="144">
+  <text class="planet-text" text-anchor="middle" x="596" y="136">
     <tspan class="label">Jun '25</tspan><tspan class="label-count" dx="4">70</tspan>
   </text>
 
-  <!-- i=11 May '25  50c  r=4   pos=(515,107) label=(525,90) -->
+  <!-- i=11 May '25  50c  r=4   pos=(515,107) label=(533,77) -->
   <circle class="planet" cx="515" cy="107" r="4"  fill="#9b8cff" filter="url(#glow)" style="animation-delay:4.4s"/>
-  <text class="planet-text" text-anchor="middle" x="525" y="90">
+  <text class="planet-text" text-anchor="middle" x="533" y="77">
     <tspan class="label">May '25</tspan><tspan class="label-count" dx="4">50</tspan>
   </text>
 </g>
