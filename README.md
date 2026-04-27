@@ -25,6 +25,19 @@
 <br/>
 
 <!-- ═══════════════════════════════════════════════════ -->
+<!-- ORBITAL SVG                                        -->
+<!-- Data: placeholder — update manually or via Action  -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<div align="center">
+
+<img src="./assets/orbital.svg" width="100%" alt="Orbital telemetry — last 12 months"/>
+
+</div>
+
+<br/>
+
+<!-- ═══════════════════════════════════════════════════ -->
 <!-- TECH STACK                                         -->
 <!-- ═══════════════════════════════════════════════════ -->
 
@@ -39,19 +52,6 @@
 ![FreeRTOS](https://img.shields.io/badge/FreeRTOS-003D5B?style=for-the-badge&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
-</div>
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- ORBITAL SVG                                        -->
-<!-- Data: placeholder — update manually or via Action  -->
-<!-- ═══════════════════════════════════════════════════ -->
-
-<div align="center">
-
-<img src="./assets/orbital.svg" width="100%" alt="Orbital telemetry — last 12 months"/>
 
 </div>
 
