@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 140" width="100%">
+  <defs>
+    <radialGradient id="h-nebula" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#0d2137" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="h-text-glow" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      @keyframes h-tw-a { 0%,100%{opacity:.1}  50%{opacity:.85} }
+      @keyframes h-tw-b { 0%,100%{opacity:.2}  50%{opacity:1}   }
+      @keyframes h-tw-c { 0%,100%{opacity:.06} 50%{opacity:.6}  }
+      @keyframes h-title { 0%,100%{opacity:.88} 50%{opacity:1}  }
+      .h-a { fill:#e8f4f8; animation:h-tw-a 3.2s ease-in-out infinite; }
+      .h-b { fill:#58a6ff; animation:h-tw-b 2.1s ease-in-out infinite; }
+      .h-c { fill:#e6b450; animation:h-tw-c 1.8s ease-in-out infinite; }
+      .h-d { fill:#ffffff;  animation:h-tw-a 4.4s ease-in-out infinite; }
+      .h-title { animation:h-title 4s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background + nebula -->
+  <rect width="900" height="140" fill="#0d1117"/>
+  <rect width="900" height="140" fill="url(#h-nebula)"/>
+
+  <!-- Stars — top band -->
+  <circle class="h-a" cx="14"  cy="9"   r="0.7" style="animation-delay:.3s"/>
+  <circle class="h-d" cx="58"  cy="6"   r="0.5" style="animation-delay:1.2s"/>
+  <circle class="h-b" cx="110" cy="14"  r="0.6" style="animation-delay:2.5s"/>
+  <circle class="h-a" cx="166" cy="8"   r="0.8" style="animation-delay:.7s"/>
+  <circle class="h-c" cx="220" cy="18"  r="0.5" style="animation-delay:3.1s"/>
+  <circle class="h-d" cx="272" cy="11"  r="0.7" style="animation-delay:1.8s"/>
+  <circle class="h-a" cx="330" cy="5"   r="0.6" style="animation-delay:.4s"/>
+  <circle class="h-b" cx="388" cy="16"  r="0.5" style="animation-delay:2.9s"/>
+  <circle class="h-c" cx="448" cy="8"   r="0.7" style="animation-delay:.9s"/>
+  <circle class="h-a" cx="508" cy="19"  r="0.6" style="animation-delay:2.2s"/>
+  <circle class="h-d" cx="560" cy="7"   r="0.5" style="animation-delay:1.5s"/>
+  <circle class="h-b" cx="614" cy="14"  r="0.8" style="animation-delay:.2s"/>
+  <circle class="h-a" cx="670" cy="6"   r="0.6" style="animation-delay:3.4s"/>
+  <circle class="h-c" cx="726" cy="17"  r="0.5" style="animation-delay:1.0s"/>
+  <circle class="h-d" cx="780" cy="9"   r="0.7" style="animation-delay:2.7s"/>
+  <circle class="h-a" cx="836" cy="13"  r="0.6" style="animation-delay:.6s"/>
+  <circle class="h-b" cx="882" cy="5"   r="0.5" style="animation-delay:3.8s"/>
+
+  <!-- Stars — left / right flanks (avoid centre to not crowd text) -->
+  <circle class="h-c" cx="28"  cy="42"  r="0.7" style="animation-delay:2.1s"/>
+  <circle class="h-a" cx="72"  cy="58"  r="0.5" style="animation-delay:.5s"/>
+  <circle class="h-b" cx="38"  cy="78"  r="0.8" style="animation-delay:3.6s"/>
+  <circle class="h-d" cx="90"  cy="95"  r="0.6" style="animation-delay:1.3s"/>
+  <circle class="h-a" cx="52"  cy="112" r="0.5" style="animation-delay:.8s"/>
+  <circle class="h-c" cx="118" cy="50"  r="0.7" style="animation-delay:2.4s"/>
+  <circle class="h-b" cx="140" cy="88"  r="0.5" style="animation-delay:1.1s"/>
+  <circle class="h-a" cx="162" cy="70"  r="0.6" style="animation-delay:3.0s"/>
+  <circle class="h-d" cx="180" cy="110" r="0.7" style="animation-delay:.4s"/>
+
+  <circle class="h-a" cx="720" cy="45"  r="0.6" style="animation-delay:2.8s"/>
+  <circle class="h-c" cx="745" cy="80"  r="0.8" style="animation-delay:.6s"/>
+  <circle class="h-b" cx="768" cy="62"  r="0.5" style="animation-delay:3.2s"/>
+  <circle class="h-d" cx="790" cy="105" r="0.7" style="animation-delay:1.7s"/>
+  <circle class="h-a" cx="820" cy="48"  r="0.5" style="animation-delay:.3s"/>
+  <circle class="h-b" cx="848" cy="88"  r="0.6" style="animation-delay:2.6s"/>
+  <circle class="h-c" cx="866" cy="68"  r="0.7" style="animation-delay:1.4s"/>
+  <circle class="h-d" cx="884" cy="110" r="0.5" style="animation-delay:3.9s"/>
+
+  <!-- Stars — bottom band -->
+  <circle class="h-b" cx="22"  cy="128" r="0.7" style="animation-delay:2.0s"/>
+  <circle class="h-a" cx="75"  cy="134" r="0.5" style="animation-delay:.8s"/>
+  <circle class="h-c" cx="130" cy="125" r="0.6" style="animation-delay:3.3s"/>
+  <circle class="h-d" cx="220" cy="132" r="0.7" style="animation-delay:1.2s"/>
+  <circle class="h-a" cx="310" cy="128" r="0.5" style="animation-delay:.1s"/>
+  <circle class="h-b" cx="590" cy="130" r="0.6" style="animation-delay:2.7s"/>
+  <circle class="h-c" cx="680" cy="126" r="0.8" style="animation-delay:1.0s"/>
+  <circle class="h-d" cx="770" cy="133" r="0.5" style="animation-delay:3.5s"/>
+  <circle class="h-a" cx="860" cy="128" r="0.7" style="animation-delay:.5s"/>
+
+  <!-- Accent bright stars -->
+  <circle cx="102" cy="35"  r="1.5" fill="#58a6ff" filter="url(#h-text-glow)" style="animation:h-tw-b 2.8s ease-in-out .4s infinite"/>
+  <circle cx="798" cy="40"  r="1.4" fill="#e6b450" filter="url(#h-text-glow)" style="animation:h-tw-c 3.2s ease-in-out 1.9s infinite"/>
+  <circle cx="55"  cy="108" r="1.5" fill="#8b5cf6" filter="url(#h-text-glow)" style="animation:h-tw-a 2.5s ease-in-out .7s infinite"/>
+  <circle cx="848" cy="105" r="1.6" fill="#58a6ff" filter="url(#h-text-glow)" style="animation:h-tw-b 3.6s ease-in-out 2.3s infinite"/>
+
+  <!-- Title -->
+  <text class="h-title" x="450" y="70" text-anchor="middle" dominant-baseline="middle"
+        font-size="64" font-family="monospace" fill="#58a6ff" letter-spacing="6"
+        filter="url(#h-text-glow)">WhyILived</text>
+</svg>

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,50:1a0533,100:0d2137&height=200&section=header&text=WhyILived&fontSize=68&fontColor=58a6ff&fontAlignY=55" width="100%"/>
+<img src="./assets/header.svg" width="100%" alt="WhyILived"/>
 
 </div>
 
@@ -46,23 +46,12 @@
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- ORBITAL SVG                                        -->
+<!-- Data: placeholder — update manually or via Action  -->
 <!-- ═══════════════════════════════════════════════════ -->
 
 <div align="center">
 
-<img src="./assets/orbital.svg" width="100%" alt="Orbital system"/>
-
-</div>
-
-<br/>
-
-<!-- ═══════════════════════════════════════════════════ -->
-<!-- TROPHIES                                           -->
-<!-- ═══════════════════════════════════════════════════ -->
-
-<div align="center">
-
-<img src="https://github-profile-trophy.vercel.app/?username=WhyILived&theme=darkhub&no-frame=true&margin-w=6&margin-h=6&column=7" width="100%"/>
+<img src="./assets/orbital.svg" width="100%" alt="Orbital telemetry — last 12 months"/>
 
 </div>
 
@@ -77,5 +66,3 @@
 <!-- PLACEHOLDER: Contact links row goes here -->
 
 </div>
-
-<img src="https://capsule-render.vercel.app/api?type=wave&color=0:0d1117,50:1a0533,100:0d2137&height=100&section=footer&reversal=true" width="100%"/>
