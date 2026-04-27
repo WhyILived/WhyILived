@@ -1,0 +1,240 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%">
+  <defs>
+    <radialGradient id="space-bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0d2137"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </radialGradient>
+    <radialGradient id="nebula-l" cx="20%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#1a0533" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula-r" cx="82%" cy="45%" r="30%">
+      <stop offset="0%" stop-color="#0d2137" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="star-core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffde7"/>
+      <stop offset="40%" stop-color="#e6b450"/>
+      <stop offset="100%" stop-color="#e6b450" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e6b450" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#e6b450" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow-soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="glow-hard" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      /* Star field twinkle */
+      @keyframes tw-a { 0%,100%{opacity:.12} 50%{opacity:.85} }
+      @keyframes tw-b { 0%,100%{opacity:.25} 50%{opacity:1}   }
+      @keyframes tw-c { 0%,100%{opacity:.08} 50%{opacity:.6}  }
+
+      /* Central star pulse */
+      @keyframes star-pulse {
+        0%,100% { opacity:.85; transform:scale(1);   }
+        50%      { opacity:1;   transform:scale(1.08);}
+      }
+      @keyframes star-halo {
+        0%,100% { opacity:.25; transform:scale(1);   }
+        50%      { opacity:.55; transform:scale(1.2); }
+      }
+      @keyframes star-corona {
+        0%,100% { opacity:.08; transform:scale(1);   }
+        50%      { opacity:.2;  transform:scale(1.4); }
+      }
+
+      /* Orbit rings */
+      @keyframes ring-spin {
+        from { transform: rotateX(72deg) rotate(0deg);   }
+        to   { transform: rotateX(72deg) rotate(360deg); }
+      }
+
+      /* Planet orbits — each planet travels along its ellipse */
+      @keyframes orbit-1 {
+        from { transform: rotate(0deg)   translateX(72px)  rotate(0deg);   }
+        to   { transform: rotate(360deg) translateX(72px)  rotate(-360deg);}
+      }
+      @keyframes orbit-2 {
+        from { transform: rotate(45deg)  translateX(118px) rotate(-45deg);  }
+        to   { transform: rotate(405deg) translateX(118px) rotate(-405deg); }
+      }
+      @keyframes orbit-3 {
+        from { transform: rotate(200deg) translateX(160px) rotate(-200deg); }
+        to   { transform: rotate(560deg) translateX(160px) rotate(-560deg); }
+      }
+      @keyframes orbit-4 {
+        from { transform: rotate(300deg) translateX(205px) rotate(-300deg); }
+        to   { transform: rotate(660deg) translateX(205px) rotate(-660deg); }
+      }
+      @keyframes orbit-5 {
+        from { transform: rotate(130deg) translateX(248px) rotate(-130deg); }
+        to   { transform: rotate(490deg) translateX(248px) rotate(-490deg); }
+      }
+
+      /* Shooting stars */
+      @keyframes shoot {
+        0%   { stroke-dashoffset:250; opacity:0; }
+        10%  { opacity:.9; }
+        80%  { opacity:.5; }
+        100% { stroke-dashoffset:-50; opacity:0; }
+      }
+
+      /* Text label fade */
+      @keyframes label-fade { 0%,100%{opacity:.4} 50%{opacity:.75} }
+
+      /* Apply classes */
+      .s-a { fill:#e8f4f8; animation: tw-a 3.1s ease-in-out infinite; }
+      .s-b { fill:#58a6ff; animation: tw-b 2.3s ease-in-out infinite; }
+      .s-c { fill:#e6b450; animation: tw-c 1.9s ease-in-out infinite; }
+      .s-d { fill:#ffffff;  animation: tw-a 4.2s ease-in-out infinite; }
+
+      .star-core   { transform-box:fill-box; transform-origin:center; animation: star-pulse  3s ease-in-out infinite; }
+      .star-halo   { transform-box:fill-box; transform-origin:center; animation: star-halo   3s ease-in-out infinite; }
+      .star-corona { transform-box:fill-box; transform-origin:center; animation: star-corona  3s ease-in-out infinite; }
+
+      .p1 { transform-box:fill-box; transform-origin:center; animation: orbit-1 6s  linear infinite; fill:#58a6ff;  filter:url(#glow-soft); }
+      .p2 { transform-box:fill-box; transform-origin:center; animation: orbit-2 10s linear infinite; fill:#e6b450;  filter:url(#glow-soft); }
+      .p3 { transform-box:fill-box; transform-origin:center; animation: orbit-3 15s linear infinite; fill:#39d353;  filter:url(#glow-soft); }
+      .p4 { transform-box:fill-box; transform-origin:center; animation: orbit-4 22s linear infinite; fill:#8b5cf6;  filter:url(#glow-soft); }
+      .p5 { transform-box:fill-box; transform-origin:center; animation: orbit-5 31s linear infinite; fill:#58a6ff;  filter:url(#glow-soft); opacity:.7; }
+
+      .meteor { stroke-dasharray:60 250; animation: shoot 5s ease-in-out infinite; stroke-linecap:round; }
+      .label  { fill:#8b949e; font-family:monospace; animation: label-fade 4s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="300" fill="url(#space-bg)"/>
+  <rect width="900" height="300" fill="url(#nebula-l)"/>
+  <rect width="900" height="300" fill="url(#nebula-r)"/>
+
+  <!-- ── Star field ─────────────────────────────────────── -->
+  <!-- Top strip -->
+  <circle class="s-a" cx="18"  cy="11"  r="0.7" style="animation-delay:.3s"/>
+  <circle class="s-d" cx="62"  cy="7"   r="0.5" style="animation-delay:1.1s"/>
+  <circle class="s-b" cx="134" cy="19"  r="0.6" style="animation-delay:2.4s"/>
+  <circle class="s-a" cx="198" cy="8"   r="0.8" style="animation-delay:.7s"/>
+  <circle class="s-c" cx="253" cy="22"  r="0.5" style="animation-delay:3.1s"/>
+  <circle class="s-d" cx="312" cy="13"  r="0.7" style="animation-delay:1.8s"/>
+  <circle class="s-a" cx="378" cy="6"   r="0.6" style="animation-delay:.4s"/>
+  <circle class="s-b" cx="441" cy="17"  r="0.5" style="animation-delay:2.9s"/>
+  <circle class="s-c" cx="505" cy="10"  r="0.7" style="animation-delay:.9s"/>
+  <circle class="s-a" cx="568" cy="23"  r="0.6" style="animation-delay:2.2s"/>
+  <circle class="s-d" cx="631" cy="9"   r="0.5" style="animation-delay:1.5s"/>
+  <circle class="s-b" cx="694" cy="18"  r="0.8" style="animation-delay:.2s"/>
+  <circle class="s-a" cx="757" cy="7"   r="0.6" style="animation-delay:3.4s"/>
+  <circle class="s-c" cx="820" cy="21"  r="0.5" style="animation-delay:1.0s"/>
+  <circle class="s-d" cx="871" cy="12"  r="0.7" style="animation-delay:2.7s"/>
+
+  <!-- Upper zone (outside orbit area) -->
+  <circle class="s-a" cx="35"  cy="55"  r="0.6" style="animation-delay:2.1s"/>
+  <circle class="s-b" cx="88"  cy="42"  r="0.8" style="animation-delay:.5s"/>
+  <circle class="s-c" cx="142" cy="68"  r="0.5" style="animation-delay:3.6s"/>
+  <circle class="s-d" cx="760" cy="48"  r="0.7" style="animation-delay:1.3s"/>
+  <circle class="s-a" cx="812" cy="62"  r="0.6" style="animation-delay:.8s"/>
+  <circle class="s-b" cx="858" cy="44"  r="0.5" style="animation-delay:3.3s"/>
+  <circle class="s-c" cx="40"  cy="90"  r="0.7" style="animation-delay:1.7s"/>
+  <circle class="s-a" cx="76"  cy="110" r="0.5" style="animation-delay:.3s"/>
+  <circle class="s-b" cx="820" cy="88"  r="0.6" style="animation-delay:2.0s"/>
+  <circle class="s-d" cx="862" cy="108" r="0.8" style="animation-delay:.6s"/>
+  <circle class="s-a" cx="25"  cy="140" r="0.5" style="animation-delay:3.2s"/>
+  <circle class="s-c" cx="68"  cy="158" r="0.7" style="animation-delay:1.4s"/>
+  <circle class="s-b" cx="835" cy="137" r="0.6" style="animation-delay:.1s"/>
+  <circle class="s-d" cx="876" cy="155" r="0.5" style="animation-delay:2.6s"/>
+  <circle class="s-a" cx="48"  cy="190" r="0.8" style="animation-delay:1.0s"/>
+  <circle class="s-c" cx="85"  cy="208" r="0.6" style="animation-delay:3.8s"/>
+  <circle class="s-b" cx="818" cy="192" r="0.5" style="animation-delay:.4s"/>
+  <circle class="s-a" cx="860" cy="210" r="0.7" style="animation-delay:2.3s"/>
+
+  <!-- Lower zone -->
+  <circle class="s-b" cx="22"  cy="248" r="0.6" style="animation-delay:1.9s"/>
+  <circle class="s-a" cx="74"  cy="262" r="0.5" style="animation-delay:.7s"/>
+  <circle class="s-c" cx="126" cy="240" r="0.8" style="animation-delay:3.0s"/>
+  <circle class="s-d" cx="775" cy="250" r="0.6" style="animation-delay:1.2s"/>
+  <circle class="s-a" cx="830" cy="268" r="0.7" style="animation-delay:.5s"/>
+  <circle class="s-b" cx="872" cy="244" r="0.5" style="animation-delay:2.8s"/>
+  <circle class="s-c" cx="44"  cy="285" r="0.7" style="animation-delay:.2s"/>
+  <circle class="s-d" cx="98"  cy="293" r="0.5" style="animation-delay:1.6s"/>
+  <circle class="s-a" cx="152" cy="279" r="0.6" style="animation-delay:3.5s"/>
+  <circle class="s-b" cx="750" cy="282" r="0.8" style="animation-delay:.9s"/>
+  <circle class="s-c" cx="805" cy="290" r="0.5" style="animation-delay:2.4s"/>
+  <circle class="s-d" cx="855" cy="278" r="0.7" style="animation-delay:1.1s"/>
+
+  <!-- Distant right & left corridor stars -->
+  <circle class="s-a" cx="175" cy="128" r="0.5" style="animation-delay:2.9s"/>
+  <circle class="s-b" cx="158" cy="165" r="0.6" style="animation-delay:.6s"/>
+  <circle class="s-c" cx="172" cy="200" r="0.5" style="animation-delay:3.7s"/>
+  <circle class="s-d" cx="720" cy="115" r="0.7" style="animation-delay:1.3s"/>
+  <circle class="s-a" cx="738" cy="155" r="0.5" style="animation-delay:.8s"/>
+  <circle class="s-b" cx="724" cy="195" r="0.6" style="animation-delay:2.1s"/>
+
+  <!-- Accent bright stars (larger, filtered glow) -->
+  <circle cx="105" cy="50"  r="1.6" fill="#58a6ff"  filter="url(#glow-soft)" style="animation:tw-b 2.8s ease-in-out infinite;animation-delay:.4s"/>
+  <circle cx="795" cy="60"  r="1.4" fill="#e6b450"  filter="url(#glow-soft)" style="animation:tw-c 3.2s ease-in-out infinite;animation-delay:1.9s"/>
+  <circle cx="55"  cy="220" r="1.5" fill="#8b5cf6"  filter="url(#glow-soft)" style="animation:tw-a 2.5s ease-in-out infinite;animation-delay:.7s"/>
+  <circle cx="847" cy="235" r="1.8" fill="#58a6ff"  filter="url(#glow-soft)" style="animation:tw-b 3.6s ease-in-out infinite;animation-delay:2.3s"/>
+  <circle cx="142" cy="275" r="1.3" fill="#e6b450"  filter="url(#glow-soft)" style="animation:tw-c 2.1s ease-in-out infinite;animation-delay:.1s"/>
+  <circle cx="756" cy="278" r="1.4" fill="#39d353"  filter="url(#glow-soft)" style="animation:tw-a 3.9s ease-in-out infinite;animation-delay:1.5s"/>
+
+  <!-- ── Shooting stars ──────────────────────────────────── -->
+  <line class="meteor" x1="120" y1="35"  x2="215" y2="65"  stroke="#e8f4f8" stroke-width="1.2" style="animation-delay:0s"/>
+  <line class="meteor" x1="650" y1="18"  x2="745" y2="42"  stroke="#58a6ff" stroke-width="0.9" style="animation-delay:2.5s"/>
+  <line class="meteor" x1="700" y1="255" x2="790" y2="278" stroke="#e8f4f8" stroke-width="1.0" style="animation-delay:4.2s"/>
+  <line class="meteor" x1="60"  cy="235" x1="60"  y1="235" x2="140" y2="255" stroke="#e6b450" stroke-width="0.8" style="animation-delay:1.7s"/>
+
+  <!-- ── Orbit rings (ellipses around centre cx=450,cy=150) ─ -->
+  <!-- Rings are purely decorative ellipses, slightly tilted via rx/ry ratio -->
+  <ellipse cx="450" cy="150" rx="72"  ry="22" fill="none" stroke="#1a0533" stroke-width="1"   opacity="0.7"/>
+  <ellipse cx="450" cy="150" rx="118" ry="36" fill="none" stroke="#1a0533" stroke-width="0.8" opacity="0.6"/>
+  <ellipse cx="450" cy="150" rx="160" ry="48" fill="none" stroke="#1a0533" stroke-width="0.7" opacity="0.5"/>
+  <ellipse cx="450" cy="150" rx="205" ry="62" fill="none" stroke="#1a0533" stroke-width="0.6" opacity="0.4"/>
+  <ellipse cx="450" cy="150" rx="248" ry="76" fill="none" stroke="#1a0533" stroke-width="0.5" opacity="0.35"/>
+
+  <!-- ── Central star ────────────────────────────────────── -->
+  <!-- Corona (outermost glow) -->
+  <circle class="star-corona" cx="450" cy="150" r="28" fill="url(#star-glow)" filter="url(#glow-hard)"/>
+  <!-- Halo -->
+  <circle class="star-halo"   cx="450" cy="150" r="16" fill="url(#star-glow)" filter="url(#glow-soft)"/>
+  <!-- Core -->
+  <circle class="star-core"   cx="450" cy="150" r="8"  fill="url(#star-core)"/>
+
+  <!-- ── Planets (each positioned at its orbit origin) ─────── -->
+  <!-- Planet 1: orbit-1, radius 72 — starts at angle 0 (right of star) -->
+  <g style="transform-origin:450px 150px; animation:orbit-1 6s linear infinite;">
+    <circle cx="522" cy="150" r="5" fill="#58a6ff" filter="url(#glow-soft)"/>
+  </g>
+
+  <!-- Planet 2: orbit-2, radius 118 — starts at 45deg offset -->
+  <g style="transform-origin:450px 150px; animation:orbit-2 10s linear infinite;">
+    <circle cx="568" cy="150" r="7" fill="#e6b450" filter="url(#glow-soft)"/>
+  </g>
+
+  <!-- Planet 3: orbit-3, radius 160 — starts at 200deg offset -->
+  <g style="transform-origin:450px 150px; animation:orbit-3 15s linear infinite;">
+    <circle cx="610" cy="150" r="4.5" fill="#39d353" filter="url(#glow-soft)"/>
+  </g>
+
+  <!-- Planet 4: orbit-4, radius 205 — starts at 300deg offset -->
+  <g style="transform-origin:450px 150px; animation:orbit-4 22s linear infinite;">
+    <circle cx="655" cy="150" r="6" fill="#8b5cf6" filter="url(#glow-soft)"/>
+  </g>
+
+  <!-- Planet 5: orbit-5, radius 248 — starts at 130deg offset, dimmer/distant -->
+  <g style="transform-origin:450px 150px; animation:orbit-5 31s linear infinite;">
+    <circle cx="698" cy="150" r="4" fill="#58a6ff" filter="url(#glow-soft)" opacity="0.7"/>
+  </g>
+
+  <!-- ── Labels ─────────────────────────────────────────── -->
+  <text class="label" x="450" y="293" text-anchor="middle" font-size="9" letter-spacing="3" style="animation-delay:.5s">
+    ORBITAL TELEMETRY · SYSTEM WhyILived
+  </text>
+  <text class="label" x="450" y="13"  text-anchor="middle" font-size="8" letter-spacing="2" style="animation-delay:1.2s">
+    DEEP SPACE OBSERVATION · SECTOR 7G
+  </text>
+</svg>

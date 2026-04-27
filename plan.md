@@ -1,6 +1,6 @@
 # README Build Plan
 
-**Status:** Planning — not yet implementing  
+**Status:** In progress — building  
 **Goal:** A deep space / mission control themed GitHub profile README that's visually stunning, automated, and has personality
 
 ---
@@ -13,8 +13,8 @@
 | Typing animation tone | Personality-first, not a résumé |
 | Setup effort | High — willing to do GitHub Actions, secrets, local machine scripts |
 | Private repo stats | Yes |
-| Contribution graph | Custom hand-written space SVG |
-| Live status badge | Yes — Arch Linux / Hyprland "last seen" or "now online" |
+| Contribution graph | Custom hand-written SVG — Orbital System (CSS animated planets orbiting a star) |
+| Live status badge | Yes — Arch Linux / Hyprland, "Online" or "Offline" (no timestamp) |
 | Bio/About section | Deferred |
 | Full tech stack | Deferred |
 | WakaTime | No |
@@ -103,16 +103,11 @@ We add `on_lock_cmd` and `on_unlock_cmd` lines pointing to those scripts.
 
 **Secrets needed:** One GitHub token with `gist` write permission (separate from the stats token, or can be the same token if you give it both permissions).
 
-**OPEN QUESTION 2 — hypridle setup details**
-
-Before I write the scripts, I need to know:
-- Do you currently use `hypridle`? (Run `which hypridle` or `pgrep hypridle` in your terminal — if it returns something, you have it)
-- Do you use a screen locker like `hyprlock` or `swaylock`? The on_lock_cmd hook fires when your screen locks, which is the cleanest trigger for "went offline"
-- Alternative trigger: instead of lock/unlock, we could use **login/logout** via a systemd user service. This means the badge updates when you boot up (online) and shutdown (offline) rather than every time you lock your screen. Which feels more accurate to you?
-- How precise do you want "last seen"? Options:
-  - `Last seen 3h ago` (calculated from timestamp in the Gist)
-  - `Last seen today` (less precise, more casual)
-  - Just `Offline` with no time info
+**Q2 — ANSWERED**
+- Has hypridle: yes
+- Screen locker: DMS (also has hyprlock but doesn't use it)
+- Status precision: just "Offline" — no timestamp
+- Implementation: using hypridle `listener` block with `on-timeout` / `on-resume` hooks (fires after 10 min idle → offline, fires on resume → online). This works regardless of which locker is used since it's based on idle detection, not lock events.
 
 ---
 
@@ -138,11 +133,8 @@ The contribution grid is kept as a grid but each cell glows and pulses like a ne
 **Option D — Warp Speed**
 Stars stream past horizontally — pure CSS animation of white lines on black. Your contribution data controls the density of stars. Feels like warp/hyperspace. No grid at all.
 
-**OPEN QUESTION 3 — Which SVG direction?**
-
-Which of A/B/C/D feels most "you"? Or describe something else entirely. You can also say "surprise me" and I'll pick based on your website aesthetic.
-
-Note: for Options A/B/C that use your actual contribution data, the SVG will be static (a snapshot of your current contribution graph baked in at write time). To make it auto-update with real data we'd need a GitHub Action — doable, just more work. Worth it?
+**Q3 — ANSWERED: Surprise me → Orbital System (Option B)**
+CSS-animated orbital system: a glowing central star with rings, each week of contribution activity represented as a planet on an orbital path. Activity level determines planet size. All pure CSS keyframe animations — no JavaScript. Decorative (not live data-driven) — sits alongside the activity graph which shows real data.
 
 ---
 
@@ -235,8 +227,8 @@ When ready:
 | # | Question | Priority |
 |---|---|---|
 | Q1 | Clarify "heralded" reference, confirm "PRESIDENT" phrase, explain "Kapow" | Low — not blocking |
-| Q2 | hypridle setup: do you have it, what locker do you use, login vs lock trigger, time precision | **High — needed to write status scripts** |
-| Q3 | Custom SVG direction: A (stars) / B (orbits) / C (nebula grid) / D (warp) / surprise me | **High — needed to design the SVG** |
+| Q2 | hypridle setup details | ✓ Answered — using listener/timeout approach |
+| Q3 | Custom SVG direction | ✓ Answered — Orbital System |
 | Q4 | GitHub token for private stats — now or during build? | Medium |
 | Q5 | Contact link details (email, LinkedIn, Twitter, Discord) | Low — deferred |
 | Q6 | Bio content and tone | Low — deferred |
@@ -266,19 +258,98 @@ GitHub (external):
 
 ---
 
-## Build Order (once Q2 and Q3 are answered)
+## Build Progress
 
-1. Create the Gist + write status scripts + edit hypridle config (live status feature)
-2. Walk through GitHub token setup for private stats (Q4)
-3. Write README.md skeleton — all sections stubbed with placeholders
-4. Add animated header (capsule render)
-5. Add typing animation
-6. Add live status badge
-7. Add stats cards + languages side by side
-8. Add activity graph + trophies
-9. Build custom space SVG (contribution visualization) — biggest creative chunk
-10. Add footer with placeholder contact links
-11. Tech stack badges (once Q6 answered)
-12. Bio section (once Q7 answered)
-13. Contact links finalized
-14. Final pass — spacing, alignment, test dark + light mode on GitHub
+| Step | Status | Notes |
+|---|---|---|
+| Update plan/research docs | ✅ Done | |
+| Write orbital.svg | ✅ Done | `assets/orbital.svg` — CSS animated planetary system |
+| Write status scripts | ✅ Done | `local-scripts/` — online.sh, offline.sh, hypridle-addition.conf |
+| Write README.md skeleton | ✅ Done | All sections stubbed, placeholders marked |
+| Animated header (capsule render) | ✅ Done | venom type, space gradient, twinkling |
+| Typing animation | ✅ Done | 6 phrases, Fira Code font, blue |
+| Live status badge | ✅ Done in README | **Needs Gist setup from you — see below** |
+| Stats cards side by side | ✅ Done | custom space color scheme |
+| Activity graph | ✅ Done | custom space colors |
+| Orbital SVG section | ✅ Done | |
+| GitHub trophies | ✅ Done | darkhub theme |
+| Footer (capsule render wave) | ✅ Done | |
+| Tech stack badges | ⏳ Deferred | waiting on full stack list |
+| Bio section | ⏳ Deferred | waiting on content |
+| Contact links | ⏳ Deferred | waiting on details |
+| Replace GIST_ID_HERE in README | ⏳ Needs your action | see setup steps below |
+| Copy scripts to ~/.local/bin/ | ⏳ Needs your action | see setup steps below |
+| Edit hypridle.conf | ⏳ Needs your action | see setup steps below |
+| Final pass + dark/light mode test | ⏳ After deferred sections done | |
+
+---
+
+## ⚡ Action Required: Live Status Setup
+
+These are the steps you need to do on your end to activate the status badge. Takes ~10 minutes.
+
+### Step 1 — Create a GitHub Gist
+
+1. Go to **https://gist.github.com**
+2. Filename: `status.json`
+3. Content (paste exactly):
+   ```json
+   {"schemaVersion":1,"label":"status","message":"Offline","color":"555555","namedLogo":"linux","logoColor":"white"}
+   ```
+4. Set to **Secret** (or Public — both work)
+5. Click **Create secret gist**
+6. Copy the **Gist ID** from the URL — it's the long alphanumeric string after your username:
+   `https://gist.github.com/WhyILived/`**`abc123def456...`** ← that part
+
+### Step 2 — Create a GitHub Token
+
+1. Go to **https://github.com/settings/tokens** → "Generate new token (classic)"
+2. Name: `github-status-badge`
+3. Expiration: No expiration (or 1 year)
+4. Scopes: tick **`gist`** only (that's all it needs)
+5. Click **Generate token**
+6. Copy the token immediately — it only shows once
+
+### Step 3 — Create the config file on your machine
+
+```bash
+mkdir -p ~/.config/github-status
+chmod 700 ~/.config/github-status
+
+cat > ~/.config/github-status/config << 'EOF'
+GIST_ID=paste_your_gist_id_here
+GITHUB_TOKEN=paste_your_token_here
+EOF
+
+chmod 600 ~/.config/github-status/config
+```
+
+### Step 4 — Copy the scripts
+
+```bash
+cp local-scripts/github-status-online.sh  ~/.local/bin/github-status-online.sh
+cp local-scripts/github-status-offline.sh ~/.local/bin/github-status-offline.sh
+chmod +x ~/.local/bin/github-status-online.sh
+chmod +x ~/.local/bin/github-status-offline.sh
+```
+
+### Step 5 — Edit hypridle.conf
+
+Open `~/.config/hypr/hypridle.conf` and add the contents of `local-scripts/hypridle-addition.conf`. If you already have a `general {}` block, just add the `lock_cmd` and `unlock_cmd` lines to it (don't duplicate the block).
+
+Then reload: `killall hypridle && hypridle &`
+
+### Step 6 — Test it
+
+```bash
+# Test online script manually
+~/.local/bin/github-status-online.sh
+
+# Check your Gist — it should now say "Online"
+# Then test offline:
+~/.local/bin/github-status-offline.sh
+```
+
+### Step 7 — Update README.md
+
+Replace `GIST_ID_HERE` in README.md with your actual Gist ID.
