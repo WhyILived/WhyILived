@@ -1,16 +1,7 @@
-<div align="center">
-
-<img src="./assets/header.svg" width="100%" alt="WhyILived"/>
-
+<div align="center" style="padding:0;margin:0;line-height:0;">
+<img src="./assets/header.svg" width="100%" alt="WhyILived" style="display:block;margin:0;padding:0;border:none;"/>
+<img src="./assets/typing.svg" width="100%" alt="Typing SVG" style="display:block;margin:0;padding:0;border:none;"/>
 </div>
-
-<div align="center">
-
-<img src="./assets/typing.svg" width="100%" alt="Typing SVG"/>
-
-</div>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- BIO — placeholder, fill in later                   -->
@@ -22,20 +13,14 @@
 
 </div>
 
-<br/>
-
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- ORBITAL SVG                                        -->
 <!-- Data: placeholder — update manually or via Action  -->
 <!-- ═══════════════════════════════════════════════════ -->
 
-<div align="center">
-
-<img src="./assets/orbital.svg" width="100%" alt="Orbital telemetry — last 12 months"/>
-
+<div align="center" style="padding:0;margin:0;line-height:0;">
+<img src="./assets/orbital.svg" width="100%" alt="Orbital telemetry — last 12 months" style="display:block;margin:0;padding:0;border:none;"/>
 </div>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- TECH STACK                                         -->
@@ -54,8 +39,6 @@
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 </div>
-
-<br/>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- FOOTER                                             -->
