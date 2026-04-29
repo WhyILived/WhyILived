@@ -109,7 +109,7 @@ def download_badge(url: str, filepath: str, bg_color: str, target_w: int, target
         # Paste badge centered
         px = (target_w - new_w) // 2
         py = (target_h - new_h) // 2
-        canvas.paste(scaled, (px, py), scaled)
+        canvas.paste(scaled, (px, py), scaled.split()[3] if scaled.mode == "RGBA" else None)
 
         # Apply rounded-rect mask
         mask = Image.new("L", (target_w, target_h), 0)
