@@ -1,33 +1,33 @@
 """
-Download and standardize shield.io badges, then generate the pyramid SVG
-with base64-embedded badges (required for GitHub rendering).
+Download shield.io SVG badges and embed them in the pyramid SVG.
+
+Each badge is fetched as SVG, scaled to fit 96x28 while preserving aspect
+ratio, placed on a brand-colored rounded-rect background, and embedded
+as a base64 SVG data URI in the pyramid SVG (required for GitHub CSP).
 
 Usage:
     python scripts/download_badges.py
 
 Config: edit BADGES list below. Output:
-    - assets/badges/ directory with standardized 96×28 PNG badges (AR preserved, padded)
+    - assets/badges/ directory with standardized 96x28 SVG badges
     - assets/stack-pyramid.svg rebuilt with base64-embedded badges
 """
 
 import base64
-import io
 import os
+import re
 import sys
 
 import requests
-from PIL import Image, ImageDraw
 
 # ─── Configuration ─────────────────────────────────────────────
 TARGET_WIDTH = 96
 TARGET_HEIGHT = 28
+CORNER_RX = 5
 OUTPUT_DIR = "assets/badges"
 SVG_PATH = "assets/stack-pyramid.svg"
 
 # Pyramid geometry — block width=96, no gaps, centered at x=450
-# start_x = 450 - (n * 96) / 2
-# Row positions (y from top, grounded at y=380)
-# Block height=28, no vertical gaps
 ROW_Y = [352, 324, 296, 268, 240, 212, 184]  # rows 7→1 (bottom to top)
 ROW_X = {
     1: [402],
@@ -74,13 +74,13 @@ BADGES = [
     ("Arch%20Linux", "1793D1", "archlinux"),
 ]
 
-# Which rows need fillers (indices into ROW_X)
+# Which rows need fillers
 FILLER_ROWS = {2, 3, 5, 6}
 
 
 def shields_url(label: str, color: str, logo: str, style: str = "for-the-badge") -> str:
-    """Build a shields.io badge URL (PNG for PIL processing)."""
-    url = f"https://img.shields.io/badge/{label}-{color}.png"
+    """Build a shields.io badge URL (SVG for sharp rendering)."""
+    url = f"https://img.shields.io/badge/{label}-{color}.svg"
     params = [f"style={style}"]
     if logo:
         params.append(f"logo={logo}")
@@ -88,40 +88,60 @@ def shields_url(label: str, color: str, logo: str, style: str = "for-the-badge")
     return url + "?" + "&".join(params)
 
 
-def download_badge(url: str, filepath: str, bg_color: str, target_w: int, target_h: int, corner_rx: int = 5) -> bool:
-    """Download PNG badge, scale with LANCZOS, center on canvas, apply rounded corners."""
+def fetch_svg(url: str) -> str:
+    """Download SVG from shields.io and return the raw string."""
+    resp = requests.get(url, timeout=10, headers={"Accept": "image/svg+xml"})
+    resp.raise_for_status()
+    return resp.text
+
+
+def extract_inner(svg_text: str) -> tuple[float, float, str]:
+    """Extract width, height, and inner content from a shields.io SVG."""
+    w_match = re.search(r'width="([0-9.]+)"', svg_text)
+    h_match = re.search(r'height="([0-9.]+)"', svg_text)
+    orig_w = float(w_match.group(1))
+    orig_h = float(h_match.group(1))
+    inner = svg_text[svg_text.find(">") + 1:]
+    if inner.rstrip().endswith("</svg>"):
+        inner = inner.rstrip()[:-len("</svg>")]
+    return orig_w, orig_h, inner
+
+
+def build_badge_svg(inner: str, orig_w: float, orig_h: float, bg_color: str,
+                    target_w: int, target_h: int, corner_rx: int) -> str:
+    """Build a 96x28 SVG with brand-color background, AR-scaled badge, and clipPath."""
+    scale = min(target_w / orig_w, target_h / orig_h)
+    offset_x = (target_w - orig_w * scale) / 2
+    offset_y = (target_h - orig_h * scale) / 2
+
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" width="{target_w}" height="{target_h}" viewBox="0 0 {target_w} {target_h}">\n'
+    svg += f'  <defs><clipPath id="clip"><rect x="0" y="0" width="{target_w}" height="{target_h}" rx="{corner_rx}"/></clipPath></defs>\n'
+    svg += f'  <rect x="0" y="0" width="{target_w}" height="{target_h}" rx="{corner_rx}" fill="#{bg_color}"/>\n'
+    svg += f'  <g clip-path="url(#clip)">\n'
+    svg += f'    <g transform="translate({offset_x:.4f}, {offset_y:.4f}) scale({scale:.6f})">\n'
+    svg += inner
+    svg += "\n    </g>\n"
+    svg += "  </g>\n</svg>"
+    return svg
+
+
+def badge_svg_to_base64(svg_text: str) -> str:
+    """Encode SVG as base64 data URI."""
+    b64 = base64.b64encode(svg_text.encode()).decode()
+    return f"data:image/svg+xml;base64,{b64}"
+
+
+def download_badge(url: str, filepath: str, bg_color: str,
+                   target_w: int, target_h: int, corner_rx: int) -> bool:
+    """Download SVG badge, scale AR, add bg + clipPath, save as .svg."""
     try:
-        resp = requests.get(url, timeout=10)
-        resp.raise_for_status()
-        img = Image.open(io.BytesIO(resp.content)).convert("RGBA")
-
-        # Scale to fit within target while preserving aspect ratio
-        w_ratio = target_w / img.width
-        h_ratio = target_h / img.height
-        scale = min(w_ratio, h_ratio)
-        new_w = max(1, int(img.width * scale))
-        new_h = max(1, int(img.height * scale))
-        scaled = img.resize((new_w, new_h), Image.LANCZOS)
-
-        # Create canvas with badge background color
-        canvas = Image.new("RGBA", (target_w, target_h), (*bytes.fromhex(bg_color), 255))
-
-        # Paste badge centered
-        px = (target_w - new_w) // 2
-        py = (target_h - new_h) // 2
-        canvas.paste(scaled, (px, py), scaled.split()[3] if scaled.mode == "RGBA" else None)
-
-        # Apply rounded-rect mask
-        mask = Image.new("L", (target_w, target_h), 0)
-        draw = ImageDraw.Draw(mask)
-        draw.rounded_rectangle(
-            [(0, 0), (target_w - 1, target_h - 1)],
-            radius=corner_rx,
-            fill=255,
-        )
-        canvas.putalpha(mask)
-        canvas.save(filepath, "PNG")
-        print(f"  ✓ {filepath} ({img.width}x{img.height} → {scaled.width}x{scaled.height})")
+        svg_raw = fetch_svg(url)
+        orig_w, orig_h, inner = extract_inner(svg_raw)
+        badge_svg = build_badge_svg(inner, orig_w, orig_h, bg_color, target_w, target_h, corner_rx)
+        with open(filepath, "w") as f:
+            f.write(badge_svg)
+        scale = min(target_w / orig_w, target_h / orig_h)
+        print(f"  ✓ {filepath} ({orig_w}x{orig_h} → scale {scale:.4f})")
         return True
     except Exception as e:
         print(f"  ✗ {filepath}: {e}")
@@ -129,10 +149,10 @@ def download_badge(url: str, filepath: str, bg_color: str, target_w: int, target
 
 
 def badge_base64(filepath: str) -> str:
-    """Read a PNG file and return a base64 data URI string."""
-    with open(filepath, "rb") as f:
-        data = base64.b64encode(f.read()).decode()
-    return f"data:image/png;base64,{data}"
+    """Read an SVG file and return a base64 data URI string."""
+    with open(filepath, "r") as f:
+        data = base64.b64encode(f.read().encode()).decode()
+    return f"data:image/svg+xml;base64,{data}"
 
 
 def read_existing_svg(path: str) -> str:
@@ -142,8 +162,7 @@ def read_existing_svg(path: str) -> str:
 
 
 def generate_pyramid_svg(existing_svg: str) -> str:
-    """Replace the pyramid section with base64-embedded badges."""
-    # Find the pyramid comment block
+    """Replace the pyramid section with base64-embedded SVG badges."""
     start_marker = "  <!-- ══════════════════════════════════════════════════\n       PYRAMID"
     end_marker = "</svg>"
 
@@ -159,32 +178,28 @@ def generate_pyramid_svg(existing_svg: str) -> str:
 
     lines = []
     lines.append("  <!-- ══════════════════════════════════════════════════")
-    lines.append("       PYRAMID — 7 rows, blocks touch (96×28 shields.io)")
+    lines.append("       PYRAMID — 7 rows, blocks touch (96×28 SVG badges)")
     lines.append("       Filler blocks: 96×28 dark rect (#21262d, rx=5)")
     lines.append("       Row 7 bottom touches y=380")
     lines.append("       ══════════════════════════════════════════════════ -->")
     lines.append("")
 
     badge_idx = 0
-    filler_rows_done = {2: 0, 5: 0, 6: 0}
 
-    # Render rows 7 → 1 (bottom to top)
     for row_num in range(7, 0, -1):
         y = ROW_Y[7 - row_num]
         positions = ROW_X[row_num]
-        filler_count = len(positions) - min(len(positions), len(BADGES) - badge_idx)
 
-        # Determine how many real badges vs fillers for this row
         row_badge_count = len(positions)
         if row_num in FILLER_ROWS:
             if row_num == 2:
-                row_badge_count = 2  # Docker, K8s
+                row_badge_count = 2
             elif row_num == 3:
-                row_badge_count = 2  # AWS, GH Actions
+                row_badge_count = 2
             elif row_num == 5:
-                row_badge_count = 4  # React, Next, Svelte, Vue
+                row_badge_count = 4
             elif row_num == 6:
-                row_badge_count = 4  # Angular, FastAPI, Django, Node
+                row_badge_count = 4
 
         label = f"Row {row_num}"
         if row_num == 1:
@@ -208,13 +223,12 @@ def generate_pyramid_svg(existing_svg: str) -> str:
 
         for i, x in enumerate(positions):
             if i < row_badge_count:
-                # Real badge
                 if badge_idx >= len(BADGES):
                     print(f"ERROR: Not enough badges defined for row {row_num}")
                     sys.exit(1)
                 label_url, color, logo = BADGES[badge_idx]
                 filename = label_url.replace("%20", "_").replace("%2B%2B", "plusplus")
-                filepath = os.path.join(OUTPUT_DIR, f"{filename}.png")
+                filepath = os.path.join(OUTPUT_DIR, f"{filename}.svg")
                 b64 = badge_base64(filepath)
                 if label_url == "Arch%20Linux":
                     lines.append(f'  <image class="apex-badge" x="{x}" y="{y}" width="{TARGET_WIDTH}" height="{TARGET_HEIGHT}" href="{b64}" filter="url(#apex-glow)"/>')
@@ -222,7 +236,6 @@ def generate_pyramid_svg(existing_svg: str) -> str:
                     lines.append(f'  <image x="{x}" y="{y}" width="{TARGET_WIDTH}" height="{TARGET_HEIGHT}" href="{b64}"/>')
                 badge_idx += 1
             else:
-                # Filler block
                 lines.append(f'  <rect x="{x}" y="{y}" width="{TARGET_WIDTH}" height="{TARGET_HEIGHT}" rx="5" fill="#21262d"/>')
 
         lines.append("")
@@ -235,25 +248,24 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     print(f"Downloading {len(BADGES)} badges to {OUTPUT_DIR}/")
-    print(f"Target size: {TARGET_WIDTH}×{TARGET_HEIGHT} (PNG source, LANCZOS scale)\n")
+    print(f"Target size: {TARGET_WIDTH}x{TARGET_HEIGHT} (SVG source, AR-preserving scale)\n")
 
     success = 0
     for label, color, logo in BADGES:
         url = shields_url(label, color, logo)
         filename = label.replace("%20", "_").replace("%2B%2B", "plusplus")
-        filepath = os.path.join(OUTPUT_DIR, f"{filename}.png")
-        if download_badge(url, filepath, color, TARGET_WIDTH, TARGET_HEIGHT):
+        filepath = os.path.join(OUTPUT_DIR, f"{filename}.svg")
+        if download_badge(url, filepath, color, TARGET_WIDTH, TARGET_HEIGHT, CORNER_RX):
             success += 1
 
     print(f"\n{success}/{len(BADGES)} badges downloaded.\n")
 
     if success == len(BADGES):
-        # Rebuild the pyramid SVG with base64-embedded badges
         existing = read_existing_svg(SVG_PATH)
         new_svg = generate_pyramid_svg(existing)
         with open(SVG_PATH, "w") as f:
             f.write(new_svg)
-        print(f"✓ {SVG_PATH} rebuilt with base64-embedded badges.")
+        print(f"✓ {SVG_PATH} rebuilt with base64-embedded SVG badges.")
     else:
         print("✗ Some badges failed to download. Not rebuilding SVG.")
 
