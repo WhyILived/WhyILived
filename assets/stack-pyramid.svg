@@ -143,99 +143,57 @@
   <ellipse cx="450" cy="338" rx="380" ry="46" fill="#c86014" filter="url(#haze-f)" opacity="0.11"/>
 
   <!-- ══════════════════════════════════════════════════
-       PYRAMID — 7 rows, no horizontal/vertical gaps
-       Block: 88×26, centered at x=450
-       Row 7 bottom touches y=380 (viewBox bottom)
+       PYRAMID — 7 rows, blocks touch (96×28 shields.io)
+       Filler blocks: 96×28 dark rect (#21262d, rx=5)
+       Row 7 bottom touches y=380
        ══════════════════════════════════════════════════ -->
 
-  <!-- Row 7 — Languages (7 blocks, y=354) -->
-  <!-- x: 142, 230, 318, 406, 494, 582, 670 -->
-  <rect x="142" y="354" width="88" height="26" rx="5" fill="#3178C6"/>
-  <rect x="230" y="354" width="88" height="26" rx="5" fill="#00599C"/>
-  <rect x="318" y="354" width="88" height="26" rx="5" fill="#3776AB"/>
-  <rect x="406" y="354" width="88" height="26" rx="5" fill="#CE422B"/>
-  <rect x="494" y="354" width="88" height="26" rx="5" fill="#A8B9CC"/>
-  <rect x="582" y="354" width="88" height="26" rx="5" fill="#000080"/>
-  <rect x="670" y="354" width="88" height="26" rx="5" fill="#ED8B00"/>
+  <!-- Row 7 — Languages (7 blocks, y=352) -->
+  <!-- x: 114, 210, 306, 402, 498, 594, 690 -->
+  <image x="114" y="352" width="96" height="28" href="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&amp;logo=typescript&amp;logoColor=white"/>
+  <image x="210" y="352" width="96" height="28" href="https://img.shields.io/badge/C++-00599C?style=for-the-badge&amp;logo=cplusplus&amp;logoColor=white"/>
+  <image x="306" y="352" width="96" height="28" href="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&amp;logo=python&amp;logoColor=white"/>
+  <image x="402" y="352" width="96" height="28" href="https://img.shields.io/badge/Rust-CE422B?style=for-the-badge&amp;logo=rust&amp;logoColor=white"/>
+  <image x="498" y="352" width="96" height="28" href="https://img.shields.io/badge/C-00599C?style=for-the-badge&amp;logo=c&amp;logoColor=white"/>
+  <image x="594" y="352" width="96" height="28" href="https://img.shields.io/badge/Lua-000080?style=for-the-badge&amp;logo=lua&amp;logoColor=white"/>
+  <image x="690" y="352" width="96" height="28" href="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&amp;logo=openjdk&amp;logoColor=white"/>
 
-  <!-- Row 6 — Frameworks cont. (6 blocks, y=328) -->
-  <!-- x: 186, 274, 362, 450, 538, 626 -->
-  <rect x="186" y="328" width="88" height="26" rx="5" fill="#DD0031"/>
-  <rect x="274" y="328" width="88" height="26" rx="5" fill="#009688"/>
-  <rect x="362" y="328" width="88" height="26" rx="5" fill="#092E20"/>
-  <rect x="450" y="328" width="88" height="26" rx="5" fill="#339933"/>
-  <rect x="538" y="328" width="88" height="26" rx="5" fill="#21262d"/>
-  <rect x="626" y="328" width="88" height="26" rx="5" fill="#21262d"/>
+  <!-- Row 6 — Frameworks cont. (6 blocks, y=324) -->
+  <!-- x: 162, 258, 354, 450, 546, 642 -->
+  <image x="162" y="324" width="96" height="28" href="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&amp;logo=angular&amp;logoColor=white"/>
+  <image x="258" y="324" width="96" height="28" href="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&amp;logo=fastapi&amp;logoColor=white"/>
+  <image x="354" y="324" width="96" height="28" href="https://img.shields.io/badge/Django-092E20?style=for-the-badge&amp;logo=Django&amp;logoColor=white"/>
+  <image x="450" y="324" width="96" height="28" href="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&amp;logo=nodejs&amp;logoColor=white"/>
+  <rect x="546" y="324" width="96" height="28" rx="5" fill="#21262d"/>
+  <rect x="642" y="324" width="96" height="28" rx="5" fill="#21262d"/>
 
-  <!-- Row 5 — Frameworks (5 blocks, y=302) -->
-  <!-- x: 230, 318, 406, 494, 582 -->
-  <rect x="230" y="302" width="88" height="26" rx="5" fill="#61DAFB"/>
-  <rect x="318" y="302" width="88" height="26" rx="5" fill="#ffffff"/>
-  <rect x="406" y="302" width="88" height="26" rx="5" fill="#FF3E00"/>
-  <rect x="494" y="302" width="88" height="26" rx="5" fill="#4FC08D"/>
-  <rect x="582" y="302" width="88" height="26" rx="5" fill="#21262d"/>
+  <!-- Row 5 — Frameworks (5 blocks, y=296) -->
+  <!-- x: 210, 306, 402, 498, 594 -->
+  <image x="210" y="296" width="96" height="28" href="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&amp;logo=react&amp;logoColor=white"/>
+  <image x="306" y="296" width="96" height="28" href="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&amp;logo=nextdotjs&amp;logoColor=white"/>
+  <image x="402" y="296" width="96" height="28" href="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&amp;logo=svelte&amp;logoColor=white"/>
+  <image x="498" y="296" width="96" height="28" href="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&amp;logo=vuedotjs&amp;logoColor=white"/>
+  <rect x="594" y="296" width="96" height="28" rx="5" fill="#21262d"/>
 
-  <!-- Row 4 — Databases (4 blocks, y=276) -->
-  <!-- x: 274, 362, 450, 538 -->
-  <rect x="274" y="276" width="88" height="26" rx="5" fill="#4169E1"/>
-  <rect x="362" y="276" width="88" height="26" rx="5" fill="#F29111"/>
-  <rect x="450" y="276" width="88" height="26" rx="5" fill="#DC382D"/>
-  <rect x="538" y="276" width="88" height="26" rx="5" fill="#003B57"/>
+  <!-- Row 4 — Databases (4 blocks, y=268) -->
+  <!-- x: 258, 354, 450, 546 -->
+  <image x="258" y="268" width="96" height="28" href="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&amp;logo=postgresql&amp;logoColor=white"/>
+  <image x="354" y="268" width="96" height="28" href="https://img.shields.io/badge/MySQL-F29111?style=for-the-badge&amp;logo=mysql&amp;logoColor=white"/>
+  <image x="450" y="268" width="96" height="28" href="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&amp;logo=redis&amp;logoColor=white"/>
+  <image x="546" y="268" width="96" height="28" href="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&amp;logo=sqlite&amp;logoColor=white"/>
 
-  <!-- Row 3 — DevOps cont. (3 blocks, y=250) -->
-  <!-- x: 318, 406, 494 -->
-  <rect x="318" y="250" width="88" height="26" rx="5" fill="#FF9900"/>
-  <rect x="406" y="250" width="88" height="26" rx="5" fill="#2088FF"/>
-  <rect x="494" y="250" width="88" height="26" rx="5" fill="#21262d"/>
+  <!-- Row 3 — DevOps cont. (3 blocks, y=240) -->
+  <!-- x: 306, 402, 498 -->
+  <image x="306" y="240" width="96" height="28" href="https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&amp;logo=amazonaws&amp;logoColor=black"/>
+  <image x="402" y="240" width="96" height="28" href="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&amp;logo=githubactions&amp;logoColor=white"/>
+  <rect x="498" y="240" width="96" height="28" rx="5" fill="#21262d"/>
 
-  <!-- Row 2 — DevOps (2 blocks, y=224) -->
-  <!-- x: 362, 450 -->
-  <rect x="362" y="224" width="88" height="26" rx="5" fill="#2496ED"/>
-  <rect x="450" y="224" width="88" height="26" rx="5" fill="#326CE5"/>
+  <!-- Row 2 — DevOps (2 blocks, y=212) -->
+  <!-- x: 354, 450 -->
+  <image x="354" y="212" width="96" height="28" href="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&amp;logo=docker&amp;logoColor=white"/>
+  <image x="450" y="212" width="96" height="28" href="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&amp;logo=kubernetes&amp;logoColor=white"/>
 
-  <!-- Row 1 — Apex: Arch Linux (1 block, y=198) -->
-  <!-- x: 406 -->
-  <rect class="apex-badge" x="406" y="198" width="88" height="26" rx="5" fill="#F99E3A" filter="url(#apex-glow)"/>
-
-  <!-- BLOCK LABELS -->
-  <!-- Row 7 — Languages -->
-  <text x="186" y="371" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">TypeScript</text>
-  <text x="274" y="371" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">C++</text>
-  <text x="362" y="371" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Python</text>
-  <text x="450" y="371" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Rust</text>
-  <text x="538" y="371" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">C</text>
-  <text x="626" y="371" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Lua</text>
-  <text x="714" y="371" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">Java</text>
-
-  <!-- Row 6 — Frameworks cont. -->
-  <text x="230" y="345" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Angular</text>
-  <text x="318" y="345" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">FastAPI</text>
-  <text x="406" y="345" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Django</text>
-  <text x="494" y="345" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Node.js</text>
-  <!-- fillers: no text -->
-
-  <!-- Row 5 — Frameworks -->
-  <text x="274" y="319" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">React</text>
-  <text x="362" y="319" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">Next.js</text>
-  <text x="450" y="319" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Svelte</text>
-  <text x="538" y="319" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">Vue</text>
-  <!-- filler: no text -->
-
-  <!-- Row 4 — Databases -->
-  <text x="318" y="293" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">PostgreSQL</text>
-  <text x="406" y="293" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">MySQL</text>
-  <text x="494" y="293" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Redis</text>
-  <text x="582" y="293" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">SQLite</text>
-
-  <!-- Row 3 — DevOps cont. -->
-  <text x="362" y="267" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">AWS</text>
-  <text x="450" y="267" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">GH Actions</text>
-
-  <!-- Row 2 — DevOps -->
-  <text x="406" y="241" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Docker</text>
-  <text x="494" y="241" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Kubernetes</text>
-
-  <!-- Row 1 — Apex -->
-  <text x="450" y="215" text-anchor="middle" font-family="monospace" font-size="10" fill="#0d1117" font-weight="bold">Arch Linux</text>
+  <!-- Row 1 — Apex: Arch Linux (1 block, y=184) -->
+  <image class="apex-badge" x="402" y="184" width="96" height="28" href="https://img.shields.io/badge/Arch_Linux-1793D1?style=for-the-badge&amp;logo=archlinux&amp;logoColor=white" filter="url(#apex-glow)"/>
 
 </svg>
