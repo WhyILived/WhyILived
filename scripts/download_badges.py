@@ -79,7 +79,7 @@ FILLER_ROWS = {2, 3, 5, 6}
 
 
 def shields_url(label: str, color: str, logo: str, style: str = "for-the-badge") -> str:
-    """Build a shields.io badge URL."""
+    """Build a shields.io badge URL (PNG for PIL processing)."""
     url = f"https://img.shields.io/badge/{label}-{color}.png"
     params = [f"style={style}"]
     if logo:
@@ -89,27 +89,27 @@ def shields_url(label: str, color: str, logo: str, style: str = "for-the-badge")
 
 
 def download_badge(url: str, filepath: str, bg_color: str, target_w: int, target_h: int, corner_rx: int = 5) -> bool:
-    """Download badge, scale preserving aspect ratio, center on bg-colored canvas, apply rounded corners."""
+    """Download PNG badge, scale with LANCZOS, center on canvas, apply rounded corners."""
     try:
         resp = requests.get(url, timeout=10)
         resp.raise_for_status()
         img = Image.open(io.BytesIO(resp.content)).convert("RGBA")
 
-        # Scale to fit within target dimensions while preserving aspect ratio
+        # Scale to fit within target while preserving aspect ratio
         w_ratio = target_w / img.width
         h_ratio = target_h / img.height
         scale = min(w_ratio, h_ratio)
         new_w = max(1, int(img.width * scale))
         new_h = max(1, int(img.height * scale))
-        img = img.resize((new_w, new_h), Image.LANCZOS)
+        scaled = img.resize((new_w, new_h), Image.LANCZOS)
 
-        # Create target canvas with badge background color
+        # Create canvas with badge background color
         canvas = Image.new("RGBA", (target_w, target_h), (*bytes.fromhex(bg_color), 255))
 
-        # Paste badge centered on canvas
-        paste_x = (target_w - new_w) // 2
-        paste_y = (target_h - new_h) // 2
-        canvas.paste(img, (paste_x, paste_y), img)
+        # Paste badge centered
+        px = (target_w - new_w) // 2
+        py = (target_h - new_h) // 2
+        canvas.paste(scaled, (px, py), scaled)
 
         # Apply rounded-rect mask
         mask = Image.new("L", (target_w, target_h), 0)
@@ -121,7 +121,7 @@ def download_badge(url: str, filepath: str, bg_color: str, target_w: int, target
         )
         canvas.putalpha(mask)
         canvas.save(filepath, "PNG")
-        print(f"  ✓ {filepath}")
+        print(f"  ✓ {filepath} ({img.width}x{img.height} → {scaled.width}x{scaled.height})")
         return True
     except Exception as e:
         print(f"  ✗ {filepath}: {e}")
@@ -235,7 +235,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     print(f"Downloading {len(BADGES)} badges to {OUTPUT_DIR}/")
-    print(f"Target size: {TARGET_WIDTH}×{TARGET_HEIGHT} (aspect ratio preserved, padded)\n")
+    print(f"Target size: {TARGET_WIDTH}×{TARGET_HEIGHT} (PNG source, LANCZOS scale)\n")
 
     success = 0
     for label, color, logo in BADGES:
