@@ -62,26 +62,10 @@
       .star-corona { transform-box:fill-box; transform-origin:center; animation:corona  3s ease-in-out infinite; }
       .star-halo   { transform-box:fill-box; transform-origin:center; animation:halo    3s ease-in-out infinite; }
       .star-core   { transform-box:fill-box; transform-origin:center; animation:s-pulse 3s ease-in-out infinite; }
-
-      .orbit-ring { animation:ring   4s ease-in-out infinite; }
-      .planet     { animation:p-glow 3s ease-in-out infinite; }
-      .foot       { animation:footer 5s ease-in-out infinite; }
-      .label      { fill:#8b949e; font-family:monospace; font-size:8px; }
-      .label-count{ fill:#58a6ff; font-family:monospace; font-size:8px; }
-      .planet-text{
-        transform-box: fill-box;
-        transform-origin: center;
-        animation: orbit-ccw 90s linear infinite;
-      }
-      #sys {
-        transform-box: view-box;
-        transform-origin: 450px 220px;
-        animation: orbit-cw 90s linear infinite;
-      }
+      .orbit-ring  { animation:ring   4s ease-in-out infinite; }
+      .foot        { animation:footer 5s ease-in-out infinite; }
     </style>
   </defs>
-
-  <!-- ── Background ──────────────────────────────────── -->
   <rect width="900" height="430" fill="#0d1117"/>
 
   <!-- ── Star field ─────────────────────────────────── -->
@@ -192,11 +176,20 @@
        ══════════════════════════════════════════════════ -->
 
 <!-- BEGIN_PLANETS -->
+<!-- DESIGN Styles preserved across script updates — do not remove -->
+<!-- Design classes: .planet-text, #sys, .planet, .label, .label-count -->
+<style id="design-styles">
+  .planet-text{transform-box:fill-box;transform-origin:center;animation:orbit-ccw 90s linear infinite;}
+  #sys{transform-box:view-box;transform-origin:450px 220px;animation:orbit-cw 90s linear infinite;}
+  .planet{animation:p-glow 3s ease-in-out infinite;}
+  .label{fill:#c9d1d9;font-family:monospace;font-size:8px;}
+  .label-count{fill:#e6b450;font-family:monospace;font-size:8px;font-weight:bold;}
+</style>
 <g id="sys">
-  <!-- i=0  Apr '26  136c  r=10  pos=(450,90)  label=(450,40) -->
+  <!-- i=0  Apr '26  145c  r=10  pos=(450,90)  label=(450,40) -->
   <circle class="planet" cx="450" cy="90" r="10" fill="#e6b450" filter="url(#glow)" style="animation-delay:0.0s"/>
   <text class="planet-text" text-anchor="middle" x="450" y="43">
-    <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">136</tspan>
+    <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">145</tspan>
   </text>
 
   <!-- i=1  Mar '26  73c  r=7  pos=(385,107)  label=(362,67) -->

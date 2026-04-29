@@ -160,13 +160,13 @@ def scale_radius(count, lo, hi):
 # ── SVG generation ──────────────────────────────────────────────────────────
 def build_planets_block(months):
     """
-    Build the <g id="sys"> ... </g> content from the months list.
+    Build the content inside <g id="sys"> ... </g> from the months list.
     months: [(year, month, count), ...], index 0 = latest month.
     """
     counts = [c for _, _, c in months]
     lo, hi = min(counts), max(counts)
 
-    lines = ['<g id="sys">']
+    lines = []
     for i, (year, month, count) in enumerate(months):
         r     = scale_radius(count, lo, hi)
         color = COLORS[i % len(COLORS)]
@@ -192,8 +192,7 @@ def build_planets_block(months):
                 px=px, py=py, r=r, color=color, delay=delay,
             )
         )
-        # Vertical offset for label text baseline: centre the text on ly
-        ly_text = ly + 3  # small downward nudge so text visually centres on ly
+        ly_text = ly + 3
         lines.append(
             '  <text class="planet-text" text-anchor="middle" x="{lx:.0f}" y="{ly:.0f}">'.format(
                 lx=lx, ly=ly_text,
@@ -208,7 +207,6 @@ def build_planets_block(months):
         lines.append("  </text>")
         lines.append("")
 
-    lines.append("</g>")
     return "\n".join(lines)
 
 
@@ -219,7 +217,7 @@ MARKER_RE = re.compile(
 )
 
 
-def update_svg(new_block, output_path=None):
+def update_svg(new_planets_content, output_path=None):
     target = output_path or SVG_PATH
     with open(target, "r", encoding="utf-8") as f:
         svg = f.read()
@@ -231,12 +229,30 @@ def update_svg(new_block, output_path=None):
         )
         sys.exit(1)
 
-    replacement = (
-        "<!-- BEGIN_PLANETS -->\n"
-        + new_block
-        + "\n<!-- END_PLANETS -->"
-    )
-    new_svg = MARKER_RE.sub(replacement, svg)
+    def replacer(m):
+        inner = m.group(0)
+        g_open = '<g id="sys">'
+        g_close = '</g>'
+        s_open = '<!-- DESIGN Styles preserved across script updates — do not remove -->'
+        s_id = '<style id="design-styles">'
+        s_close = '</style>'
+        si = inner.find(s_open)
+        ss = inner.find(s_id)
+        se = inner.find(s_close)
+        if si == -1 or ss == -1 or se == -1:
+            print("ERROR: design style block not found inside markers", file=sys.stderr)
+            sys.exit(1)
+        preserved_style = inner[si:se + len(s_close)]
+        return (
+            "<!-- BEGIN_PLANETS -->\n"
+            + preserved_style + "\n"
+            + g_open + "\n"
+            + new_planets_content + "\n"
+            + g_close + "\n"
+            + "<!-- END_PLANETS -->"
+        )
+
+    new_svg = MARKER_RE.sub(replacer, svg)
 
     with open(target, "w", encoding="utf-8") as f:
         f.write(new_svg)
@@ -244,7 +260,7 @@ def update_svg(new_block, output_path=None):
     print("Updated" if not output_path else "Wrote", target)
 
 
-def write_test_svg(new_block, output_path):
+def write_test_svg(new_planets_content, output_path):
     with open(SVG_PATH, "r", encoding="utf-8") as f:
         svg = f.read()
 
@@ -255,12 +271,30 @@ def write_test_svg(new_block, output_path):
         )
         sys.exit(1)
 
-    replacement = (
-        "<!-- BEGIN_PLANETS -->\n"
-        + new_block
-        + "\n<!-- END_PLANETS -->"
-    )
-    new_svg = MARKER_RE.sub(replacement, svg)
+    def replacer(m):
+        inner = m.group(0)
+        g_open = '<g id="sys">'
+        g_close = '</g>'
+        s_open = '<!-- DESIGN Styles preserved across script updates — do not remove -->'
+        s_id = '<style id="design-styles">'
+        s_close = '</style>'
+        si = inner.find(s_open)
+        ss = inner.find(s_id)
+        se = inner.find(s_close)
+        if si == -1 or ss == -1 or se == -1:
+            print("ERROR: design style block not found inside markers", file=sys.stderr)
+            sys.exit(1)
+        preserved_style = inner[si:se + len(s_close)]
+        return (
+            "<!-- BEGIN_PLANETS -->\n"
+            + preserved_style + "\n"
+            + g_open + "\n"
+            + new_planets_content + "\n"
+            + g_close + "\n"
+            + "<!-- END_PLANETS -->"
+        )
+
+    new_svg = MARKER_RE.sub(replacer, svg)
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(new_svg)
