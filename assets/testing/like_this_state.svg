@@ -147,6 +147,17 @@
   <ellipse cx="862" cy="312" rx="18" ry="5" fill="#0d0500" opacity="0.80" transform="rotate(-4 862 312)"/>
   <ellipse cx="862" cy="312" rx="16" ry="5" fill="#0d0500" opacity="0.76" transform="rotate(-46 862 312)"/>
   <ellipse cx="862" cy="312" rx="14" ry="4" fill="#0d0500" opacity="0.70" transform="rotate(72 862 312)"/>
+  <rect x="178" y="326" width="3" height="48" rx="1.5" fill="#0d0500" opacity="0.78"/>
+  <ellipse cx="179" cy="326" rx="16" ry="5" fill="#0d0500" opacity="0.74" transform="rotate(-32 179 326)"/>
+  <ellipse cx="179" cy="326" rx="14" ry="4" fill="#0d0500" opacity="0.70" transform="rotate(10 179 326)"/>
+  <ellipse cx="179" cy="326" rx="12" ry="4" fill="#0d0500" opacity="0.66" transform="rotate(52 179 326)"/>
+  <rect x="722" y="322" width="3" height="50" rx="1.5" fill="#0d0500" opacity="0.76"/>
+  <ellipse cx="723" cy="322" rx="15" ry="5" fill="#0d0500" opacity="0.72" transform="rotate(28 723 322)"/>
+  <ellipse cx="723" cy="322" rx="13" ry="4" fill="#0d0500" opacity="0.68" transform="rotate(-12 723 322)"/>
+  <ellipse cx="723" cy="322" rx="11" ry="3" fill="#0d0500" opacity="0.64" transform="rotate(-56 723 322)"/>
+  <rect x="48" y="332" width="2.5" height="38" rx="1" fill="#0d0500" opacity="0.65"/>
+  <ellipse cx="49" cy="332" rx="12" ry="4" fill="#0d0500" opacity="0.60" transform="rotate(-40 49 332)"/>
+  <ellipse cx="49" cy="332" rx="10" ry="3" fill="#0d0500" opacity="0.55" transform="rotate(15 49 332)"/>
 
   <!-- DESERT HEAT HAZE -->
   <ellipse class="hb" cx="155"  cy="278" rx="148" ry="32" fill="#c8a060" filter="url(#haze-f)"  opacity="0.13"/>
