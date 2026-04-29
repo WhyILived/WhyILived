@@ -1,0 +1,283 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" width="100%">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#06080f"/>
+      <stop offset="18%"  stop-color="#0a0d1e"/>
+      <stop offset="38%"  stop-color="#0e0826"/>
+      <stop offset="55%"  stop-color="#1c0d2e"/>
+      <stop offset="68%"  stop-color="#2e1008"/>
+      <stop offset="80%"  stop-color="#4a1e04"/>
+      <stop offset="91%"  stop-color="#5c2800"/>
+      <stop offset="100%" stop-color="#280d00"/>
+    </linearGradient>
+    <radialGradient id="nebula" cx="62%" cy="22%" r="44%">
+      <stop offset="0%"   stop-color="#162040" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#0a0d1e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="horizon-glow" cx="50%" cy="100%" r="58%">
+      <stop offset="0%"   stop-color="#d46414" stop-opacity="0.32"/>
+      <stop offset="42%"  stop-color="#8b3800" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#3d1400" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moon-aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#e8d488" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#c8b060" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="apex-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="moon-glow-f" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="haze-f" x="-40%" y="-80%" width="180%" height="260%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="haze-f2" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <style>
+      @keyframes tw-a { 0%,100%{opacity:.12} 50%{opacity:.8}  }
+      @keyframes tw-b { 0%,100%{opacity:.22} 50%{opacity:1}   }
+      @keyframes tw-c { 0%,100%{opacity:.06} 50%{opacity:.6}  }
+      @keyframes apex-pulse { 0%,100%{opacity:.75} 50%{opacity:1} }
+      @keyframes moon-pulse { 0%,100%{opacity:.85} 50%{opacity:1} }
+      @keyframes haze-a { 0%,100%{opacity:.10;transform:translateX(0)}  50%{opacity:.19;transform:translateX(8px)}  }
+      @keyframes haze-b { 0%,100%{opacity:.07;transform:translateX(0)}  50%{opacity:.14;transform:translateX(-7px)} }
+      @keyframes haze-c { 0%,100%{opacity:.05;transform:translateX(0)}  50%{opacity:.11;transform:translateX(5px)}  }
+      .sa { fill:#e8f4f8; animation:tw-a 3.1s ease-in-out infinite; }
+      .sb { fill:#58a6ff; animation:tw-b 2.3s ease-in-out infinite; }
+      .sc { fill:#e6b450; animation:tw-c 1.9s ease-in-out infinite; }
+      .sd { fill:#ffffff;  animation:tw-a 4.3s ease-in-out infinite; }
+      .apex-badge { animation:apex-pulse 3s ease-in-out infinite; }
+      .moon-el { animation:moon-pulse 4s ease-in-out infinite; }
+      .ha { animation:haze-a 9s  ease-in-out infinite; }
+      .hb { animation:haze-b 13s ease-in-out infinite; }
+      .hc { animation:haze-c 7s  ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- ══ BACKGROUND ══ -->
+  <rect width="900" height="380" fill="url(#sky)"/>
+  <rect width="900" height="380" fill="url(#nebula)"/>
+  <rect width="900" height="380" fill="url(#horizon-glow)"/>
+
+  <!-- ══ STARS (upper half — space zone) ══ -->
+  <circle class="sa" cx="18"  cy="14"  r="0.7" style="animation-delay:.3s"/>
+  <circle class="sd" cx="64"  cy="9"   r="0.5" style="animation-delay:1.2s"/>
+  <circle class="sb" cx="120" cy="20"  r="0.6" style="animation-delay:2.5s"/>
+  <circle class="sa" cx="182" cy="8"   r="0.8" style="animation-delay:.7s"/>
+  <circle class="sc" cx="238" cy="22"  r="0.5" style="animation-delay:3.1s"/>
+  <circle class="sd" cx="298" cy="12"  r="0.7" style="animation-delay:1.8s"/>
+  <circle class="sa" cx="356" cy="7"   r="0.6" style="animation-delay:.4s"/>
+  <circle class="sb" cx="416" cy="18"  r="0.5" style="animation-delay:2.9s"/>
+  <circle class="sc" cx="476" cy="10"  r="0.7" style="animation-delay:.9s"/>
+  <circle class="sa" cx="536" cy="20"  r="0.6" style="animation-delay:2.2s"/>
+  <circle class="sd" cx="594" cy="9"   r="0.5" style="animation-delay:1.5s"/>
+  <circle class="sb" cx="652" cy="17"  r="0.8" style="animation-delay:.2s"/>
+  <circle class="sa" cx="710" cy="8"   r="0.6" style="animation-delay:3.4s"/>
+  <circle class="sc" cx="764" cy="21"  r="0.5" style="animation-delay:1.0s"/>
+  <circle class="sd" cx="820" cy="11"  r="0.7" style="animation-delay:2.7s"/>
+  <circle class="sa" cx="868" cy="16"  r="0.6" style="animation-delay:.6s"/>
+  <circle class="sc" cx="28"  cy="52"  r="0.6" style="animation-delay:2.0s"/>
+  <circle class="sa" cx="72"  cy="72"  r="0.8" style="animation-delay:.5s"/>
+  <circle class="sb" cx="44"  cy="105" r="0.5" style="animation-delay:3.5s"/>
+  <circle class="sd" cx="90"  cy="135" r="0.7" style="animation-delay:1.2s"/>
+  <circle class="sa" cx="54"  cy="162" r="0.5" style="animation-delay:.8s"/>
+  <circle class="sc" cx="36"  cy="195" r="0.4" style="animation-delay:3.0s"/>
+  <circle class="sd" cx="110" cy="60"  r="0.6" style="animation-delay:2.2s"/>
+  <circle class="sa" cx="145" cy="100" r="0.5" style="animation-delay:1.6s"/>
+  <circle class="sb" cx="168" cy="148" r="0.6" style="animation-delay:3.3s"/>
+  <circle class="sd" cx="822" cy="58"  r="0.7" style="animation-delay:2.9s"/>
+  <circle class="sa" cx="854" cy="85"  r="0.5" style="animation-delay:1.4s"/>
+  <circle class="sb" cx="832" cy="115" r="0.6" style="animation-delay:.2s"/>
+  <circle class="sc" cx="868" cy="145" r="0.8" style="animation-delay:3.2s"/>
+  <circle class="sa" cx="842" cy="172" r="0.4" style="animation-delay:1.9s"/>
+  <circle class="sd" cx="874" cy="198" r="0.5" style="animation-delay:.7s"/>
+  <circle class="sc" cx="727" cy="60"  r="0.6" style="animation-delay:1.8s"/>
+  <circle class="sd" cx="755" cy="100" r="0.5" style="animation-delay:.3s"/>
+  <circle class="sa" cx="740" cy="148" r="0.6" style="animation-delay:2.4s"/>
+  <circle cx="102" cy="30"  r="1.5" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 2.8s ease-in-out .4s infinite"/>
+  <circle cx="798" cy="36"  r="1.4" fill="#e6b450" filter="url(#glow)" style="animation:tw-c 3.2s ease-in-out 1.9s infinite"/>
+  <circle cx="848" cy="150" r="1.2" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 3.6s ease-in-out 2.3s infinite"/>
+  <circle cx="55"  cy="185" r="1.1" fill="#8b5cf6" filter="url(#glow)" style="animation:tw-a 2.5s ease-in-out .7s infinite"/>
+
+  <!-- ══ CRESCENT MOON (upper-left, clear of badges) ══ -->
+  <ellipse class="moon-el" cx="128" cy="58" rx="42" ry="42" fill="url(#moon-aura)" filter="url(#haze-f2)" opacity="0.9"/>
+  <circle  class="moon-el" cx="128" cy="58" r="18" fill="#e8d48a" filter="url(#moon-glow-f)"/>
+  <circle  cx="138" cy="52" r="15" fill="#0c0a20"/>
+
+  <!-- ══ BACKGROUND EGYPTIAN PYRAMID SILHOUETTES ══ -->
+  <polygon points="18,376 235,376 126,298"  fill="#1c0b00" opacity="0.72"/>
+  <polygon points="285,376 565,376 425,265" fill="#140700" opacity="0.78"/>
+  <polygon points="615,376 822,376 718,304" fill="#1c0b00" opacity="0.68"/>
+
+  <!-- ══ DESERT SAND FLOOR ══ -->
+  <path d="M 0,362 Q 180,348 390,360 Q 590,372 790,350 Q 855,344 900,354 L 900,380 L 0,380 Z" fill="#4a2000" opacity="0.78"/>
+  <path d="M 0,373 Q 110,365 270,372 Q 440,379 630,368 Q 765,360 900,368 L 900,380 L 0,380 Z" fill="#3a1600" opacity="0.92"/>
+
+  <!-- ══ PALM TREE SILHOUETTES ══ -->
+  <rect x="35" y="320" width="4" height="58" rx="2" fill="#0d0500" opacity="0.88"/>
+  <ellipse cx="37" cy="320" rx="20" ry="6" fill="#0d0500" opacity="0.82" transform="rotate(-38 37 320)"/>
+  <ellipse cx="37" cy="320" rx="18" ry="5" fill="#0d0500" opacity="0.80" transform="rotate(4 37 320)"/>
+  <ellipse cx="37" cy="320" rx="16" ry="5" fill="#0d0500" opacity="0.76" transform="rotate(46 37 320)"/>
+  <ellipse cx="37" cy="320" rx="14" ry="4" fill="#0d0500" opacity="0.70" transform="rotate(-72 37 320)"/>
+  <rect x="860" y="312" width="4" height="65" rx="2" fill="#0d0500" opacity="0.88"/>
+  <ellipse cx="862" cy="312" rx="20" ry="6" fill="#0d0500" opacity="0.82" transform="rotate(38 862 312)"/>
+  <ellipse cx="862" cy="312" rx="18" ry="5" fill="#0d0500" opacity="0.80" transform="rotate(-4 862 312)"/>
+  <ellipse cx="862" cy="312" rx="16" ry="5" fill="#0d0500" opacity="0.76" transform="rotate(-46 862 312)"/>
+  <ellipse cx="862" cy="312" rx="14" ry="4" fill="#0d0500" opacity="0.70" transform="rotate(72 862 312)"/>
+
+  <!-- ══ DESERT HEAT HAZE (transition zone) ══ -->
+  <ellipse class="hb" cx="155"  cy="278" rx="148" ry="32" fill="#c8a060" filter="url(#haze-f)"  opacity="0.13"/>
+  <ellipse class="ha" cx="462"  cy="262" rx="222" ry="38" fill="#d4aa70" filter="url(#haze-f)"  opacity="0.15"/>
+  <ellipse class="hb" cx="752"  cy="275" rx="142" ry="30" fill="#c8a060" filter="url(#haze-f)"  opacity="0.11"/>
+  <ellipse class="hc" cx="298"  cy="250" rx="98"  ry="20" fill="#e0c090" filter="url(#haze-f2)" opacity="0.11"/>
+  <ellipse class="ha" cx="604"  cy="256" rx="108" ry="22" fill="#e0c090" filter="url(#haze-f2)" opacity="0.10"/>
+  <ellipse class="hb" cx="450"  cy="224" rx="280" ry="20" fill="#b8c8e0" filter="url(#haze-f)"  opacity="0.06"/>
+  <ellipse cx="450" cy="338" rx="380" ry="46" fill="#c86014" filter="url(#haze-f)" opacity="0.11"/>
+
+  <!-- ══════════════════════════════════════════════════════
+       PYRAMID — narrows top→bottom with correct labels
+       Badge: 88×26 px, rx=5
+
+       Apex  (1):  88 px span  — Arch Linux
+       Row 2 (4):  406 px span — DevOps & Infra  (gap 18 px)
+       Row 3 (4):  502 px span — Databases        (gap 50 px)
+       Row 4 (7):  664 px span — Languages         (gap  8 px)
+       Row 5 (8):  760 px span — Frameworks        (gap  8 px)
+
+       All rows centered at x=450.
+       ══════════════════════════════════════════════════════ -->
+
+  <!-- ── Apex: Arch Linux (y=37, x=406) ── -->
+  <rect class="apex-badge" x="406" y="37" width="88" height="26" rx="5" fill="#F99E3A" filter="url(#apex-glow)"/>
+
+  <!-- ── Row 2: DevOps & Infra (y=102, gap=18, x_start=247) ──
+       Docker 247 | K8s 353 | AWS 459 | GH Actions 565          -->
+  <rect x="247" y="102" width="88" height="26" rx="5" fill="#2496ED"/>
+  <rect x="353" y="102" width="88" height="26" rx="5" fill="#326CE5"/>
+  <rect x="459" y="102" width="88" height="26" rx="5" fill="#FF9900"/>
+  <rect x="565" y="102" width="88" height="26" rx="5" fill="#2088FF"/>
+
+  <!-- ── Row 3: Databases (y=167, gap=50, x_start=199) ──
+       PostgreSQL 199 | MySQL 337 | Redis 475 | SQLite 613       -->
+  <rect x="199" y="167" width="88" height="26" rx="5" fill="#4169E1"/>
+  <rect x="337" y="167" width="88" height="26" rx="5" fill="#F29111"/>
+  <rect x="475" y="167" width="88" height="26" rx="5" fill="#DC382D"/>
+  <rect x="613" y="167" width="88" height="26" rx="5" fill="#003B57"/>
+
+  <!-- ── Row 4: Languages (y=232, gap=8, x_start=118) ──
+       TS 118 | C++ 214 | Py 310 | Rust 406 | C 502 | Lua 598 | Java 694 -->
+  <rect x="118" y="232" width="88" height="26" rx="5" fill="#3178C6"/>
+  <rect x="214" y="232" width="88" height="26" rx="5" fill="#00599C"/>
+  <rect x="310" y="232" width="88" height="26" rx="5" fill="#3776AB"/>
+  <rect x="406" y="232" width="88" height="26" rx="5" fill="#CE422B"/>
+  <rect x="502" y="232" width="88" height="26" rx="5" fill="#A8B9CC"/>
+  <rect x="598" y="232" width="88" height="26" rx="5" fill="#000080"/>
+  <rect x="694" y="232" width="88" height="26" rx="5" fill="#ED8B00"/>
+
+  <!-- ── Row 5: Frameworks (y=297, gap=8, x_start=70) ──
+       React 70 | Next 166 | Svelte 262 | Angular 358 | Vue 454
+       FastAPI 550 | Django 646 | Node 742                       -->
+  <rect x="70"  y="297" width="88" height="26" rx="5" fill="#61DAFB"/>
+  <rect x="166" y="297" width="88" height="26" rx="5" fill="#ffffff"/>
+  <rect x="262" y="297" width="88" height="26" rx="5" fill="#FF3E00"/>
+  <rect x="358" y="297" width="88" height="26" rx="5" fill="#DD0031"/>
+  <rect x="454" y="297" width="88" height="26" rx="5" fill="#4FC08D"/>
+  <rect x="550" y="297" width="88" height="26" rx="5" fill="#009688"/>
+  <rect x="646" y="297" width="88" height="26" rx="5" fill="#092E20"/>
+  <rect x="742" y="297" width="88" height="26" rx="5" fill="#339933"/>
+
+  <!-- ══════════════════════════════════════
+       RIGHT-SIDE BRACKET BAR
+       Continuous vertical at x=870 with
+       horizontal tabs at each row.
+       ══════════════════════════════════════ -->
+
+  <!-- Apex line -->
+  <line x1="494" y1="50"  x2="870" y2="50"  stroke="#30363d" stroke-width="1"/>
+  <text x="878" y="54" font-family="monospace" font-size="11" fill="#F99E3A">🐧 Linux</text>
+
+  <!-- Connector: apex → Row 2 -->
+  <line x1="870" y1="50"  x2="870" y2="101" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Row 2 (DevOps) bracket: right edge of last badge = 653 -->
+  <line x1="653" y1="101" x2="870" y2="101" stroke="#30363d" stroke-width="1"/>
+  <line x1="653" y1="129" x2="870" y2="129" stroke="#30363d" stroke-width="1"/>
+  <line x1="870" y1="101" x2="870" y2="129" stroke="#30363d" stroke-width="1"/>
+  <text x="878" y="119" font-family="monospace" font-size="11" fill="#c9d1d9">🚀 DevOps &amp; Infra</text>
+
+  <!-- Connector: Row 2 → Row 3 -->
+  <line x1="870" y1="129" x2="870" y2="166" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Row 3 (Databases) bracket: right edge = 701 -->
+  <line x1="701" y1="166" x2="870" y2="166" stroke="#30363d" stroke-width="1"/>
+  <line x1="701" y1="194" x2="870" y2="194" stroke="#30363d" stroke-width="1"/>
+  <line x1="870" y1="166" x2="870" y2="194" stroke="#30363d" stroke-width="1"/>
+  <text x="878" y="184" font-family="monospace" font-size="11" fill="#c9d1d9">🗄️ Databases</text>
+
+  <!-- Connector: Row 3 → Row 4 -->
+  <line x1="870" y1="194" x2="870" y2="231" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Row 4 (Languages) bracket: right edge = 782 -->
+  <line x1="782" y1="231" x2="870" y2="231" stroke="#30363d" stroke-width="1"/>
+  <line x1="782" y1="259" x2="870" y2="259" stroke="#30363d" stroke-width="1"/>
+  <line x1="870" y1="231" x2="870" y2="259" stroke="#30363d" stroke-width="1"/>
+  <text x="878" y="249" font-family="monospace" font-size="11" fill="#c9d1d9">💻 Languages</text>
+
+  <!-- Connector: Row 4 → Row 5 -->
+  <line x1="870" y1="259" x2="870" y2="296" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Row 5 (Frameworks) bracket: right edge = 830 -->
+  <line x1="830" y1="296" x2="870" y2="296" stroke="#30363d" stroke-width="1"/>
+  <line x1="830" y1="324" x2="870" y2="324" stroke="#30363d" stroke-width="1"/>
+  <line x1="870" y1="296" x2="870" y2="324" stroke="#30363d" stroke-width="1"/>
+  <text x="878" y="314" font-family="monospace" font-size="11" fill="#c9d1d9">🛠️ Frameworks</text>
+
+  <!-- ══════════════════════════════════════
+       BADGE TEXT LABELS
+       text-y = badge-y + 17  (baseline in 26px badge)
+       text-x = badge-x + 44  (center of 88px badge)
+       ══════════════════════════════════════ -->
+
+  <!-- Apex -->
+  <text x="450" y="54" text-anchor="middle" font-family="monospace" font-size="10" fill="#0d1117" font-weight="bold">Arch Linux</text>
+
+  <!-- Row 2 DevOps (text-y=119) -->
+  <text x="291" y="119" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Docker</text>
+  <text x="397" y="119" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">K8s</text>
+  <text x="503" y="119" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">AWS</text>
+  <text x="609" y="119" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">GH Actions</text>
+
+  <!-- Row 3 Databases (text-y=184) -->
+  <text x="243" y="184" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">PostgreSQL</text>
+  <text x="381" y="184" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">MySQL</text>
+  <text x="519" y="184" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Redis</text>
+  <text x="657" y="184" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">SQLite</text>
+
+  <!-- Row 4 Languages (text-y=249) -->
+  <text x="162" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">TypeScript</text>
+  <text x="258" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">C++</text>
+  <text x="354" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Python</text>
+  <text x="450" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Rust</text>
+  <text x="546" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">C</text>
+  <text x="642" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Lua</text>
+  <text x="738" y="249" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">Java</text>
+
+  <!-- Row 5 Frameworks (text-y=314) -->
+  <text x="114" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">React</text>
+  <text x="210" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">Next.js</text>
+  <text x="306" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Svelte</text>
+  <text x="402" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Angular</text>
+  <text x="498" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#000" font-weight="bold">Vue</text>
+  <text x="594" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">FastAPI</text>
+  <text x="690" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Django</text>
+  <text x="786" y="314" text-anchor="middle" font-family="monospace" font-size="10" fill="#fff" font-weight="bold">Node.js</text>
+
+</svg>
