@@ -28,7 +28,7 @@ OUTPUT_DIR = "assets/badges"
 SVG_PATH = "assets/stack-pyramid.svg"
 
 # Pyramid geometry — block width=96, no gaps, centered at x=450
-ROW_Y = [352, 324, 296, 268, 240, 212, 184]  # rows 7→1 (bottom to top)
+ROW_Y = [442, 414, 386, 358, 330, 302, 274]  # rows 7→1 (bottom to top)
 ROW_X = {
     1: [402],
     2: [354, 450],
@@ -180,7 +180,7 @@ def generate_pyramid_svg(existing_svg: str) -> str:
     lines.append("  <!-- ══════════════════════════════════════════════════")
     lines.append("       PYRAMID — 7 rows, blocks touch (96×28 SVG badges)")
     lines.append("       Filler blocks: 96×28 dark rect (#21262d, rx=5)")
-    lines.append("       Row 7 bottom touches y=380")
+    lines.append("       Row 7 bottom at y=470 (svg height=560)")
     lines.append("       ══════════════════════════════════════════════════ -->")
     lines.append("")
 
