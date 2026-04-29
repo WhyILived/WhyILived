@@ -14,9 +14,9 @@
       <stop offset="0%"   stop-color="#162040" stop-opacity="0.45"/>
       <stop offset="100%" stop-color="#0a0d1e" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="horizon-glow" cx="50%" cy="100%" r="58%">
-      <stop offset="0%"   stop-color="#d46414" stop-opacity="0.32"/>
-      <stop offset="42%"  stop-color="#8b3800" stop-opacity="0.16"/>
+    <radialGradient id="horizon-glow" cx="48%" cy="65%" r="58%">
+      <stop offset="0%"   stop-color="#ff7733" stop-opacity="0.38"/>
+      <stop offset="35%"  stop-color="#cc4400" stop-opacity="0.18"/>
       <stop offset="100%" stop-color="#3d1400" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="moon-aura" cx="50%" cy="50%" r="50%">
@@ -29,6 +29,21 @@
     </filter>
     <filter id="apex-glow" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="sunrise" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#ff9944" stop-opacity="1"/>
+      <stop offset="35%"  stop-color="#ff6622" stop-opacity="0.85"/>
+      <stop offset="70%"  stop-color="#cc3300" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#881100" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun-core" cx="45%" cy="40%" r="50%">
+      <stop offset="0%"   stop-color="#fff4e0" stop-opacity="1"/>
+      <stop offset="40%"  stop-color="#ffcc66" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff8833" stop-opacity="0.6"/>
+    </radialGradient>
+    <filter id="sun-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
     <filter id="moon-glow-f" x="-80%" y="-80%" width="260%" height="260%">
@@ -47,6 +62,7 @@
       @keyframes tw-c { 0%,100%{opacity:.06} 50%{opacity:.6}  }
       @keyframes apex-pulse { 0%,100%{opacity:.75} 50%{opacity:1} }
       @keyframes moon-pulse { 0%,100%{opacity:.85} 50%{opacity:1} }
+      @keyframes sunrise-breathe { 0%,100%{opacity:.82} 50%{opacity:.95} }
       @keyframes haze-a { 0%,100%{opacity:.10;transform:translateX(0)}  50%{opacity:.19;transform:translateX(8px)}  }
       @keyframes haze-b { 0%,100%{opacity:.07;transform:translateX(0)}  50%{opacity:.14;transform:translateX(-7px)} }
       @keyframes haze-c { 0%,100%{opacity:.05;transform:translateX(0)}  50%{opacity:.11;transform:translateX(5px)}  }
@@ -66,6 +82,10 @@
   <rect width="900" height="560" fill="url(#sky)"/>
   <rect width="900" height="560" fill="url(#nebula)"/>
   <rect width="900" height="560" fill="url(#horizon-glow)"/>
+
+  <!-- SUNRISE - Dawn behind everything, centered horizontally -->
+  <circle cx="450" cy="320" r="95" fill="url(#sunrise)" filter="url(#sun-glow)" style="animation:sunrise-breathe 5s ease-in-out infinite" opacity="0.88"/>
+  <circle cx="450" cy="320" r="52" fill="url(#sun-core)"/>
 
   <!-- STARS -->
   <circle class="sa" cx="32"  cy="18"  r="0.6" style="animation-delay:.1s"/>
@@ -122,14 +142,9 @@
   <circle cx="848" cy="240" r="1.2" fill="#58a6ff" filter="url(#glow)" style="animation:tw-b 3.6s ease-in-out 2.3s infinite"/>
   <circle cx="55"  cy="275" r="1.1" fill="#8b5cf6" filter="url(#glow)" style="animation:tw-a 2.5s ease-in-out .7s infinite"/>
 
-  <!-- CRESCENT MOON -->
-  <ellipse class="moon-el" cx="128" cy="58" rx="42" ry="42" fill="url(#moon-aura)" filter="url(#haze-f2)" opacity="0.9"/>
-  <circle  class="moon-el" cx="128" cy="58" r="18" fill="#e8d48a" filter="url(#moon-glow-f)"/>
-  <circle  cx="138" cy="52" r="15" fill="#0c0a20"/>
-
   <!-- PYRAMID SILHOUETTES -->
   <polygon points="18,376 235,376 126,298"  fill="#1c0b00" opacity="0.72"/>
-  <polygon points="285,376 565,376 425,265" fill="#140700" opacity="0.78"/>
+  <polygon points="285,376 565,376 425,265" fill="#140700"/>
   <polygon points="615,376 822,376 718,304" fill="#1c0b00" opacity="0.68"/>
 
   <!-- DESERT SAND FLOOR -->
@@ -160,6 +175,7 @@
   <ellipse cx="49" cy="332" rx="10" ry="3" fill="#0d0500" opacity="0.55" transform="rotate(15 49 332)"/>
 
   <!-- DESERT HEAT HAZE -->
+  <ellipse cx="425" cy="348" rx="200" ry="28" fill="#ff8844" filter="url(#haze-f)" opacity="0.14"/>
   <ellipse class="hb" cx="155"  cy="278" rx="148" ry="32" fill="#c8a060" filter="url(#haze-f)"  opacity="0.13"/>
   <ellipse class="ha" cx="462"  cy="262" rx="222" ry="38" fill="#d4aa70" filter="url(#haze-f)"  opacity="0.15"/>
   <ellipse class="hb" cx="752"  cy="275" rx="142" ry="30" fill="#c8a060" filter="url(#haze-f)"  opacity="0.11"/>
