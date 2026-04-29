@@ -2,40 +2,54 @@
 
 ## Overview
 
-Replace the current tech stack badge rows in `README.md` with a **custom SVG pyramid** that displays all tech stack items as visual blocks, arranged in a pyramid shape with category labels.
+Replace the current tech stack badge rows in `README.md` with a **custom SVG pyramid** — 7 rows of blocks, each row naturally 1 block wider than the one above it (1, 2, 3, 4, 5, 6, 7 = 28 total slots). Categories span 1 or more rows.
 
 **Context:** The README already has a space/starry/orbital theme. The pyramid should be a native SVG asset with a matching starry background.
 
 ---
 
-## Tech Stack Items
+## Pyramid Geometry
 
-### Row 1 — Apex (1 item)
-- **Arch Linux** — single block at the top, styled as a prominent apex element (arch logo or badge)
+7 rows, each row `r` (1-indexed from top) has `r` blocks:
 
-### Row 2 — DevOps & Infra (4 items)
-- Docker
-- Kubernetes
-- AWS
-- GitHub Actions
+| Row | Blocks | Total so far |
+|-----|--------|-------------|
+| 1   | 1      | 1           |
+| 2   | 2      | 3           |
+| 3   | 3      | 6           |
+| 4   | 4      | 10          |
+| 5   | 5      | 15          |
+| 6   | 6      | 21          |
+| 7   | 7      | **28**      |
 
-### Row 3 — Databases (4 items)
+24 real items + **4 filler blocks** = 28 slots exactly.
+
+---
+
+## Tech Stack Items — 7-Row Structure
+
+### Row 1 — Linux (1 block, 0 fillers)
+- **Arch Linux** — apex, prominent orange block
+
+### Rows 2-3 — DevOps & Infra (5 blocks, 1 filler in row 3)
+
+**Row 2** — Docker, Kubernetes
+
+**Row 3** — AWS, GitHub Actions, [filler]
+
+### Row 4 — Databases (4 blocks, 0 fillers)
 - PostgreSQL
 - MySQL
 - Redis
 - SQLite
 
-### Row 4 — Frameworks (8 items)
-- React
-- Next.js
-- Svelte
-- Angular
-- Vue
-- FastAPI
-- Django
-- Node.js
+### Rows 5-6 — Frameworks (9 blocks, 3 fillers across rows 5 and 6)
 
-### Row 5 — Languages (7 items)
+**Row 5** — React, Next.js, Svelte, Vue, [filler]
+
+**Row 6** — Angular, FastAPI, Django, Node.js, [filler], [filler]
+
+### Row 7 — Languages (7 blocks, 0 fillers)
 - TypeScript
 - C++
 - Python
@@ -46,36 +60,42 @@ Replace the current tech stack badge rows in `README.md` with a **custom SVG pyr
 
 ---
 
+## Block Layout Per Row
+
+Each row is horizontally centered. Blocks sit flush with no gaps — every block in a row is the same size, evenly spaced across the row width.
+
+**Row 7** (7 blocks): TypeScript · C++ · Python · Rust · C · Lua · Java
+**Row 6** (6 blocks): Angular · FastAPI · Django · Node.js · [filler] · [filler]
+**Row 5** (5 blocks): React · Next.js · Svelte · Vue · [filler]
+**Row 4** (4 blocks): PostgreSQL · MySQL · Redis · SQLite
+**Row 3** (3 blocks): AWS · GitHub Actions · [filler]
+**Row 2** (2 blocks): Docker · Kubernetes
+**Row 1** (1 block): Arch Linux
+
+---
+
 ## Design Direction
 
 ### Layout
-- Downward-pointing pyramid: apex at top (Arch Linux), widening downward
-- Each category occupies one row
-- Row widths get progressively wider toward the bottom
-- Items within each row are evenly spaced
+- Downward-pointing pyramid: apex at top (Arch Linux), naturally widening downward
+- Each row has `r` blocks — no gaps within a row
+- Rows are visually distinct but flow into each other
+- No space between adjacent blocks — blocks touch, forming a solid pyramid face
 
 ### Visual Style
-- **Starfield background** matching the `orbital.svg` / `header.svg` aesthetic (`#0d1117` background, small twinkling star circles)
-- **Badge blocks** — each item is a rounded rect pill (using shield.io badge imagery rendered as SVG shapes, or inline SVG badges clipped to rounded rects)
-- **Category labels** — positioned with bracket/marker lines on the right side of each row, like:
+- **Starfield background** matching `orbital.svg` / `header.svg` aesthetic (`#0d1117` background, small twinkling star circles)
+- **Badge blocks** — each item is a rounded rect (rx=5), filled with the brand color, centered text label in contrasting color
+- **Category labels** — bracket/marker lines on the right side of the pyramid, pointing to the relevant rows
+- **Filler blocks** — same shape/size as real blocks, neutral dark fill (#21262d), no text
+- **Arch Linux apex** — uses orange (#F99E3A) matching the header title color
 
-```
-      [Arch Linux]                    ---|
-  [Docker] [K8s] [AWS] [GH Actions]   |--- 🚀 DevOps & Infra
-[Postgres] [MySQL] [Redis] [SQLite]    ---| 🗄️ Databases
-[React] [Next.js] [Svelte]...              |--- 🛠️ Frameworks
-[TypeScript] [C++] [Python]...              |--- 💻 Languages
-```
+### Bracket Labels
+- Category labels sit on the **right side** of the pyramid, outside the block area
+- A vertical bracket arm runs along the right edge
+- Horizontal lines connect bracket to relevant rows
+- Labels: 🐧 Linux, 🚀 DevOps & Infra, 🗄️ Databases, 🛠️ Frameworks, 💻 Languages
 
-- **Bracket lines** — thin lines connecting category labels to their rows, right-aligned
-- Arch Linux apex uses **orange (#F99E3A)** matching the header title color
-
-### Pyramid Centering
-- The pyramid should be centered within a `900px` wide viewBox
-- Each row is centered, items evenly distributed across row width
-- Row spacing: ~60-70px between row centers
-
-### Color Palette (from existing theme)
+### Color Palette
 | Element | Color |
 |---|---|
 | Background | `#0d1117` |
@@ -84,6 +104,39 @@ Replace the current tech stack badge rows in `README.md` with a **custom SVG pyr
 | Star amber | `#e6b450` |
 | Text / Labels | `#c9d1d9` |
 | Bracket lines | `#30363d` |
+| Filler blocks | `#21262d` |
+
+---
+
+## Block Width Calculation
+
+All rows share the same overall width (fills 900px viewBox). Block width is chosen so the **bottom row (7 blocks) fits perfectly** with no overflow and a small margin.
+
+For Row 7 (7 blocks, no gaps):
+- Available width: ~860px (40px margin each side)
+- Block width + spacing = 860 / 7 ≈ 123px per block slot
+- Let block width = 110px, gap = 13px → 7×110 + 6×13 = 770 + 78 = 848px ✓
+
+Each row above is centered, so Row 6 (6 blocks) uses the same block width:
+- 6×110 + 5×13 = 660 + 65 = 725px → centered at x=450 → x starts at ~(900-725)/2 = 87.5
+
+Proceed similarly for all rows.
+
+---
+
+## Category Label Layout
+
+Labels on the right side (x > rightmost block), vertically spanning their rows:
+
+| Category | Rows | Bracket x |
+|---|---|---|
+| 💻 Languages | 7 | ~860 |
+| 🛠️ Frameworks | 5-6 | ~860 |
+| 🗄️ Databases | 4 | ~860 |
+| 🚀 DevOps & Infra | 2-3 | ~860 |
+| 🐧 Linux | 1 | ~860 |
+
+Label text at right edge, bracket lines connect to row level.
 
 ---
 
@@ -91,43 +144,34 @@ Replace the current tech stack badge rows in `README.md` with a **custom SVG pyr
 
 | File | Role |
 |---|---|
-| `README.md` | Replace the existing badge `<div>` with `<img src="./assets/stack-pyramid.svg">` |
-| `assets/stack-pyramid.svg` | New SVG file — the pyramid graphic |
+| `README.md` | Has `<img src="./assets/stack-pyramid.svg">` for tech stack section |
+| `assets/stack-pyramid.svg` | The pyramid SVG — 900×450 viewBox |
 
 ---
 
 ## Technical Notes
 
 ### Badge Rendering
-Since shield.io badges are external images, each badge in the SVG should be either:
-1. **Inline SVG shapes** — draw the rounded rect + icon + text directly in the SVG (more complex but fully self-contained)
-2. **`<img>` tags referencing shield.io** — simpler, but requires network access to render
-
-**Recommendation:** Use inline SVG shapes for the main items, matching the shield.io badge style (rounded rect background, icon on left, text label).
-
-### Row Widths (rough calculations)
-- Row 5 (Languages, 7 items): ~800px wide, items ~100px each
-- Row 4 (Frameworks, 8 items): ~800px wide, items ~90px each
-- Row 3 (DBs, 4 items): ~480px wide
-- Row 2 (DevOps, 4 items): ~480px wide
-- Row 1 (Apex): centered, single item
+Inline SVG `<rect>` + `<text>` for each block — no external images. Brand colors from shield.io / official logos.
 
 ### Animation
-- Subtle twinkle animation on the star background (same `@keyframes` as `header.svg`)
-- Optional: slight pulse on the Arch Linux apex block
+- Subtle twinkle on star background (`@keyframes tw-a/b/c` matching `orbital.svg`)
+- Optional pulse on Arch Linux apex block
 
 ---
 
 ## Bugs / TODO
 
 - [ ] Bracket lines for rows 2, 4, 5 pass through badge rects — need bracket to sit on outside of pyramid only (no horizontal line crossing pyramid width), or remove horizontal segment entirely and use just the vertical bracket arm on the right side
+- [ ] Implement the 7-row structure — blocks must touch with no gaps
+- [ ] Filler blocks: neutral dark fill, no text
 
 ---
 
 ## Implementation Order
 
-1. Create `assets/stack-pyramid.svg` — build the SVG with starfield background, pyramid layout, badge shapes, and bracket labels
-2. Update `README.md` — replace the old badge `<div>` with the new SVG `<img>` reference
+1. Rebuild `assets/stack-pyramid.svg` — 7-row pyramid, blocks flush/touching, correct block widths, filler blocks, bracket labels on right side only
+2. Verify in browser — pyramid looks like a solid monument, no gaps between blocks
 
 ---
 
@@ -137,7 +181,7 @@ Since shield.io badges are external images, each badge in the SVG should be eith
 - `assets/orbital.svg` — viewBox `900×430`, starfield, animated planets, CSS classes for animations
 - Both use `monospace` font, `#0d1117` background
 
-The pyramid SVG should share the same:
+The pyramid SVG should share:
 - Background color and star style
 - Font (`monospace`)
-- Animation keyframes (if any star twinkling is included)
+- Animation keyframes
