@@ -246,25 +246,191 @@
   <!-- Row 1 — Apex: Arch Linux (1 blocks + 0 filler(s), y=364) -->
   <!-- x: 402 -->
   <image class="apex-badge" x="402" y="328" width="96" height="28" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDk2IDI4Ij4KICA8ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI5NiIgaGVpZ2h0PSIyOCIgcng9IjUiLz48L2NsaXBQYXRoPjwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iOTYiIGhlaWdodD0iMjgiIHJ4PSI1IiBmaWxsPSIjMTc5M0QxIi8+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXApIj4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMCwgMy4zNzU1KSBzY2FsZSgwLjc1ODg5MykiPgo8dGl0bGU+QVJDSCBMSU5VWDwvdGl0bGU+PGcgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cmVjdCB3aWR0aD0iMTI2LjUiIGhlaWdodD0iMjgiIGZpbGw9IiMxNzkzZDEiLz48L2c+PGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGZvbnQtc2l6ZT0iMTAwIj48aW1hZ2UgeD0iOSIgeT0iNyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBocmVmPSJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUJtYVd4c1BTSjNhR2wwWlNJZ2NtOXNaVDBpYVcxbklpQjJhV1YzUW05NFBTSXdJREFnTWpRZ01qUWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSFJwZEd4bFBrRnlZMmdnVEdsdWRYZzhMM1JwZEd4bFBqeHdZWFJvSUdROUlrMHhNUzR6T1M0Mk1EVkRNVEF1TXpjMklETXVNRGt5SURrdU56WTBJRFF1TnpJZ09DNDJNelVnTnk0eE16SmpMalk1TXk0M016UWdNUzQxTkRNZ01TNDFPRGtnTWk0NU1qTWdNaTQxTlRRdE1TNDBPRFF0TGpZeExUSXVORGsyTFRFdU1qSTBMVE11TWpVeUxURXVPRFpETmk0NE5pQXhNQzQ0TkRJZ05DNDFPVFlnTVRVdU1UTTRJREFnTWpNdU16azFZek11TmpFeUxUSXVNRGcxSURZdU5ERXlMVE11TXpjZ09TNHdNakV0TXk0NE5qSmhOaTQyTVNBMkxqWXhJREFnTURFdExqRTNNUzB4TGpVME4yd3VNREF6TFM0eE1UVmpMakExT0MweUxqTXhOU0F4TGpJMk1TMDBMakE1TlNBeUxqWTROeTB6TGprM015QXhMalF5Tmk0eE1pQXlMalV6TkNBeUxqQTVOaUF5TGpRM09DQTBMalF3T1dFMkxqVXlJRFl1TlRJZ01DQXdNUzB1TVRRMklERXVNalF6WXpJdU5UZ3VOVEExSURVdU16VXlJREV1TnpnM0lEZ3VPVEUwSURNdU9EUTBMUzQzTURJdE1TNHlPVE10TVM0ek15MHlMalExT1MweExqa3lPUzB6TGpVM0xTNDVORE10TGpjekxURXVPVEkyTFRFdU5qZ3lMVE11T1RNekxUSXVOekV6SURFdU16Z3VNelU1SURJdU16WTNMamMzTWlBekxqRXpOeUF4TGpJek5DMDJMakE1TFRFeExqTXpOQzAyTGpVNE1pMHhNaTQ0TkMwNExqWTNMVEUzTGpjMGVrMHlNaTQ0T1RnZ01qRXVNeloyTFM0Mk1qTm9MUzR5TXpSMkxTNHdPRFJvTGpVMk1uWXVNRGcwYUMwdU1qTTBkaTQyTWpOb0xqTXpNWFl0TGpjd04yZ3VNVFF5YkM0eE5qY3VOUzR3TXpRdU1UQTNZVEl1TWpZZ01pNHlOaUF3SURBeExqQXpPQzB1TVRFMGJDNHhOeTB1TkRrelNESTBkaTQzTURkb0xTNHdPVEYyTFM0MU9UTnNMUzR5TURZdU5Ua3phQzB1TURnMGJDMHVNakExTFM0Mk1ESjJMall3TW1ndExqQTVNU0l2UGp3dmMzWm5QZz09Ii8+PHRleHQgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHg9IjczMi41IiB5PSIxNzUiIHRleHRMZW5ndGg9IjgyNSIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPkFSQ0ggTElOVVg8L3RleHQ+PC9nPgogICAgPC9nPgogIDwvZz4KPC9zdmc+" filter="url(#apex-glow)"/>
-  <!-- CASCADE BORDERS — single trail traces from top-center down each side to bottom-center -->
+  <!-- CASCADE BORDERS — per-block trails. Each block has its own ~126-unit cascade path
+       (top-center → side → bottom-center). Within a row, all blocks share the same row slot,
+       so their trails fire simultaneously. Rows fire in sequence over 43.75s (7 × 6.25s). -->
   <g fill="none" stroke="#ff8844" stroke-width="3" stroke-linecap="butt" filter="url(#block-glow)">
-    <!-- Faint base border (always visible) -->
-    <rect x="400" y="326" width="100" height="32" rx="7" stroke="#ff8844" stroke-linecap="round" opacity="0.10"/>
 
-    <!-- Right cascade: top-center → top-right corner → right side → bottom-right corner → bottom-center.
-         Path length ≈ 126. Trail length 25 (~20% of path), gap 126 (= path length, so only one trail
-         on the path at a time). Animate dashoffset from -25 (trail off, before start) to 126 (trail
-         off, past end) so the trail enters smoothly at start and exits smoothly at end, with no
-         double-trails or visible loop discontinuity. -->
-    <path d="M450,326 H493 A7,7 0 0,1 500,333 V351 A7,7 0 0,1 493,358 H450"
-          stroke-dasharray="25 126" stroke-dashoffset="25">
-      <animate attributeName="stroke-dashoffset" from="25" to="-126" dur="6.25s" repeatCount="indefinite"/>
+    <!-- Row 1 (Apex) — slot 0 -->
+    <rect x="400" y="326" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M450,326 H493 A7,7 0 0,1 500,333 V351 A7,7 0 0,1 493,358 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0;0.142857;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M450,326 H407 A7,7 0 0,0 400,333 V351 A7,7 0 0,0 407,358 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0;0.142857;1" dur="43.75s" repeatCount="indefinite"/>
     </path>
 
-    <!-- Left cascade (mirror) -->
-    <path d="M450,326 H407 A7,7 0 0,0 400,333 V351 A7,7 0 0,0 407,358 H450"
-          stroke-dasharray="25 126" stroke-dashoffset="25">
-      <animate attributeName="stroke-dashoffset" from="25" to="-126" dur="6.25s" repeatCount="indefinite"/>
+    <!-- Row 2 — slot 1 -->
+    <rect x="349" y="360" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M399,360 H442 A7,7 0 0,1 449,367 V385 A7,7 0 0,1 442,392 H399" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.142857;0.285714;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M399,360 H356 A7,7 0 0,0 349,367 V385 A7,7 0 0,0 356,392 H399" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.142857;0.285714;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="451" y="360" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M501,360 H544 A7,7 0 0,1 551,367 V385 A7,7 0 0,1 544,392 H501" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.142857;0.285714;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M501,360 H458 A7,7 0 0,0 451,367 V385 A7,7 0 0,0 458,392 H501" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.142857;0.285714;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Row 3 — slot 2 -->
+    <rect x="298" y="394" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M348,394 H391 A7,7 0 0,1 398,401 V419 A7,7 0 0,1 391,426 H348" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.285714;0.428571;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M348,394 H305 A7,7 0 0,0 298,401 V419 A7,7 0 0,0 305,426 H348" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.285714;0.428571;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="400" y="394" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M450,394 H493 A7,7 0 0,1 500,401 V419 A7,7 0 0,1 493,426 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.285714;0.428571;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M450,394 H407 A7,7 0 0,0 400,401 V419 A7,7 0 0,0 407,426 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.285714;0.428571;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Row 4 — slot 3 -->
+    <rect x="247" y="428" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M297,428 H340 A7,7 0 0,1 347,435 V453 A7,7 0 0,1 340,460 H297" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M297,428 H254 A7,7 0 0,0 247,435 V453 A7,7 0 0,0 254,460 H297" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="349" y="428" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M399,428 H442 A7,7 0 0,1 449,435 V453 A7,7 0 0,1 442,460 H399" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M399,428 H356 A7,7 0 0,0 349,435 V453 A7,7 0 0,0 356,460 H399" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="451" y="428" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M501,428 H544 A7,7 0 0,1 551,435 V453 A7,7 0 0,1 544,460 H501" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M501,428 H458 A7,7 0 0,0 451,435 V453 A7,7 0 0,0 458,460 H501" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="553" y="428" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M603,428 H646 A7,7 0 0,1 653,435 V453 A7,7 0 0,1 646,460 H603" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M603,428 H560 A7,7 0 0,0 553,435 V453 A7,7 0 0,0 560,460 H603" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.428571;0.571429;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Row 5 — slot 4 -->
+    <rect x="196" y="462" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M246,462 H289 A7,7 0 0,1 296,469 V487 A7,7 0 0,1 289,494 H246" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M246,462 H203 A7,7 0 0,0 196,469 V487 A7,7 0 0,0 203,494 H246" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="298" y="462" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M348,462 H391 A7,7 0 0,1 398,469 V487 A7,7 0 0,1 391,494 H348" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M348,462 H305 A7,7 0 0,0 298,469 V487 A7,7 0 0,0 305,494 H348" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="400" y="462" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M450,462 H493 A7,7 0 0,1 500,469 V487 A7,7 0 0,1 493,494 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M450,462 H407 A7,7 0 0,0 400,469 V487 A7,7 0 0,0 407,494 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="502" y="462" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M552,462 H595 A7,7 0 0,1 602,469 V487 A7,7 0 0,1 595,494 H552" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M552,462 H509 A7,7 0 0,0 502,469 V487 A7,7 0 0,0 509,494 H552" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.571429;0.714286;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Row 6 — slot 5 -->
+    <rect x="145" y="496" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M195,496 H238 A7,7 0 0,1 245,503 V521 A7,7 0 0,1 238,528 H195" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M195,496 H152 A7,7 0 0,0 145,503 V521 A7,7 0 0,0 152,528 H195" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="247" y="496" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M297,496 H340 A7,7 0 0,1 347,503 V521 A7,7 0 0,1 340,528 H297" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M297,496 H254 A7,7 0 0,0 247,503 V521 A7,7 0 0,0 254,528 H297" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="349" y="496" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M399,496 H442 A7,7 0 0,1 449,503 V521 A7,7 0 0,1 442,528 H399" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M399,496 H356 A7,7 0 0,0 349,503 V521 A7,7 0 0,0 356,528 H399" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="451" y="496" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M501,496 H544 A7,7 0 0,1 551,503 V521 A7,7 0 0,1 544,528 H501" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M501,496 H458 A7,7 0 0,0 451,503 V521 A7,7 0 0,0 458,528 H501" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.714286;0.857143;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Row 7 — slot 6 -->
+    <rect x="94" y="530" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M144,530 H187 A7,7 0 0,1 194,537 V555 A7,7 0 0,1 187,562 H144" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M144,530 H101 A7,7 0 0,0 94,537 V555 A7,7 0 0,0 101,562 H144" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="196" y="530" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M246,530 H289 A7,7 0 0,1 296,537 V555 A7,7 0 0,1 289,562 H246" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M246,530 H203 A7,7 0 0,0 196,537 V555 A7,7 0 0,0 203,562 H246" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="298" y="530" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M348,530 H391 A7,7 0 0,1 398,537 V555 A7,7 0 0,1 391,562 H348" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M348,530 H305 A7,7 0 0,0 298,537 V555 A7,7 0 0,0 305,562 H348" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="400" y="530" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M450,530 H493 A7,7 0 0,1 500,537 V555 A7,7 0 0,1 493,562 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M450,530 H407 A7,7 0 0,0 400,537 V555 A7,7 0 0,0 407,562 H450" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="502" y="530" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M552,530 H595 A7,7 0 0,1 602,537 V555 A7,7 0 0,1 595,562 H552" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M552,530 H509 A7,7 0 0,0 502,537 V555 A7,7 0 0,0 509,562 H552" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="604" y="530" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M654,530 H697 A7,7 0 0,1 704,537 V555 A7,7 0 0,1 697,562 H654" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M654,530 H611 A7,7 0 0,0 604,537 V555 A7,7 0 0,0 611,562 H654" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <rect x="706" y="530" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M756,530 H799 A7,7 0 0,1 806,537 V555 A7,7 0 0,1 799,562 H756" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
+    </path>
+    <path d="M756,530 H713 A7,7 0 0,0 706,537 V555 A7,7 0 0,0 713,562 H756" stroke-dasharray="25 126" stroke-dashoffset="25">
+      <animate attributeName="stroke-dashoffset" values="25;25;-126;-126" keyTimes="0;0.857143;1;1" dur="43.75s" repeatCount="indefinite"/>
     </path>
   </g>
 
