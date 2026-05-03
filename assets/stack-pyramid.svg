@@ -223,7 +223,8 @@
   <rect x="453" y="498" width="96" height="28" rx="5" fill="none" stroke="#b56828" stroke-width="3"/>
   <image x="555" y="498" width="96" height="28" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDk2IDI4Ij4KICA8ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI5NiIgaGVpZ2h0PSIyOCIgcng9IjUiLz48L2NsaXBQYXRoPjwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iOTYiIGhlaWdodD0iMjgiIHJ4PSI1IiBmaWxsPSIjNEI0QjRCIi8+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXApIj4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMCwgMi42MzQyKSBzY2FsZSgwLjgxMTgzOSkiPgo8dGl0bGU+TExBTUEuQ1BQPC90aXRsZT48ZyBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxyZWN0IHdpZHRoPSIxMTguMjUiIGhlaWdodD0iMjgiIGZpbGw9IiM0YjRiNGIiLz48L2c+PGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGZvbnQtc2l6ZT0iMTAwIj48aW1hZ2UgeD0iOSIgeT0iNyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBocmVmPSJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUJtYVd4c1BTSjNhR2wwWlNJZ2NtOXNaVDBpYVcxbklpQjJhV1YzUW05NFBTSXdJREFnTWpRZ01qUWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSFJwZEd4bFBrMWxkR0U4TDNScGRHeGxQanh3WVhSb0lHUTlJazAyTGpreE5TQTBMakF6WXkweExqazJPQ0F3TFRNdU5qZ3pJREV1TWpndE5DNDROekVnTXk0eE1UTkRMamN3TkNBNUxqSXdPQ0F3SURFeExqZzRNeUF3SURFMExqUTBPV013SUM0M01EWXVNRGNnTVM0ek5qa3VNakVnTVM0NU56TmhOaTQyTWpRZ05pNDJNalFnTUNBd0lEQWdMakkyTlM0NE5pQTFMakk1TnlBMUxqSTVOeUF3SURBZ01DQXVNemN4TGpjMk1XTXVOamsySURFdU1UVTVJREV1T0RFNElERXVPVEkzSURNdU5Ua3pJREV1T1RJM0lERXVORGszSURBZ01pNDJNek10TGpZM01TQXpMamsyTlMweUxqUTBOQzQzTmkweExqQXhNaUF4TGpFME5DMHhMall5TmlBeUxqWTJNeTAwTGpNeWJDNDNOVFl0TVM0ek16a3VNVGcyTFM0ek1qVmpMakEyTVM0eExqRXlNUzR4T1RZdU1UZ3pMak5zTWk0eE5USWdNeTQxT1RWakxqY3lOQ0F4TGpJeElERXVOalkxSURJdU5UVTJJREl1TkRjZ015NHpNVFFnTVM0d05EWXVPVGczSURFdU9Ua3lJREV1TWpJZ015NHdOaUF4TGpJeUlERXVNRGMxSURBZ01TNDROell0TGpNMU5TQXlMalExTlMwdU9EUXpZVE11TnpReklETXVOelF6SURBZ01DQXdJQzQ0TVMwdU9UY3pZeTQxTkRJdExqa3pPUzQ0TmpFdE1pNHhNamN1T0RZeExUTXVOelExSURBdE1pNDNNaTB1TmpneExUVXVNelUzTFRJdU1EZzBMVGN1TkRVdE1TNHlPREl0TVM0NU1USXRNaTQ1TlRjdE1pNDVNeTAwTGpjeE5pMHlMamt6TFRFdU1EUTNJREF0TWk0d09EZ3VORFkzTFRNdU1EVXpJREV1TXpBNExTNDJOVEl1TlRjdE1TNHlOVGNnTVM0eU9TMHhMamd5SURJdU1EVXRMalk1TFM0NE56VXRNUzR6TXpVdE1TNDFORGN0TVM0NU5UZ3RNaTR3TlRZdE1TNHhPREl0TGprMk5pMHlMak14TlMweExqTXdNeTB6TGpRMU5DMHhMak13TTNwdE1UQXVNVFlnTWk0d05UTmpNUzR4TkRjZ01DQXlMakU0T0M0M05UZ2dNaTQ1T1RJZ01TNDVPVGtnTVM0eE16SWdNUzQzTkRnZ01TNDJORGNnTkM0eE9UVWdNUzQyTkRjZ05pNDBJREFnTVM0MU5EZ3RMak0yT0NBeUxqa3RNUzQ0TXprZ01pNDVMUzQxT0NBd0xURXVNREkzTFM0eU15MHhMalkyTkMweExqQXdOQzB1TkRrMkxTNDJNREV0TVM0ek5ETXRNUzQ0TnpndE1pNDRNekl0TkM0ek5UaHNMUzQyTVRjdE1TNHdNamhoTkRRdU9UQTRJRFEwTGprd09DQXdJREFnTUMweExqSTFOUzB4TGprNFl5NHdOeTB1TVRBNUxqRTBNUzB1TWpJMExqSXhNUzB1TXpJM0lERXVNVEl0TVM0Mk5qY2dNaTR4TVRndE1pNDJNRElnTXk0ek5UZ3RNaTQyTURKNmJTMHhNQzR5TURFdU5UVXpZekV1TWpZMUlEQWdNaTR3TlRndU56a3hJREl1TmpjMUlERXVORFEyTGpNd055NHpNamN1TnpNM0xqZzNNU0F4TGpJek5DQXhMalUzT1d3dE1TNHdNaUF4TGpVMk5tTXRMamMxTnlBeExqRTJNeTB4TGpnNE1pQXpMakF4TnkweUxqZ3pOeUEwTGpNek9DMHhMakU1TVNBeExqWTBPUzB4TGpneElERXVPREUzTFRJdU5EZzJJREV1T0RFM0xTNDFNalFnTUMweExqQXpPQzB1TWpNM0xURXVNemd6TFM0M09UUXRMakkyTXkwdU5ESTJMUzQwTmpRdE1TNHhNeTB1TkRZMExUSXVNRFEySURBdE1pNHlNakV1TmpNdE5DNDFNelVnTVM0Mk5pMDJMakE0T0M0ME5UUXRMalk0Tnk0NU5qUXRNUzR5TWpZZ01TNDFNek10TVM0MU16TmhNaTR5TmpRZ01pNHlOalFnTUNBd0lERWdNUzR3T0RndExqSTROWG9pTHo0OEwzTjJaejQ9Ii8+PHRleHQgdHJhbnNmb3JtPSJzY2FsZSguMSkiIHg9IjY5MS4yNSIgeT0iMTc1IiB0ZXh0TGVuZ3RoPSI3NDIuNSIgZmlsbD0iI2ZmZiIgZm9udC13ZWlnaHQ9ImJvbGQiPkxMQU1BLkNQUDwvdGV4dD48L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4="/>
   <rect x="555" y="498" width="96" height="28" rx="5" fill="none" stroke="#b56828" stroke-width="3"/>
-  <rect x="657" y="498" width="96" height="28" rx="5" fill="#21262d" stroke="#b56828" stroke-width="3"/>
+  <image x="657" y="498" width="96" height="28" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NiIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDk2IDI4Ij4KICA8ZGVmcz48Y2xpcFBhdGggaWQ9ImNsaXAiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSI5NiIgaGVpZ2h0PSIyOCIgcng9IjUiLz48L2NsaXBQYXRoPjwvZGVmcz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iOTYiIGhlaWdodD0iMjgiIHJ4PSI1IiBmaWxsPSIjRkY2RjAwIi8+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXApIj4KICAgIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMCwgNC4wMDc0KSBzY2FsZSgwLjcxMzc1NSkiPgo8dGl0bGU+VEVOU09SRkxPVzwvdGl0bGU+PGcgc2hhcGUtcmVuZGVyaW5nPSJjcmlzcEVkZ2VzIj48cmVjdCB3aWR0aD0iMTM0LjUiIGhlaWdodD0iMjgiIGZpbGw9IiNmZjZmMDAiLz48L2c+PGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IlZlcmRhbmEsR2VuZXZhLERlamFWdSBTYW5zLHNhbnMtc2VyaWYiIHRleHQtcmVuZGVyaW5nPSJnZW9tZXRyaWNQcmVjaXNpb24iIGZvbnQtc2l6ZT0iMTAwIj48aW1hZ2UgeD0iOSIgeT0iNyIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBocmVmPSJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUJtYVd4c1BTSjNhR2wwWlNJZ2NtOXNaVDBpYVcxbklpQjJhV1YzUW05NFBTSXdJREFnTWpRZ01qUWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSFJwZEd4bFBsUmxibk52Y2tac2IzYzhMM1JwZEd4bFBqeHdZWFJvSUdROUlrMHhMakk1TWlBMUxqZzFOa3d4TVM0MU5DQXdkakkwYkMwMExqQTVOUzB5TGpNM09GWTNMall3TTJ3dE5pNHhOamdnTXk0MU5qUXVNREUxTFRVdU16RjZiVEl4TGpReklEVXVNekV4YkMwdU1ERTBMVFV1TXpGTU1USXVORFlnTUhZeU5HdzBMakE1TlMweUxqTTNPRll4TkM0NE4yd3pMakE1TWlBeExqYzRPQzB1TURFNExUUXVOakU0TFRNdU1EYzBMVEV1TnpVMlZqY3VOakF6YkRZdU1UWTRJRE11TlRZMGVpSXZQand2YzNablBnPT0iLz48dGV4dCB0cmFuc2Zvcm09InNjYWxlKC4xKSIgeD0iNzcyLjUiIHk9IjE3NSIgdGV4dExlbmd0aD0iOTA1IiBmaWxsPSIjZmZmIiBmb250LXdlaWdodD0iYm9sZCI+VEVOU09SRkxPVzwvdGV4dD48L2c+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4="/>
+  <rect x="657" y="498" width="96" height="28" rx="5" fill="none" stroke="#b56828" stroke-width="3"/>
 
   <!-- Row 5 — Frameworks (4 blocks + 1 filler(s), y=476) -->
   <!-- x: 210, 306, 402, 498, 594 -->
@@ -323,6 +324,13 @@
     <path d="M450,394 H407 A7,7 0 0,0 400,401 V419 A7,7 0 0,0 407,426 H450" stroke-dasharray="50 126" stroke-dashoffset="50">
       <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 5.4227s" dur="5s"/>
     </path>
+    <rect x="502" y="394" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M552,394 H595 A7,7 0 0,1 602,401 V419 A7,7 0 0,1 595,426 H552" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 5.4227s" dur="5s"/>
+    </path>
+    <path d="M552,394 H509 A7,7 0 0,0 502,401 V419 A7,7 0 0,0 509,426 H552" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 5.4227s" dur="5s"/>
+    </path>
 
     <!-- Row 4 — slot 3 -->
     <rect x="247" y="428" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
@@ -383,6 +391,13 @@
     <path d="M552,462 H509 A7,7 0 0,0 502,469 V487 A7,7 0 0,0 509,494 H552" stroke-dasharray="50 126" stroke-dashoffset="50">
       <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 9.9024s" dur="4s"/>
     </path>
+    <rect x="604" y="462" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M654,462 H697 A7,7 0 0,1 704,469 V487 A7,7 0 0,1 697,494 H654" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 9.9024s" dur="4s"/>
+    </path>
+    <path d="M654,462 H611 A7,7 0 0,0 604,469 V487 A7,7 0 0,0 611,494 H654" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 9.9024s" dur="4s"/>
+    </path>
 
     <!-- Row 6 — slot 5 -->
     <rect x="145" y="496" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
@@ -411,6 +426,20 @@
       <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 11.7885s" dur="3.5s"/>
     </path>
     <path d="M501,496 H458 A7,7 0 0,0 451,503 V521 A7,7 0 0,0 458,528 H501" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 11.7885s" dur="3.5s"/>
+    </path>
+    <rect x="553" y="496" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M603,496 H646 A7,7 0 0,1 653,503 V521 A7,7 0 0,1 646,528 H603" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 11.7885s" dur="3.5s"/>
+    </path>
+    <path d="M603,496 H560 A7,7 0 0,0 553,503 V521 A7,7 0 0,0 560,528 H603" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 11.7885s" dur="3.5s"/>
+    </path>
+    <rect x="655" y="496" width="100" height="32" rx="7" stroke-linecap="round" opacity="0.10"/>
+    <path d="M705,496 H748 A7,7 0 0,1 755,503 V521 A7,7 0 0,1 748,528 H705" stroke-dasharray="50 126" stroke-dashoffset="50">
+      <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 11.7885s" dur="3.5s"/>
+    </path>
+    <path d="M705,496 H662 A7,7 0 0,0 655,503 V521 A7,7 0 0,0 662,528 H705" stroke-dasharray="50 126" stroke-dashoffset="50">
       <animate attributeName="stroke-dashoffset" values="50;-126" begin="cs.begin + 11.7885s" dur="3.5s"/>
     </path>
 

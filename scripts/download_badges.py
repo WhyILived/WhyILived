@@ -49,12 +49,13 @@ BADGES = [
     ("C", "A8B9CC", "c"),
     ("Lua", "000080", "lua"),
     ("Java", "ED8B00", "openjdk"),
-    # Row 6 — Frameworks cont. (5 real + 1 filler)
+    # Row 6 — Frameworks cont. (6 real + 0 fillers)
     ("Angular", "DD0031", "angular"),
     ("FastAPI", "009688", "fastapi"),
     ("Django", "092E20", "django"),
     ("Node.js", "339933", "nodejs"),
     ("Llama.cpp", "4B4B4B", "meta"),
+    ("TensorFlow", "FF6F00", "tensorflow"),
     # Row 5 — Frameworks (5 real + 0 fillers)
     ("React", "61DAFB", "react"),
     ("Next.js", "000000", "nextdotjs"),
@@ -77,8 +78,8 @@ BADGES = [
     ("Arch%20Linux", "1793D1", "archlinux"),
 ]
 
-# Which rows need fillers (row 6 still has 1 filler slot)
-FILLER_ROWS = {2, 6}
+# All filler slots are now filled
+FILLER_ROWS = {2}
 
 
 def shields_url(label: str, color: str, logo: str, style: str = "for-the-badge") -> str:
@@ -197,8 +198,6 @@ def generate_pyramid_svg(existing_svg: str) -> str:
         if row_num in FILLER_ROWS:
             if row_num == 2:
                 row_badge_count = 2
-            elif row_num == 6:
-                row_badge_count = 5
 
         label = f"Row {row_num}"
         if row_num == 1:
