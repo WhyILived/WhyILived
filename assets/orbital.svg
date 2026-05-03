@@ -186,10 +186,10 @@
   .label-count{fill:#e6b450;font-family:monospace;font-size:8px;font-weight:bold;}
 </style>
 <g id="sys">
-  <!-- i=0  May '26  0c  r=3  pos=(450,90)  label=(450,47) -->
-  <circle class="planet" cx="450" cy="90" r="3" fill="#e6b450" filter="url(#glow)" style="animation-delay:0.0s"/>
-  <text class="planet-text" text-anchor="middle" x="450" y="50">
-    <tspan class="label">May '26</tspan><tspan class="label-count" dx="4">0</tspan>
+  <!-- i=0  May '26  27c  r=4  pos=(450,90)  label=(450,46) -->
+  <circle class="planet" cx="450" cy="90" r="4" fill="#e6b450" filter="url(#glow)" style="animation-delay:0.0s"/>
+  <text class="planet-text" text-anchor="middle" x="450" y="49">
+    <tspan class="label">May '26</tspan><tspan class="label-count" dx="4">27</tspan>
   </text>
 
   <!-- i=1  Apr '26  170c  r=11  pos=(385,107)  label=(360,63) -->
