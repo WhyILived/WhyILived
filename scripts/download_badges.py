@@ -49,24 +49,27 @@ BADGES = [
     ("C", "A8B9CC", "c"),
     ("Lua", "000080", "lua"),
     ("Java", "ED8B00", "openjdk"),
-    # Row 6 — Frameworks cont. (4 real + 2 fillers)
+    # Row 6 — Frameworks cont. (5 real + 1 filler)
     ("Angular", "DD0031", "angular"),
     ("FastAPI", "009688", "fastapi"),
     ("Django", "092E20", "django"),
     ("Node.js", "339933", "nodejs"),
-    # Row 5 — Frameworks (4 real + 1 filler)
+    ("Llama.cpp", "4B4B4B", "meta"),
+    # Row 5 — Frameworks (5 real + 0 fillers)
     ("React", "61DAFB", "react"),
     ("Next.js", "000000", "nextdotjs"),
     ("Svelte", "FF3E00", "svelte"),
     ("Vue.js", "4FC08D", "vuedotjs"),
+    ("PyTorch", "EE4C2C", "pytorch"),
     # Row 4 — Databases (4)
     ("PostgreSQL", "4169E1", "postgresql"),
     ("MySQL", "F29111", "mysql"),
     ("Redis", "DC382D", "redis"),
     ("SQLite", "003B57", "sqlite"),
-    # Row 3 — DevOps cont. (2 real + 1 filler)
+    # Row 3 — DevOps cont. (3 real + 0 fillers)
     ("AWS", "FF9900", "amazonaws"),
     ("GitHub%20Actions", "2088FF", "githubactions"),
+    ("Terraform", "7B42BC", "terraform"),
     # Row 2 — DevOps (2)
     ("Docker", "2496ED", "docker"),
     ("Kubernetes", "326CE5", "kubernetes"),
@@ -74,8 +77,8 @@ BADGES = [
     ("Arch%20Linux", "1793D1", "archlinux"),
 ]
 
-# Which rows need fillers
-FILLER_ROWS = {2, 3, 5, 6}
+# Which rows need fillers (row 6 still has 1 filler slot)
+FILLER_ROWS = {2, 6}
 
 
 def shields_url(label: str, color: str, logo: str, style: str = "for-the-badge") -> str:
@@ -194,12 +197,8 @@ def generate_pyramid_svg(existing_svg: str) -> str:
         if row_num in FILLER_ROWS:
             if row_num == 2:
                 row_badge_count = 2
-            elif row_num == 3:
-                row_badge_count = 2
-            elif row_num == 5:
-                row_badge_count = 4
             elif row_num == 6:
-                row_badge_count = 4
+                row_badge_count = 5
 
         label = f"Row {row_num}"
         if row_num == 1:
