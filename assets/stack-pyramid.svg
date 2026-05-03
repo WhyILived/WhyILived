@@ -463,4 +463,32 @@
     </path>
   </g>
 
+  <!-- CATEGORY BRACKET LABELS (right side, staggered per layer, white) -->
+  <!-- Actual block y positions: row1=328 row2=362 row3=396 row4=430 row5=464 row6=498 row7=532
+       Right edges:  row1=498  rows2-3=600  row4=651  rows5-6=753  row7=804  -->
+  <g stroke="#ffffff" stroke-width="1.5" fill="none" opacity="0.85">
+    <!-- Linux (row 1: y=328–356, right edge 498) -->
+    <polyline points="523,333 523,351" fill="none"/>
+    <line x1="523" y1="342" x2="531" y2="342"/>
+    <!-- DevOps &amp; Infra (rows 2–3: y=362–424, right edge 600) -->
+    <polyline points="625,372 625,414" fill="none"/>
+    <line x1="625" y1="393" x2="633" y2="393"/>
+    <!-- Databases (row 4: y=430–458, right edge 651) -->
+    <polyline points="676,435 676,453" fill="none"/>
+    <line x1="676" y1="444" x2="684" y2="444"/>
+    <!-- Frameworks (rows 5–6: y=464–526, right edge 753) -->
+    <polyline points="778,474 778,516 " fill="none"/>
+    <line x1="778" y1="495" x2="786" y2="495"/>
+    <!-- Languages (row 7: y=532–560, right edge 804) -->
+    <polyline points="829,537 829,555" fill="none"/>
+    <line x1="829" y1="546" x2="837" y2="546"/>
+  </g>
+  <g fill="#ffffff" font-family="monospace" font-size="10" dominant-baseline="middle" opacity="0.92">
+    <text x="533" y="342">Linux</text>
+    <text x="635" y="393">DevOps &amp; Infra</text>
+    <text x="686" y="444">Databases</text>
+    <text x="788" y="495">Frameworks</text>
+    <text x="839" y="546">Languages</text>
+  </g>
+
 </svg>
