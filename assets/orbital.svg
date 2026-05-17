@@ -186,10 +186,10 @@
   .label-count{fill:#e6b450;font-family:monospace;font-size:8px;font-weight:bold;}
 </style>
 <g id="sys">
-  <!-- i=0  May '26  172c  r=12  pos=(450,90)  label=(450,38) -->
+  <!-- i=0  May '26  192c  r=12  pos=(450,90)  label=(450,38) -->
   <circle class="planet" cx="450" cy="90" r="12" fill="#e6b450" filter="url(#glow)" style="animation-delay:0.0s"/>
   <text class="planet-text" text-anchor="middle" x="450" y="41">
-    <tspan class="label">May '26</tspan><tspan class="label-count" dx="4">172</tspan>
+    <tspan class="label">May '26</tspan><tspan class="label-count" dx="4">192</tspan>
   </text>
 
   <!-- i=1  Apr '26  169c  r=11  pos=(385,107)  label=(360,63) -->
@@ -198,9 +198,9 @@
     <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">169</tspan>
   </text>
 
-  <!-- i=2  Mar '26  73c  r=7  pos=(337,155)  label=(297,132) -->
-  <circle class="planet" cx="337" cy="155" r="7" fill="#9b8cff" filter="url(#glow)" style="animation-delay:0.8s"/>
-  <text class="planet-text" text-anchor="middle" x="297" y="134">
+  <!-- i=2  Mar '26  73c  r=6  pos=(337,155)  label=(298,132) -->
+  <circle class="planet" cx="337" cy="155" r="6" fill="#9b8cff" filter="url(#glow)" style="animation-delay:0.8s"/>
+  <text class="planet-text" text-anchor="middle" x="298" y="135">
     <tspan class="label">Mar '26</tspan><tspan class="label-count" dx="4">73</tspan>
   </text>
 
@@ -252,9 +252,9 @@
     <tspan class="label">Jul '25</tspan><tspan class="label-count" dx="4">182</tspan>
   </text>
 
-  <!-- i=11  Jun '25  91c  r=8  pos=(515,107)  label=(539,66) -->
-  <circle class="planet" cx="515" cy="107" r="8" fill="#ffa198" filter="url(#glow)" style="animation-delay:4.4s"/>
-  <text class="planet-text" text-anchor="middle" x="539" y="69">
+  <!-- i=11  Jun '25  91c  r=7  pos=(515,107)  label=(538,67) -->
+  <circle class="planet" cx="515" cy="107" r="7" fill="#ffa198" filter="url(#glow)" style="animation-delay:4.4s"/>
+  <text class="planet-text" text-anchor="middle" x="538" y="70">
     <tspan class="label">Jun '25</tspan><tspan class="label-count" dx="4">91</tspan>
   </text>
 
