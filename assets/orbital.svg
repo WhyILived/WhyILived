@@ -186,10 +186,10 @@
   .label-count{fill:#e6b450;font-family:monospace;font-size:8px;font-weight:bold;}
 </style>
 <g id="sys">
-  <!-- i=0  May '26  215c  r=12  pos=(450,90)  label=(450,38) -->
+  <!-- i=0  May '26  220c  r=12  pos=(450,90)  label=(450,38) -->
   <circle class="planet" cx="450" cy="90" r="12" fill="#e6b450" filter="url(#glow)" style="animation-delay:0.0s"/>
   <text class="planet-text" text-anchor="middle" x="450" y="41">
-    <tspan class="label">May '26</tspan><tspan class="label-count" dx="4">215</tspan>
+    <tspan class="label">May '26</tspan><tspan class="label-count" dx="4">220</tspan>
   </text>
 
   <!-- i=1  Apr '26  169c  r=10  pos=(385,107)  label=(360,64) -->
@@ -246,9 +246,9 @@
     <tspan class="label">Aug '25</tspan><tspan class="label-count" dx="4">35</tspan>
   </text>
 
-  <!-- i=10  Jul '25  182c  r=11  pos=(563,155)  label=(607,130) -->
-  <circle class="planet" cx="563" cy="155" r="11" fill="#56d364" filter="url(#glow)" style="animation-delay:4.0s"/>
-  <text class="planet-text" text-anchor="middle" x="607" y="132">
+  <!-- i=10  Jul '25  182c  r=10  pos=(563,155)  label=(606,130) -->
+  <circle class="planet" cx="563" cy="155" r="10" fill="#56d364" filter="url(#glow)" style="animation-delay:4.0s"/>
+  <text class="planet-text" text-anchor="middle" x="606" y="133">
     <tspan class="label">Jul '25</tspan><tspan class="label-count" dx="4">182</tspan>
   </text>
 
