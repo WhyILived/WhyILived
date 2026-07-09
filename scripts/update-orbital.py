@@ -254,6 +254,10 @@ def update_svg(new_planets_content, output_path=None):
 
     new_svg = MARKER_RE.sub(replacer, svg)
 
+    if new_svg == svg:
+        print("No changes — SVG already up to date.")
+        return
+
     with open(target, "w", encoding="utf-8") as f:
         f.write(new_svg)
 
@@ -295,6 +299,10 @@ def write_test_svg(new_planets_content, output_path):
         )
 
     new_svg = MARKER_RE.sub(replacer, svg)
+
+    if new_svg == svg:
+        print("No changes — would have written", output_path)
+        return
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(new_svg)
