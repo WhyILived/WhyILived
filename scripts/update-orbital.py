@@ -9,9 +9,9 @@ assets/orbital.svg with real counts and correctly scaled planet radii.
 Usage:
   GITHUB_TOKEN=<token> python3 scripts/update-orbital.py
 
-Run automatically via .github/workflows/update-orbital.yml on the 1st of
-each month. Can also be triggered manually from the Actions tab, or run
-locally if you have a token with 'read:user' scope.
+Run automatically via .github/workflows/update-orbital.yml daily at 03:00
+UTC. Can also be triggered manually from the Actions tab, or run locally
+if you have a token with 'read:user' scope.
 """
 
 import json
