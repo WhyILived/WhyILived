@@ -210,10 +210,10 @@
     <tspan class="label">May '26</tspan><tspan class="label-count" dx="4">285</tspan>
   </text>
 
-  <!-- i=4  Apr '26  169c  r=8  pos=(337,285)  label=(296,309) -->
+  <!-- i=4  Apr '26  162c  r=8  pos=(337,285)  label=(296,309) -->
   <circle class="planet" cx="337" cy="285" r="8" fill="#ff7b72" filter="url(#glow)" style="animation-delay:1.6s"/>
   <text class="planet-text" text-anchor="middle" x="296" y="312">
-    <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">169</tspan>
+    <tspan class="label">Apr '26</tspan><tspan class="label-count" dx="4">162</tspan>
   </text>
 
   <!-- i=5  Mar '26  73c  r=5  pos=(385,333)  label=(362,372) -->
